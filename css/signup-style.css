@@ -120,7 +120,6 @@ a:active, a:visited{
     background-size: cover;
     position: relative;
     
-    
 }
 
 .loginContainer .overlay{
@@ -175,12 +174,12 @@ a:active, a:visited{
 }
 
 form{
-    
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 50fr 50fr;
 }
 
 .nameContainer , .mailContainer, .mobileContainer, .passContainer{
-    width: 50%;
     float: right;
     padding-left: 10px;
 }
@@ -285,7 +284,7 @@ form button[type="submit"]{
     padding: 5px 30px;
     border-radius: 30px;
     border: none;
-    
+    width: 100px;
     
     background: #2982aa; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #2982aa 0%, #3337aa 100%); /* FF3.6-15 */
