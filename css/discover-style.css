@@ -1,0 +1,1946 @@
+/*
+@font-face {
+    font-family: "viprawy";
+    src: url("../myFont/viprawy.otf");
+}
+*/
+body{
+    font-family: 'Cairo', sans-serif;
+    min-height: 1000px;
+}
+
+/*
+.body-bg{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/body-background.jpg);   
+    opacity: .8;
+    
+}
+*/
+.row{
+    margin: 0;
+}
+
+a:active, a:visited{
+    text-decoration: none;
+}
+
+/** Start PopUp Style **/
+
+
+.circle,.mainx{
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    z-index: 6;
+}
+.mainx{
+    height: 70px; width: 70px;
+    font-size: 3.5em;
+    line-height: 83px;
+    transition: 1s;
+    position: fixed;
+    bottom: 60px; right: 17.5%;
+    
+     -webkit-box-shadow: 0px 0px 38px rgba(51, 55, 170, 0.62);
+    -moz-box-shadow: 0px 0px 38px rgba(51, 55, 170, 0.62);
+    box-shadow: 0px 0px 38px rgba(51, 55, 170, 0.12);
+    
+    background: #2982aa; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #2982aa 0%, #3337aa 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #2982aa 0%,#3337aa 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #2982aa 0%,#3337aa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2982aa', endColorstr='#3337aa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-color: #3337AA;
+    
+    
+}
+
+.mainx img{
+    width: 30px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.mainx #inviteIcon{
+    display: none;
+}
+
+.pop{
+    max-width: 100px;
+}
+
+.pop::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mark,.gd{
+    height: 60px; width: 60px;
+    line-height: 60px;
+    margin: auto;
+    position: fixed;
+    bottom: 65px; right: 18%;
+    font-size: 1.7em;
+    background-color: #3337AA;
+    
+}
+
+.mark{
+    line-height: 2.2;
+}
+
+.rotate{
+    transform: rotate(360deg);
+    transition: transform .5s;
+}
+
+.zO{
+    transform: scale(.9);
+    font-size: 2em;
+}
+
+.mark img,.gd img{
+    width: 30px;
+}
+
+.overlay{
+    position: fixed;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9;
+    display: none;
+}
+
+/** End PopUp Style **/
+
+
+
+/********   Main Section    **********/
+
+.main{
+    margin-top: 30px;
+    padding-top: 20px;
+    
+}
+
+
+/********   SideBar Section    **********/
+
+.sidebar{
+    padding: 0 30px;
+}
+
+.sidebar ul{
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+    overflow: hidden;
+     
+}
+
+.sidebar ul li{
+    list-style: none;
+    
+}
+
+.sidebar ul li a{
+    display: block;
+    padding: 12px 0;
+    color: #333;
+    border-bottom: 1px solid #DEDEDE;
+    font-size: 14px;
+    text-align: center;
+}
+.sidebar ul li:last-of-type a{
+    border-bottom: 0;
+}
+.sidebar ul li a:hover{
+    text-decoration: none;
+    background-color: #fafafa;
+}
+
+/********************************/
+
+.posts-section{
+    padding: 5px 10px;
+}
+
+
+/***********************************/
+
+button.newMsg{
+    width: 100%;
+    text-align: right;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    position: relative;
+    outline: none;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    color: #aaaaaa;    
+}
+
+button.newMsg:after { 
+   content: ""; 
+    width: 40px;
+	height: 40px;
+	background: url(../img/icons/Msg-Tri.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: -9px; bottom: -33px;
+}
+
+button.newMsg img{
+    width: 40px; height: 40px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #333AA7;
+    margin-left: 5px;
+}
+/* to change modal overlay background */ 
+
+
+/* to add custom Animation */ 
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.modal.fade{
+  opacity:1;
+}
+.modal.fade .modal-dialog {
+   -webkit-transform: translate(0);
+   -moz-transform: translate(0);
+   transform: translate(0);
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.zoomIn{
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+}
+
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+}
+
+/*----------------------------------------------*/
+
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+    animation-duration: .5s;
+}
+
+/*----------------------------------------------*/
+
+@-webkit-keyframes bounceOutDown {
+  20% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  40%,
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+}
+
+@keyframes bounceOutDown {
+  20% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  40%,
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+}
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  animation-name: bounceOutDown;
+    animation-duration: 1s;
+}
+
+/* End Animations */
+
+.modal-dialog{
+    margin-top: 30px;
+    padding: 0 10px;
+    padding-left: 20px;
+}
+
+.createMsgModal .modal-content{
+    padding: 20px;
+    min-height: 300px;
+    position: relative;
+    border-radius: 15px;
+    border-bottom-left-radius: 0;
+}
+
+.createMsgModal .modal-content:after { 
+   content: ""; 
+    width: 40px;
+	height: 40px;
+	background: url(../img/icons/Create-Msg-Tri.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0px; bottom: -35px;
+}
+
+.msg-receiver{
+    overflow: hidden;
+}
+
+.msg-receiver h4{
+    float: right;
+    margin-left: 10px;
+    font-weight: 900;
+    font-size: 14px;
+    margin-top: 13px;
+}
+
+/* .slideThree */
+.slideThree {
+    width: 120px; height: 30px;
+    line-height: 25px;
+    background: #fff;
+    position: relative;
+    top: 5px;
+    border-radius: 50px;
+    float: right;
+    border: 1px solid #b2b2b2;
+    
+}
+.slideThree:after {
+  
+content: 'شخصية';
+  color: #000;
+  position: absolute;
+  right: 10px;
+  z-index: 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+.slideThree:before {
+  content: 'لصديق';
+  color: #333;
+  position: absolute;
+  left: 10px;
+  z-index: 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+.slideThree label {
+  display: block;
+  width: 54px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  z-index: 1;
+  background: #3337AA;
+  
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  
+}
+.slideThree input[type=checkbox] {
+  visibility: hidden;
+}
+.slideThree input[type=checkbox]:checked + label {
+  right: 60px;
+}
+
+
+
+/* end .slideThree */
+
+.chooseReciver{
+    overflow: hidden;
+    width: 28%;
+    float: right;
+}
+
+.reciverInfo{
+    overflow: hidden;
+    margin-top: 7px;
+    width: 72%;
+    float: right;
+    padding-right: 15px;
+    display: none;
+}
+
+.reciverInfo .inputContainer{
+    width: 50%;
+    float: right;
+}
+
+.inputContainer select{
+    float: right;
+    width: 70px;
+    font-weight: 900;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: 0;
+}
+
+.reciverInfo label{
+    font-size: 12px;
+    margin-left: 1%;
+    width: 16%;
+}
+.reciverInfo input{
+    width: 65%;
+    margin-right: 2%;
+    border-radius: 5px;
+    border: 1px solid #CFCFCF;
+    padding: 3px 5px;
+    outline: none;
+    
+    box-shadow: 0 #fff;
+}
+.reciverInfo input:first-of-type{
+    margin-left: 5px;
+}
+
+.reciverInfo input:last-of-type{
+    font-family: sans-serif;
+    border: 1px solid #b2b2b2;
+}
+
+
+.createMsgForm textarea{
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    padding-top: 10px;
+    resize: none;
+    min-height: 220px;
+    border-radius: 5px;
+    border: 1px solid #b2b2b2;   
+    outline: none;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 30px;
+    box-shadow: 0 #fff;
+    padding-bottom: 50px;
+    direction: inherit;
+    /*border: none;*/
+}
+
+.createMsgForm textarea:focus, .reciverInfo input:focus{
+    border-color: #333AA7;
+}
+
+.Radio{
+    padding-top: 2px;
+}
+
+.Radio label:first-of-type{
+    float: right;
+    margin-left: 5px;
+    font-size: 14px;
+    width: 60px;
+}
+
+.Radio label:not(:first-of-type){
+    width: 60px;
+    cursor: pointer;
+    padding-top: 3px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;
+}
+/*
+.Radio label:not(:first-of-type):hover{
+    text-decoration: underline;
+    border-bottom: 1px solid #333;  
+}
+*/
+
+.Radio label:not(:first-of-type):hover span{
+    color: #333AA7;
+}
+
+.Radio span{
+    float: right;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.Radio input{
+    cursor: pointer;
+    margin-top: 0px;
+    width: 15px; height: 15px;
+}
+
+
+/***********************************/
+
+.msgContainer{
+    position: relative;
+}
+
+.msgUploads{
+    position: absolute;
+    left: 13px;
+    bottom: 7px;
+    background-color: #fff;
+}
+
+.msgUploads::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.msgUploads button, .uploadImgBtn {
+    padding: 5px 10px;
+    float: left;
+    margin-right: 5px;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 3px;
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.msgUploads button:hover, .uploadImgBtn:hover {
+    background: #d1d1d1;
+    
+}
+
+.msgUploads button svg, .inputfile + label svg{
+    width: 20px; height: 20px;
+}
+
+
+
+/*************************************/
+
+#emojiBtn{
+    position: relative;
+    outline: 0;
+    transition: .3s;
+}
+
+#emojiBtn svg{
+    transition: .3s;
+}
+
+#emojiBtn.active{
+    background: #3337AA;
+}
+
+#emojiBtn.active svg .a2{
+    fill: #fff;
+}
+
+#emojiBtn.active svg .b2{
+    fill: #3337AA;
+}
+
+.emojisContainer{
+    width: 185px;
+    position: absolute;
+    left: 0; bottom: 40px;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px 0px rgba(51, 51, 51, 0.36);
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    padding: 5px;
+    display: none;
+}
+
+.emojisContainer::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.emojisContainer ul li{
+    list-style: none;
+    float: left;
+    padding: 0 5px;
+    font-size: 20px;
+    outline: 0;
+    width: 25%;
+}
+.emojisContainer ul li:hover{
+    background: #eee;
+}
+
+
+
+.uploadImgBtn input, .uploadImgContainer input{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+#previewImg{
+    display: none;
+    padding: 5px 0;
+}
+
+#previewImg::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+.uploadImgContainer{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    float: right;
+}
+
+#multiImgPreview .uploadImgContainer{
+    float: none;
+}
+
+
+#previewImg img{
+   width: 100%; height: 100%;
+    object-fit: cover;
+    position: relative;
+    display: inline-block;
+}
+
+.uploadImgOverlay{
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: #333;
+    opacity: 0; 
+    transition: .3s;
+    text-align: center;
+}
+
+.uploadImgContainer:hover .uploadImgOverlay{
+    opacity: 1;
+}
+
+
+.uploadImgOverlay span{
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #cb0000;
+    display: block;
+    width: 35px; height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin: 0 auto;
+    margin-top: 17px;
+    border-radius: 50%;
+    z-index: 9999999;
+}
+
+#previewImg > .uploadImgContainer:first-of-type{
+    float: right;
+}
+
+
+#multiImgPreview{
+    overflow: auto;
+    white-space: nowrap;
+    padding: 5px 0;
+    width: 89%;
+    float: right;
+}
+
+.newImgBtn{
+    text-align: center;
+    line-height: 95px;
+    margin-top: 5px;
+    float: left;
+    margin-left: 0;
+    border-color: #b2b2b2;
+}
+
+.newImgBtn .inputfile + label svg{
+    width: 40px; height: 40px;
+}
+
+.newImgBtn:hover{
+    background: #333AA7;
+}
+
+.newImgBtn:hover .inputfile + label svg .a6{
+    fill: #fff;
+}
+
+/****************************************/
+
+.msgDetails{
+    margin-top: 20px;
+   /* display: none;*/
+}
+
+.msgDetails::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.msgDetails .cont{
+    
+    float: right;
+    padding-left: 20px;
+}
+
+.msgDetails .cont label{
+    margin-left: 5px;
+    font-size: 13px;
+}
+.msgDetails .cont select{
+    font-size: 12px;
+    margin-left: 5px;
+    text-align: center;
+    font-weight: 900;
+    outline: 0;
+    border-radius: 3px;
+    padding: 1px 3px;
+    cursor: pointer;
+    border: 1px solid #b2b2b2;
+}
+
+.msgDetails .cont select:hover{
+    color: #333AA7;
+    border-color: #333AA7;;
+}
+
+.msgDetails .cont select option{
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.msgDetails .cont:nth-of-type(2) input{
+    font-weight: 600;
+    border-radius: 3px;
+    border: 1px solid #b2b2b2;
+    padding: 3px;
+    outline: 0;
+    cursor: pointer;
+}
+
+.msgDetails .cont:nth-of-type(2) input:hover{
+    border-color: #333AA7;
+    color: #333AA7;
+}
+
+.msgDetails .cont:nth-of-type(2) input:focus{
+    border-color: #333AA7;
+}
+
+.msgDetails .cont:nth-of-type(3){
+    padding-left: 0;
+}
+
+.msgDetails .cont:nth-of-type(3) select{
+    margin-left: 0;
+}
+
+
+.createMsgForm .submitBtn{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 10px 0;
+    margin-top: 20px;
+    border: none;
+    color: #fff;
+    background-color: #3337AA;
+    border-radius: 5px;
+}
+
+.createMsgForm .submitBtn:hover{
+    background-color: #262b76;
+}
+
+/************************************/
+
+.post{
+    min-height: 200px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    position: relative;
+    border-radius: 33px;
+    border-bottom-left-radius: 0;
+    padding: 10px 0px;
+    padding-bottom: 0px;
+    margin-bottom: 40px;
+}
+.post::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.post:before { 
+   content: ""; 
+    width: 40px;
+	height: 40px;
+	background: url(../img/icons/post-Tri.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: -5px; bottom: -38px;
+}
+
+
+.userDetails{
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.userDetails a{
+    color: #333;
+}
+
+.userDetails a:hover{
+    text-decoration: none;
+    
+}
+
+.userDetails div h4{
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 5px;
+    color: #333AA7;
+}
+
+.userDetails div h4:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.userDetails img{
+    width: 55px;
+    border-radius: 50%;
+    float: right;
+    margin-left: 10px;
+}
+
+.userDetails div{
+    margin-top: 5px;
+    width: auto;
+    float: left;
+}
+
+.userDetails div svg{
+    width: 13px; height: 12px;
+    fill: #777777;
+}
+.privacy{
+    font-weight: 400;
+    font-size: 12px;
+    color: #777777;
+}
+
+.userDetails::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.post .dates{
+    float: left;
+    border: 2px solid #333AA7;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 15px;
+}
+
+.post .dates h4{
+    float: left;
+    margin: 0;
+    padding: 7px 15px;
+    padding-top: 8px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.post .dates h4:first-of-type{
+    background-color: #333AA7;
+    color: #fff;
+    padding-left: 20px;
+}
+
+.post .dates h4 img{
+    margin-right: 5px;
+    margin-top: -2px;
+    width: 17px; height: 17px;
+}
+
+.post .dates::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.postContent{
+    display: block;
+    width: 100%;
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+}
+
+.postContent p{
+    color: #1d2129;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 25px;
+}
+.postContent .postImgs{
+    margin-top: 15px;
+}
+
+.postImgs::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.postContent .postImgs img{
+    display: block;
+    float: right;
+    width: 24.25%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: 1%;
+    background-color: #eee;
+}
+
+.postContent .postImgs img:last-of-type{
+    margin-left: 0;
+}
+
+.postContent .postImgs img:hover{
+    cursor: pointer;
+    opacity: .95;
+}
+
+.postContent .oneImg img{
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+
+.postContent .twoImgs{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+	grid-column-gap: 10px;
+    justify-items: start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.postContent .twoImgs img{
+    width: 100%;
+    height: auto;
+    height: 200px;
+}
+
+.postContent .threeImgs img{
+    width: 32.33%;
+    margin-left: 1%;
+}
+
+.postContent .moreThanFour{
+    padding-bottom: 10px;
+    width: 100%;
+    float: right;
+    overflow: auto;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+.postContent .moreThanFour img{
+    display: inline-block;
+    float: none;
+    width: 40%;
+}
+
+#previewImgModal{
+    width: 100%;
+    padding: 0 20px;
+    background-color: rgba(51, 51, 51, 0.78);
+}
+
+#previewImgModal .modal-content{
+    width: 100%; height: 90vh;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    background-color: #fff;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+#previewImgModal img.modalImg{
+    width: 100%; height: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    box-shadow:none;
+    padding: 0;
+    border: 0;
+}
+
+.viewMsgContainer{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(51, 58, 167, 0.97);
+    color: #fff;
+    border: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    opacity: 0;
+    transition: .2s;
+}
+
+
+#previewImgModal .modal-content:hover .viewMsgContainer{
+    opacity: 1;
+}
+
+#previewImgModal .modal-content:hover .changeImgsBtns{
+    opacity: 1;
+}
+
+#previewImgModal .modal-content button.viewMsg{
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 10px 0;
+}
+
+#previewImgModal .modal-content button.viewMsg:hover{
+    background-color: #333AA7;
+}
+
+
+#previewImgModal .modal-content button.viewMsg svg{
+    width: 20px;
+    fill: #fff;
+}
+
+#previewImgModal .close{
+    font-size: 22px;
+    background-color: red;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 1px 16px rgba(255, 0, 0, 0.56);
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    line-height: 25px;
+    opacity: 1;
+    position: absolute;
+    top: -15px; right: -15px;
+}
+
+#previewImgModal .msgContent{
+    display: none;
+    /*cursor: pointer;*/
+    padding: 0 20px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#previewImgModal .msgContent p{
+    width: 70%;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.8;
+    text-align: right;
+    max-height: 150px;
+    overflow-y: scroll;
+    padding: 10px;
+    float: right;
+}
+
+#previewImgModal .msgAuthor{
+    margin-top: 10px;
+    float: right;
+    width: 15%;
+    margin-right: 5%;
+    padding: 0px 10px;
+}
+
+.msgAuthor img{
+    width: 60px; height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.msgAuthor h4{
+    font-size: 14px;
+    font-weight: 900;
+    margin-top: 5px;
+    line-height: 1.7;
+}
+
+
+.postContent p a.moreDescription{
+    font-weight: 900;
+    color: #333AA7;
+}
+
+
+@keyframes rotateMe{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+
+.rotateMe{
+    transform: rotate(180deg);
+    animation-name: rotateMe;
+    animation-duration: .5s;
+}
+
+@keyframes unRotateMe{
+    from{
+        transform: rotate(180deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.unRotateMe{
+    transform: rotate(360deg);
+    animation-name: unRotateMe;
+    animation-duration: .5s;
+}
+
+.changeImgsBtns{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    padding: 0;
+    opacity: 0;
+    transition: .3s;
+}
+
+.changeImgsBtns button{
+    height: 50px; width: 60px;
+    text-align: center;
+    border: none;
+    background-color: rgba(51, 58, 167, 0.8);
+    border-radius: 50px;
+    outline: none;
+}
+
+.changeImgsBtns button:hover{
+    background-color: #333AA7;
+}
+
+.changeImgsBtns button svg{
+    height: 30px;
+    margin-top: 5px;
+}
+
+.changeImgsBtns button svg .a99{
+    fill: #fff;
+}
+
+.changeImgsBtns #prev{
+    float: left;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.changeImgsBtns #next{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+/*************************************/
+
+.reactionsCounter{
+    margin-top: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 20px;
+    padding-bottom: 10px;
+}
+
+.reactionsCounter::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.reactionsCounter a{
+    color: #333;
+    overflow: hidden;
+}
+
+.reactionsCounter .counter{
+    display: block;
+    float: right;
+    margin-left: 5px;
+}
+
+.reactionsCounter > div{
+    float: right;
+    padding-left: 10px;
+    border-left: 1px solid #e5e5e5;
+    height: 20px;
+    padding: 0 15px;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.reactionsCounter .emotions{
+    padding-right: 0;
+}
+
+.reactionsCounter > div:last-of-type{
+    border: none;
+}
+
+.reactionsCounter .emotions .emoContainer{
+    float: right;
+    height: 20px;
+    margin-top: 0px;
+}
+
+.reactionsCounter .emotions .emoContainer svg{
+    width: 18px; height: 18px;
+}
+
+.reactionsCounter .emotions .emoContainer svg:nth-of-type(2),.reactionsCounter .emotions .emoContainer svg:nth-of-type(3){
+    margin-right: -10px;
+}
+
+/*************************************/
+
+.post .addReacts{
+    margin-top: 15px;
+    padding: 0 10px;
+    padding-bottom: 15px;
+}
+
+.post .addReacts:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.post .addReacts button{
+    background-color: #fff;
+    border: none;
+    width: 100%;
+    height: 40px; line-height: 55px;
+    outline: none;
+}
+
+.post .addReacts button:hover{
+    background-color: #eee;
+}
+
+.post .addReacts button.activeReactBtn{
+    background-color: #333AA7; 
+}
+
+.post .addReacts button:hover svg, .post .addReacts button.activeReactBtn svg{
+    fill: #333AA7;
+}
+
+.post .addReacts button.activeReactBtn svg{
+    fill: #fff;
+}
+
+.addReacts > div:nth-of-type(3){
+    border-left: 0;
+}
+
+.post .addReacts button svg{
+    width: 25px; height: 25px;
+    fill: #575757;
+}
+
+.post .addReacts .postMenu{
+    border-left: 0;
+    float: left;
+    width: auto;
+    padding-left: 5px;
+    
+}
+
+.addReacts > div{
+    border-left: 1px solid #e5e5e5;
+    float: right;
+    position: relative;
+    width: 20%;
+    text-align: center;
+}
+
+.addReacts .reactEmotions{
+    padding: 10px 0px;
+    width: 50px;
+    position: absolute;
+    background-color: #fff;
+    text-align: center;
+    z-index: 3;
+    left: 50%; top: 120%;
+    transform: translate(-50%,0);
+    border: 3px solid #333AA7;
+    border-radius: 30px;
+    display: none;
+}
+
+.addReacts .reactEmotions::before{
+    content: '';
+    display: block;
+    background: url(../img/icons/triangle.svg);
+    position: absolute;
+    top: -9px; left: 33%;
+    width: 15px; height: 15px;
+}
+
+.addReacts .reactEmotions a{
+    display: block;
+    padding-bottom: 7px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.addReacts .reactEmotions svg{
+    width: 100%; height: 30px;
+    display: block;
+    transition: .1s;
+    /*padding: 3px 0;*/
+    transform: translate(-40px,0px);
+    
+}
+
+.addReacts .reactEmotions a:last-of-type svg{
+    margin-bottom: 0;
+}
+
+.addReacts .reactEmotions .emotionShow{
+    transition: .3s;
+    transform: translate(0px,0px);
+}
+
+.addReacts .reactEmotions a:hover{
+    position: relative;
+    z-index: 9;
+}
+
+
+.addReacts .reactEmotions a:hover svg{
+    transform: scale(1.5) translate(-17px,-5px);
+}
+
+
+/**************************************/
+
+.comments-section{
+    background-color: #F3F6F8;
+    padding: 20px;
+    border-bottom-right-radius: 30px;
+    margin-top: -5px;
+    display: none;
+}
+
+.comments-section::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.addComment{
+    width: 100%;
+}
+
+.addComment::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.addComment img{
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 2px solid #333AA7;
+    float: right;
+    margin-left: 10px;
+}
+
+.addComment form{
+    width: calc(100% - 50px);
+    float: right;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-left: 0px;
+}
+
+.addComment form:focus{
+    display: none;
+}
+
+.addComment form textarea{
+    width: 100%;
+    min-height: 40px; 
+    line-height: 30px;
+    outline: none;
+    padding-right: 20px;
+    padding-left: 90px;
+    padding-top: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    word-spacing: 2px;
+    max-height: 200px;
+    resize: none;
+    border: none;
+    margin-bottom: -5px;
+    
+}
+.addComment form textarea:focus{
+    border-color: #333AA7;
+}
+.addComment form button[type="submit"]{
+    position: absolute;
+    left: 10px; bottom: 5px;
+    height: 30px;
+    padding: 0 25px;
+    border: none;
+    background-color: #333AA7;
+    color: #fff;
+    border-radius: 30px;
+    outline: none;
+}
+
+.addComment form button[type="submit"]:hover{
+    background-color: #4f55a7;
+}
+
+/*************************************/
+
+.postComment{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.postComment .commenterDetails{
+    margin-bottom: 5px;
+}
+
+.postComment .commenterDetails img{
+    width: 50px;
+    border-radius: 50%;
+    float: right;
+}
+
+.postComment .commenterDetails h5{
+    float: right;
+    color: #333AA7;
+    font-size: 12px;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.postComment .commenterDetails a:hover h5{
+    text-decoration: underline;
+}
+
+.postComment .commenterDetails::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.postComment .commenterDetails .commentDate{
+    float: left;
+    color: #a0a0a0;
+}
+
+.postComment p{
+    padding: 0 10px;
+    line-height: 1.9;
+    margin-bottom: 0;
+    padding-right: 58px;
+    margin-top: -15px;
+}
+
+.commentVotes{
+    margin-top: 10px;
+}
+
+.commentVotes button{
+    min-width: 50px;
+    padding: 3px 0;
+    background-color: #fff;
+    border: 1px solid #CFCFCF;
+    border-radius: 3px;
+    text-align: center;
+    outline: none;
+    margin-left: 3px;
+}
+
+.commentVotes button:last-of-type{
+    margin-left: 0;
+}
+
+.commentVotes button:hover{
+    border-color: #333AA7;
+}
+
+.commentVotes button svg{
+    width: 8px;
+    fill: #33377A;
+}
+
+/*************************************/
+
+@media screen and (min-width: 991px){
+    .sidebar{
+        position: sticky;
+        top: 75px;
+    }
+    .container{
+        width: 870px;
+    }
+    .posts-section{
+        margin-left: 8%;
+    }
+}
+
+@media (min-width: 768px){
+    .modal-dialog{
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 991px){
+    
+    .main{
+        padding-top: 10px;
+        padding-bottom: 90px;
+    }
+    .posts-section{
+        padding: 10px 30px;
+    }
+    .sidebar{
+        padding-right: 30px;
+        margin-bottom: 10px;
+    }
+    .mainx{
+        right: 30px;
+    }
+    .mark,.gd{
+        right: 35px;
+    }
+    .modal-dialog{
+        width: 100%;
+        left: -10px;
+    }
+    #multiImgPreview{
+        width: 85%;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+    .mainx{
+        right: 5px;
+    }
+    .mark,.gd{
+        right: 10px;
+    }
+    
+    .main{
+        padding-top: 0;
+    }
+    
+    .sidebar{
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    
+    .sidebar ul{
+        border-radius: 0;
+    }
+    
+    .container{
+        padding: 0;
+    }
+    .posts-section{
+        padding: 10px 20px;
+    }
+    
+    .modal-dialog{
+        margin-top: 20px;  
+        width: 100%;
+        left: 10px;
+    }
+    
+    .chooseReciver,.reciverInfo{
+        width: 100%;
+    }
+    
+    .reciverInfo{
+        margin-top: 15px;
+        padding: 0;     
+    }
+    
+    .reciverInfo input{
+        margin-right: 0%;
+    }
+    
+    .reciverInfo .inputContainer:first-of-type{
+        padding-left: 15px;
+    }
+    
+    .reciverInfo .inputContainer:first-of-type input{
+        width: 100%;
+    }
+    
+    .reciverInfo .inputContainer label:first-of-type{
+        display: block;
+        width: 100%;
+        margin-bottom: 18px;
+    }
+    
+    .reciverInfo .inputContainer select{
+        margin-bottom: 10px;
+    }
+    
+    #multiImgPreview{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .newImgBtn{
+        width: 100%;
+        height: 40px;
+        line-height: 45px;
+        margin-top: 5px;
+        background: #333AA7;
+    }
+    .newImgBtn .inputfile + label svg{
+        width: 20px; height: 20px;
+        
+    }   
+
+    .newImgBtn .inputfile + label svg .a6{
+        fill: #fff;
+    }
+    
+    .msgDetails .cont{
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .msgDetails .cont label{
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    #previewImgModal .msgAuthor{
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    #previewImgModal .msgContent p{
+        width: 100%;
+        font-size: 14px;
+    }
+    
+    #previewImgModal .modal-content{
+        padding-bottom: 40px;
+    }
+    
+    .createMsgForm .submitBtn{
+        margin-top: 5px;
+    }
+    
+    .viewMsgContainer, .changeImgsBtns{
+        opacity: 1;
+    }
+    .changeImgsBtns button{
+        height: 40px; width: 50px;
+    }
+    .changeImgsBtns button svg{
+        height: 20px;
+    }
+    
+    .postContent .postImgs img{
+        width: 49%;
+        margin-left: 2%;
+        margin-bottom: 2%;
+    }
+    
+    .postContent .postImgs img:nth-of-type(even){
+        margin-left: 0;
+    }
+    
+    .postContent .oneImg img,.postContent .twoImgs img{
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .postContent .moreThanFour img{
+        width: 80%;
+        margin-left: 1%;
+    }
+    
+    .postContent .threeImgs img{
+        width: 49%;
+        margin-left: 2%;
+        margin-bottom: 2%;
+    }
+    
+    .postContent .threeImgs img:nth-of-type(3){
+        width: 100%;
+    }
+    
+    .reactionsCounter, .post .addReacts{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    .reactionsCounter > div{
+        width: 33.33%;
+        text-align: center;
+    }
+    
+    .reactionsCounter .counter{
+        display: inline;
+        float: none;
+    }
+    
+    .reactionsCounter .emotions .emoContainer{
+        margin: 0 auto;
+    }
+    .reactionsCounter .emotions .emoContainer{
+        float: none;
+        display: inline;
+    }
+    .reactionsCounter .emotions .emoContainer svg{
+        width: 15px; height: 15px;
+    }
+    
+    .addReacts > div{
+        width: 33.33%;
+    }
+    
+    .post .addReacts .postMenu{
+        position: absolute;
+        top: 70px; left: 20px;
+    }
+    
+    .post .dates{
+        width: 100%;
+        border-radius: 0;
+        border-right: 0;
+        margin-top: 12px;
+    }
+    .post .dates h4{
+        width: 50%;
+        text-align: center;
+    }
+    
+    .userDetails{
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        margin-right: 0;
+    }
+    
+    .userDetails img{
+        float: none;
+    }
+    
+    .userDetails div{
+        float: none;
+    }
+    
+}
+
+@media screen and (max-width: 478px){
+   
+    .reactionsCounter > div{
+        height: auto;
+    }
+    .reactionsCounter > div:last-of-type{
+        padding-left: 0;
+    }
+    .reactionsCounter .counter{
+        display: block;
+    }
+    .postContent .postImgs img{
+        width: 100%;
+    }
+    .postContent .twoImgs img{
+        margin-bottom: 10px;
+        height: 150px;
+    }
+    .postContent .twoImgs{
+        display: block;
+        padding: 0;
+    }
+        
+}
