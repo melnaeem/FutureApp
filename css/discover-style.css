@@ -1314,7 +1314,6 @@ content: 'شخصية';
 
 .reactionsCounter{
     margin-top: 10px;
-    border-bottom: 1px solid #e5e5e5;
     padding: 0 20px;
     padding-bottom: 10px;
 }
@@ -1323,6 +1322,11 @@ content: 'شخصية';
     content: "";
     display: block;
     clear: both;
+}
+
+.reactionsCounter ~ hr{
+    width: calc(100% - 40px);
+    margin: 0 auto;
 }
 
 .reactionsCounter a{

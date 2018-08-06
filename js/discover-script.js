@@ -6,7 +6,7 @@ function addAnim(x) {
 
 
 $('#myModal').on('show.bs.modal',function(e){
-        
+    
         addAnim('zoomIn');
     //$('#myModal').css("padding-right","0");
     
@@ -18,12 +18,11 @@ $('#myModal').on('hide.bs.modal',function(e){
 
 
 $('.slideThree label').click(function(){
-    if ($('#slideThree').is(':checked')) {
+    if ($('#slideThree').is(':checked')){
         $('.reciverInfo').slideDown();
     }else{
         $('.reciverInfo').slideUp();
     }
-
 });
 
 

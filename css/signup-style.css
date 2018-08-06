@@ -175,6 +175,10 @@ a:active, a:visited{
 
 form{
     overflow: hidden;
+    
+}
+
+form.signUp{
     display: grid;
     grid-template-columns: 50fr 50fr;
 }
