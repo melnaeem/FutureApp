@@ -528,7 +528,7 @@ content: 'شخصية';
     resize: none;
     min-height: 220px;
     border-radius: 5px;
-    border: 1px solid #CFCFCF;
+    border: 1px solid #FFF;
     outline: none;
     font-size: 15px;
     font-weight: 900;
@@ -537,10 +537,13 @@ content: 'شخصية';
     padding-bottom: 50px;
     direction: inherit;
     /*border: none;*/
+    background-color: #eee;
+    transition: .3s;
 }
 
 .createMsgForm textarea:focus, .reciverInfo input:focus{
-    border-color: #333AA7;
+    border-color: #eee;
+    background-color: #fff;
 }
 
 .Radio{
@@ -596,7 +599,6 @@ content: 'شخصية';
     position: absolute;
     left: 13px;
     bottom: 7px;
-    background-color: #fff;
 }
 
 .msgUploads::after{
@@ -609,7 +611,7 @@ content: 'شخصية';
     padding: 5px 10px;
     float: left;
     margin-right: 5px;
-    background: #e8e8e8;
+    background: #eee;
     border: 0;
     border-radius: 3px;
     height: 35px;
@@ -683,8 +685,6 @@ content: 'شخصية';
     background: #eee;
 }
 
-
-
 .uploadImgBtn input, .uploadImgContainer input{
     width: 0.1px;
 	height: 0.1px;
@@ -714,8 +714,6 @@ content: 'شخصية';
     display: block;
     clear: both;
 }
-
-
 
 .uploadImgContainer{
     position: relative;
@@ -1145,7 +1143,6 @@ content: 'شخصية';
     transition: .2s;
 }
 
-
 #previewImgModal .modal-content:hover .viewMsgContainer{
     opacity: 1;
 }
@@ -1410,8 +1407,6 @@ content: 'شخصية';
     fill: #333AA7;
 }
 
-
-
 .addReacts > div:nth-of-type(3){
     border-left: 0;
 }
@@ -1581,6 +1576,10 @@ content: 'شخصية';
     background-color: #4f55a7;
 }
 
+#commentsContainer{
+    margin-bottom: 20px;
+}
+
 /*************************************/
 
 .postComment{
@@ -1588,6 +1587,12 @@ content: 'شخصية';
     padding: 15px;
     border-radius: 20px;
     margin-bottom: 10px;
+}
+
+.postComment::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .postComment .commenterDetails{
@@ -1665,6 +1670,10 @@ content: 'شخصية';
     transform: scale(1.5);
     stroke: #333AA7;
     margin-right: 4px;
+}
+
+.commentMenuContainer{
+    float: left;
 }
 
 /*************************************/

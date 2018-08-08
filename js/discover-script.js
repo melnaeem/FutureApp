@@ -26,9 +26,8 @@ $('.slideThree label').click(function(){
 });
 
 
-function removeEmptyLines(string,S){
-    
-    
+function removeEmptyLines(text){
+/*  
     var BR = '<br>'
     var firstLine = string.indexOf('<br>',S);   //S + 4
     
@@ -41,8 +40,25 @@ function removeEmptyLines(string,S){
         
     }
 	
+  */
     
-    return console.log(stt.search('<br>'));
+    while (text.indexOf('<br><br>') > -1){
+        
+        text = text.replace('<br><br>', '<br>');
+        
+    }
+    
+     while (text.indexOf('<br> ') > -1){
+        
+        text = text.replace('<br> ', '');
+        
+    }
+    
+
+    return text;
+    
+    //text.replace("",/^[ \r\n]+$/gi);
+    //return console.log(text);
 
 }
 
@@ -86,7 +102,7 @@ function showReact(){
     
     setTimeout(function(){$('.reactEmotions svg').parent().css('overflow','visible')},600);
     
-    //console.log(emotion);
+    
 }
 
 function removeReact(){
@@ -101,10 +117,7 @@ function removeReact(){
 
 function previewMultiFiles() {
   var preview = document.querySelector('#multiImgPreview');
-  var files   = document.querySelector('#inputMultiImg').files;
-    
-    //console.log(files);
-    
+  var files   = document.querySelector('#inputMultiImg').files;    
     
 
   function readAndPreview(file) {
@@ -337,7 +350,6 @@ $(".post").each(function(){
 
     $(this).find('#addCommentBtn').click(function(){
 
-       // console.log($(this).parent().parent().parent());
         
         $(this).toggleClass('activeReactBtn');
 
@@ -370,8 +382,6 @@ $(".post").each(function(){
 
                 showReact();
                 
-                //console.log(thisBtn.parent().find('.reactEmotions'));
-                
                 thisBtn.parent().find('.reactEmotions').slideDown(300,function(){
 
                 });
@@ -403,8 +413,6 @@ $(".post").each(function(){
             
             
         if(e.keyCode == 13){
-            
-            //console.log($(this));
            
             $(this).attr('rows',++commentAreaRowsCounter);
                  
@@ -446,24 +454,15 @@ $(".post").each(function(){
             
             //!/^ *$/.test(commentTxtArea.val())
             
-            var commentBody = commentTxtArea.val().trim().replace(/\n/g, "<br>") ;
-            
-            //console.log(commentBody.indexOf("<br>"));
-            //console.log(commentBody.lastIndexOf("<br>"));
-            
-            removeEmptyLines(commentBody);
+            var commentBody = commentTxtArea.val().trim().replace(/\n/g, "<br>"); //replace(/\n/g, "<br>")
             
             
-            if( commentTxtArea.val() == 0 ) {             //!/^ *$/.test(this.newList)
-               // console.log('Empty');
+            if( commentTxtArea.val() == 0 ) {             //!/^ *$/.test(this.newList)        
                 
                 return false;
                 
             }else{
-                commentSection.append('<div class="postComment"><div class="commenterDetails"><a href="#"><img src="' + commenterImgSrc + '"><h5>' + 'محمد عبدالنعيم' +'</h5></a><a href="#" class="commentDate"><h6>' + commentDate +'</h6></a></div><p>' + commentBody + '</p>' + commentsVotes  + '</div>');
-            
-                //console.log(commentTxtArea.val()[0]);
-                
+                commentSection.append('<div class="postComment"><div class="commenterDetails"><a href="#"><img src="' + commenterImgSrc + '"><h5>' + 'محمد عبدالنعيم' +'</h5></a><a href="#" class="commentDate"><h6>' + commentDate +'</h6></a></div><p>' + removeEmptyLines(commentBody) + '</p>' + commentsVotes  + '</div>');
                 
                 
                 commentTxtArea.attr('rows',commentAreaRowsCounter=1);
@@ -471,13 +470,7 @@ $(".post").each(function(){
                 commentTxtArea.val(""); // Clear Txt area   
             }
             
-           /* 
-            $(this).parent().find('#commentBody').find('br').each(function(){
-                
-                console.log("br");
-                
-            })
-            */
+           
         })
         
         
