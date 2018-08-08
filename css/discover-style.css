@@ -318,6 +318,7 @@ button.newMsg img{
 .slideInUp {
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
+    animation-delay: .3s;
     animation-duration: .5s;
 }
 
@@ -1580,6 +1581,7 @@ content: 'شخصية';
 
 #commentsContainer{
     margin-bottom: 20px;
+overflow: hidden;
 }
 
 /*************************************/
@@ -1589,15 +1591,13 @@ content: 'شخصية';
     padding: 15px;
     border-radius: 20px;
     margin-bottom: 10px;
-    
-    transition: .5s;
-    transition-delay: .3s;
+        
 }
 
 .removeComment{
+    transition: transform .3s;
     transform: scale(0);
 }
-
 
 .postComment::after{
     content: "";

@@ -445,6 +445,8 @@ $(".post").each(function(){
     
     var commentsVotes = '<div class="commentActions"><div class="votes"><button><span id="upvoteCounter">' + commentUpVoteCounter + '</span> ' + upVoteIcon + '</button><button><span id="downvoteCounter">' + commentDownVoteCounter + '</span>'+ downVoteIcon +'</button></div></div>';
     
+    
+    
         
         submitCommentBtn.click(function(e){
             
@@ -454,13 +456,19 @@ $(".post").each(function(){
             
             var commentBody = commentTxtArea.val().trim().replace(/\n/g, "<br>"); //replace(/\n/g, "<br>")
             
+            var postCommentTemp = '<div class="postComment animated slideInUp" style="display: none;"><div class="commenterDetails"><a href="#"><img src="' + commenterImgSrc + '"><h5>' + 'محمد عبدالنعيم' +'</h5></a><a href="#" class="commentDate"><h6>' + commentDate +'</h6></a></div><p>' + removeEmptyLines(commentBody) + '</p>' + commentsVotes  + '</div>';
+            
             
             if( commentTxtArea.val() == 0 ) {             //!/^ *$/.test(this.newList)        
                 
                 return false;
                 
             }else{
-                commentSection.append('<div class="postComment"><div class="commenterDetails"><a href="#"><img src="' + commenterImgSrc + '"><h5>' + 'محمد عبدالنعيم' +'</h5></a><a href="#" class="commentDate"><h6>' + commentDate +'</h6></a></div><p>' + removeEmptyLines(commentBody) + '</p>' + commentsVotes  + '</div>');
+                
+
+            //commentSection.append(postCommentTemp);
+                
+                $(postCommentTemp).appendTo(commentSection).show('slow');
                 
                 
                 commentTxtArea.attr('rows',commentAreaRowsCounter=1);
@@ -485,16 +493,21 @@ $(".post").each(function(){
 
                 
                 deleteBtn.click(function(){
-                   /* 
+                  
                     deleteBtn.closest('.postComment').addClass('removeComment');
+                    
+                    comment.slideUp(500).delay(500);
                     
                     setTimeout(
                         function(){
-                            comment.remove();
+                            
+                            //comment.remove();
                         }, 700);
-                    */
+                   
                     
                     console.log(comment.find('p').text());
+                    
+                    
                     
                     /* The problem here will be solved by making manual show and hide modal */
                 })
