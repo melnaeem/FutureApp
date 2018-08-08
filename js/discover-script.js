@@ -1,5 +1,3 @@
-
-
 function addAnim(x) {
     $('.modal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
 };
@@ -42,9 +40,9 @@ function removeEmptyLines(text){
 	
   */
     
-    while (text.indexOf('<br><br>') > -1){
+    while (text.indexOf('<br><br><br>') > -1){
         
-        text = text.replace('<br><br>', '<br>');
+        text = text.replace('<br><br><br>', '<br><br>');
         
     }
     
@@ -445,7 +443,7 @@ $(".post").each(function(){
     var commentDownVoteCounter = '';      //parseInt($('#downvoteCounter').text());
     var downVoteIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.142 12.579"><defs></defs><path d="M7.8.122A.411.411,0,0,0,7.214.7l2.959,2.959H.409A.407.407,0,0,0,0,4.068a.411.411,0,0,0,.409.414h9.764L7.214,7.436a.419.419,0,0,0,0,.584.409.409,0,0,0,.584,0L11.457,4.36a.4.4,0,0,0,0-.578Z" transform="translate(8.642 0.5) rotate(90)"/></svg>';
     
-    var commentsVotes = '<div class="commentVotes"><button><span id="upvoteCounter">' + commentUpVoteCounter + '</span> ' + upVoteIcon + '</button><button><span id="downvoteCounter">' + commentDownVoteCounter + '</span>'+ downVoteIcon +'</button></div>';
+    var commentsVotes = '<div class="commentActions"><div class="votes"><button><span id="upvoteCounter">' + commentUpVoteCounter + '</span> ' + upVoteIcon + '</button><button><span id="downvoteCounter">' + commentDownVoteCounter + '</span>'+ downVoteIcon +'</button></div></div>';
     
         
         submitCommentBtn.click(function(e){
@@ -474,6 +472,36 @@ $(".post").each(function(){
         })
         
         
+           
+            post.find('.postComment').each(function(){
+            
+                var comment = $(this);
+
+                var deleteBtn = $(this).find('#deleteCommentModal #approve');
+                
+                $(this).click(function(){
+                    console.log(comment.find('p').text());
+                })
+
+                
+                deleteBtn.click(function(){
+                   /* 
+                    deleteBtn.closest('.postComment').addClass('removeComment');
+                    
+                    setTimeout(
+                        function(){
+                            comment.remove();
+                        }, 700);
+                    */
+                    
+                    console.log(comment.find('p').text());
+                    
+                    /* The problem here will be solved by making manual show and hide modal */
+                })
+
+            })
+   
+    
         
 
 });

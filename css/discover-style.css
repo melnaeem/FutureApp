@@ -383,6 +383,8 @@ button.newMsg img{
     position: relative;
     border-radius: 15px;
     border-bottom-left-radius: 0;
+    border: 0;
+    box-shadow: 0 0 0;
 }
 
 .createMsgModal .modal-content:after { 
@@ -980,10 +982,10 @@ content: 'شخصية';
 
 .post .dates{
     float: left;
-    border: 2px solid #333AA7;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     margin-top: 15px;
+    border: 2px solid #333AA7;
 }
 
 .post .dates h4{
@@ -1562,7 +1564,7 @@ content: 'شخصية';
 }
 .addComment form button[type="submit"]{
     position: absolute;
-    left: 10px; bottom: 5px;
+    left: 5px; bottom: 5px;
     height: 30px;
     padding: 0 25px;
     border: none;
@@ -1587,7 +1589,15 @@ content: 'شخصية';
     padding: 15px;
     border-radius: 20px;
     margin-bottom: 10px;
+    
+    transition: .5s;
+    transition-delay: .3s;
 }
+
+.removeComment{
+    transform: scale(0);
+}
+
 
 .postComment::after{
     content: "";
@@ -1631,17 +1641,27 @@ content: 'شخصية';
 
 .postComment p{
     padding: 0 10px;
-    line-height: 1.9;
     margin-bottom: 0;
     padding-right: 58px;
+    padding-left: 0;
     margin-top: -15px;
 }
 
-.commentVotes{
+.commentActions{
     margin-top: 10px;
 }
 
-.commentVotes button{
+.commentActions::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.commentActions .votes{
+    float: right;
+}
+
+.commentActions .votes button{
     min-width: 50px;
     padding: 3px 0;
     background-color: #fff;
@@ -1652,29 +1672,131 @@ content: 'شخصية';
     margin-left: 3px;
 }
 
-.commentVotes button:last-of-type{
+.commentActions .votes button:last-of-type{
     margin-left: 0;
 }
 
-.commentVotes button:hover{
+.commentActions .votes button:hover{
     border-color: #333AA7;
     font-weight: 600;
 }
 
-.commentVotes button svg{
+.commentActions .votes button svg{
     width: 8px;
     fill: #33377A;
     transition: .2s;
 }
-.commentVotes button:hover svg{
+.commentActions .votes button:hover svg{
     transform: scale(1.5);
     stroke: #333AA7;
-    margin-right: 4px;
 }
 
-.commentMenuContainer{
+.delete{
     float: left;
 }
+
+.delete > button{
+    background-color: #fff;
+    border: 1px solid #d01919;
+    padding: 5px;
+    border-radius: 3px;
+    opacity: .5;
+    width: 25px; height: 27px;
+    overflow: hidden;
+    transition: .4s;
+    outline: none;
+}
+
+.delete > button::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.delete > button:hover{
+    width: 60px;
+    background-color: #d01919;
+    opacity: 1;
+}
+
+.delete button svg{
+    fill: #d01919;
+    width: 15px; height: 15px;
+    float: right;
+    display: block;
+    transition: .3s;
+}
+
+.delete button:hover svg{
+    fill: #fff;
+}
+
+.delete button span{
+    float: right;
+    margin-right: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .6s;
+    transition-delay: 0s;
+}
+
+.delete button:hover span{
+    opacity: 1;
+}
+
+#deleteCommentModal{
+    margin-top: 30vh;
+}
+
+
+#deleteCommentModal .modal-header{
+    background-color: #eee;
+    padding: 10px;
+}
+
+#deleteCommentModal .modal-header h4{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#deleteCommentModal .modal-dialog{
+    margin-top: 0;
+}
+
+#deleteCommentModal .modal-content{
+    width: 250px;
+    margin: 0 auto;
+    border: none;
+    overflow: hidden;
+}
+
+#deleteCommentModal .modal-footer button{
+    background-color: #fff;
+    border: 0;
+    padding: 5px;
+    width: 60px;
+    border-radius: 3px;
+    font-size: 12px;
+    outline: none;
+}
+
+.modal-footer button#approve{
+    background-color: #333AA7;
+    color: #fff;
+}
+
+.modal-footer button#cancel{
+    background-color: #f7f7f7;
+    border: 1px solid #CFCFCF;
+}
+
+#deleteCommentModal .modal-footer button:hover{
+    opacity: .8;
+}
+
+
 
 /*************************************/
 
@@ -1859,6 +1981,10 @@ content: 'شخصية';
         margin-left: 0;
     }
     
+    .postContent .moreThanFour img:nth-of-type(even){
+        margin-left: 1%;
+    }
+    
     .postContent .oneImg img,.postContent .twoImgs img{
         width: 100%;
         margin-bottom: 0;
@@ -1919,10 +2045,15 @@ content: 'شخصية';
         border-radius: 0;
         border-right: 0;
         margin-top: 12px;
+        padding: 5px 0;
+        border: 0;
     }
     .post .dates h4{
         width: 50%;
         text-align: center;
+    }
+    .post .dates h4:last-of-type{
+        background-color: #eee;
     }
     
     .userDetails{
@@ -1934,7 +2065,9 @@ content: 'شخصية';
     
     .userDetails img{
         float: none;
+        margin-left: 0;
     }
+    
     
     .userDetails div{
         float: none;

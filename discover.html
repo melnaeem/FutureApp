@@ -852,22 +852,153 @@
                                         <p>
                                             م الواقعة بعض قد, مدن بل جورج قررت للأراضي. كما كل حكم عالمية الإتفاقية تم, لهذه لمحاكم الواقعة بعض قد, مدن بل جورج قررت للأراضي. كما كل حكم عالمية الإتفاقية تم, لهذه لمحاكم الواقعة بعض قد, مدن بل جورج قررت للأراضي. كما كل حكم عالمية الإتفاقية تم, لهذه لمحاكم الواقعة بعض قد, مدن بل جورج قررت للأراضي. كما كل أراض للمجهود المعاهدات, فرنسية بمعارضة الإتفاقية أسر
                                         </p>
-                                        <div class="commentVotes">
-                                            <button>
-                                                <span id="upvoteCounter">5</span>
-                                                <svg viewBox="0 0 9.53 13.131"><path transform="translate(-4.174 12.631) rotate(-90)" d="M8.169,4.8a.43.43,0,1,0-.611.605l3.1,3.1H.428A.426.426,0,0,0,0,8.936a.431.431,0,0,0,.428.434h10.23l-3.1,3.094a.439.439,0,0,0,0,.611.428.428,0,0,0,.611,0L12,9.242a.421.421,0,0,0,0-.605Z"/></svg>
-                                            </button>
-                                            <button>
-                                                <span id="downvoteCounter">5</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.142 12.579"><defs></defs><path d="M7.8.122A.411.411,0,0,0,7.214.7l2.959,2.959H.409A.407.407,0,0,0,0,4.068a.411.411,0,0,0,.409.414h9.764L7.214,7.436a.419.419,0,0,0,0,.584.409.409,0,0,0,.584,0L11.457,4.36a.4.4,0,0,0,0-.578Z" transform="translate(8.642 0.5) rotate(90)"/></svg>
-                                            </button>
-                                        </div>
-                                        <div class="commentMenuContainer">
-                                            <button>
-                                                <svg viewBox="0 0 25.756 6.654"><g transform="translate(-153.691 2347.654) rotate(-90)"><circle cx="3.119" cy="3.119" r="3.119" transform="translate(2341 153.691)"/><circle cx="3.119" cy="3.119" r="3.119" transform="translate(2341.208 163.45)"/><circle cx="3.119" cy="3.119" r="3.119" transform="translate(2341.416 173.209)"/></g></svg>
-                                            </button>
+                                        <div class="commentActions">
+                                            <div class="votes">
+                                                <button>
+                                                    <span id="upvoteCounter">5</span>
+                                                    <svg viewBox="0 0 9.53 13.131"><path transform="translate(-4.174 12.631) rotate(-90)" d="M8.169,4.8a.43.43,0,1,0-.611.605l3.1,3.1H.428A.426.426,0,0,0,0,8.936a.431.431,0,0,0,.428.434h10.23l-3.1,3.094a.439.439,0,0,0,0,.611.428.428,0,0,0,.611,0L12,9.242a.421.421,0,0,0,0-.605Z"/></svg>
+                                                </button>
+                                                <button>
+                                                    <span id="downvoteCounter">5</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.142 12.579"><defs></defs><path d="M7.8.122A.411.411,0,0,0,7.214.7l2.959,2.959H.409A.407.407,0,0,0,0,4.068a.411.411,0,0,0,.409.414h9.764L7.214,7.436a.419.419,0,0,0,0,.584.409.409,0,0,0,.584,0L11.457,4.36a.4.4,0,0,0,0-.578Z" transform="translate(8.642 0.5) rotate(90)"/></svg>
+                                                </button>
+                                            </div>
+                                        
+                                            <div class="delete">
+                                                
+                                                <div class="modal fade" tabindex="-1" role="dialog" id="deleteCommentModal">
+                                                  <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h4 class="modal-title">مسح</h4>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        هل تريد تأكيد مسح التعليق؟
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
+                                                        <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
+                                                      </div>
+                                                    </div><!-- /.modal-content -->
+                                                  </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+                                                
+                                                <button data-toggle="modal" data-target="#deleteCommentModal">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903">
+                                                            <g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g>
+                                                        </svg>
+                                                    <span>مسح</span>
+                                                </button>
+
+                                            </div>
                                         </div>
                                     </div>
+                                    
+                                    <div class="postComment">
+                                        <div class="commenterDetails">
+                                            <a href="#">
+                                                <img src="img/hipster_avatar2.png">
+                                                <h5>محمد عبد النعيم</h5>
+                                            </a>
+                                            <a href="#" class="commentDate"><h6>22/10/2018</h6></a>
+                                        </div>
+                                        <p>
+                                           انا نازل
+                                        </p>
+                                        <div class="commentActions">
+                                            <div class="votes">
+                                                <button>
+                                                    <span id="upvoteCounter">5</span>
+                                                    <svg viewBox="0 0 9.53 13.131"><path transform="translate(-4.174 12.631) rotate(-90)" d="M8.169,4.8a.43.43,0,1,0-.611.605l3.1,3.1H.428A.426.426,0,0,0,0,8.936a.431.431,0,0,0,.428.434h10.23l-3.1,3.094a.439.439,0,0,0,0,.611.428.428,0,0,0,.611,0L12,9.242a.421.421,0,0,0,0-.605Z"/></svg>
+                                                </button>
+                                                <button>
+                                                    <span id="downvoteCounter">5</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.142 12.579"><defs></defs><path d="M7.8.122A.411.411,0,0,0,7.214.7l2.959,2.959H.409A.407.407,0,0,0,0,4.068a.411.411,0,0,0,.409.414h9.764L7.214,7.436a.419.419,0,0,0,0,.584.409.409,0,0,0,.584,0L11.457,4.36a.4.4,0,0,0,0-.578Z" transform="translate(8.642 0.5) rotate(90)"/></svg>
+                                                </button>
+                                            </div>
+                                        
+                                            <div class="delete">
+                                                
+                                                <div class="modal fade" tabindex="-1" role="dialog" id="deleteCommentModal">
+                                                  <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h4 class="modal-title">مسح</h4>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        هل تريد تأكيد مسح التعليق؟
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
+                                                        <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
+                                                      </div>
+                                                    </div><!-- /.modal-content -->
+                                                  </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+                                                
+                                                <button data-toggle="modal" data-target="#deleteCommentModal">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903">
+                                                            <g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g>
+                                                        </svg>
+                                                    <span>مسح</span>
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="postComment">
+                                        <div class="commenterDetails">
+                                            <a href="#">
+                                                <img src="img/hipster_avatar2.png">
+                                                <h5>محمد عبد النعيم</h5>
+                                            </a>
+                                            <a href="#" class="commentDate"><h6>22/10/2018</h6></a>
+                                        </div>
+                                        <p>
+                                            ايه يابني
+                                        </p>
+                                        <div class="commentActions">
+                                            <div class="votes">
+                                                <button>
+                                                    <span id="upvoteCounter">5</span>
+                                                    <svg viewBox="0 0 9.53 13.131"><path transform="translate(-4.174 12.631) rotate(-90)" d="M8.169,4.8a.43.43,0,1,0-.611.605l3.1,3.1H.428A.426.426,0,0,0,0,8.936a.431.431,0,0,0,.428.434h10.23l-3.1,3.094a.439.439,0,0,0,0,.611.428.428,0,0,0,.611,0L12,9.242a.421.421,0,0,0,0-.605Z"/></svg>
+                                                </button>
+                                                <button>
+                                                    <span id="downvoteCounter">5</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.142 12.579"><defs></defs><path d="M7.8.122A.411.411,0,0,0,7.214.7l2.959,2.959H.409A.407.407,0,0,0,0,4.068a.411.411,0,0,0,.409.414h9.764L7.214,7.436a.419.419,0,0,0,0,.584.409.409,0,0,0,.584,0L11.457,4.36a.4.4,0,0,0,0-.578Z" transform="translate(8.642 0.5) rotate(90)"/></svg>
+                                                </button>
+                                            </div>
+                                        
+                                            <div class="delete">
+                                                
+                                                <div class="modal fade" tabindex="-1" role="dialog" id="deleteCommentModal">
+                                                  <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <h4 class="modal-title">مسح</h4>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        هل تريد تأكيد مسح التعليق؟
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
+                                                        <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
+                                                      </div>
+                                                    </div><!-- /.modal-content -->
+                                                  </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+                                                
+                                                <button data-toggle="modal" data-target="#deleteCommentModal">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903">
+                                                            <g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g>
+                                                        </svg>
+                                                    <span>مسح</span>
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                                 
                                 <div class="addComment">
@@ -1779,7 +1910,9 @@
                 
                 <a href="#" title="مشاركة"><div class="circle gd"><img src="img/invite.png"></div></a>
                 
-                <a href="#" title="رسالة جديدة"><div class="circle mark"><img src="img/Message_Icon.png"></div></a>
+                <a title="رسالة جديدة" data-toggle="modal" data-target=".createMsgModal">
+                    <div class="circle mark"><img src="img/Message_Icon.png"></div>
+                </a>
                 
             </div>
             
