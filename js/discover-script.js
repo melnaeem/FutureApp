@@ -323,7 +323,10 @@ $(".post").each(function(){
                 
                 $(this).find('.postImgs').addClass("twoImgs");    
                
+            }else if( postImgs.length == 3 ){
                 
+                $(this).find('.postImgs').addClass("threeImgs");
+                     
             } else if(postImgs.length > 4){
                 
                 $(this).find('.postImgs').addClass("moreThanFour");
@@ -428,12 +431,13 @@ $(".post").each(function(){
     var commentDate = currentDate.getDate() + '/' + parseInt(currentDate.getMonth()+1) + '/' + currentDate.getFullYear();
     
     
-    var commentUpVoteCounter = parseInt($('#upvoteCounter').text());  
+    var commentUpVoteCounter = '';  
     var upVoteIcon = '<svg viewBox="0 0 9.53 13.131"><path transform="translate(-4.174 12.631) rotate(-90)" d="M8.169,4.8a.43.43,0,1,0-.611.605l3.1,3.1H.428A.426.426,0,0,0,0,8.936a.431.431,0,0,0,.428.434h10.23l-3.1,3.094a.439.439,0,0,0,0,.611.428.428,0,0,0,.611,0L12,9.242a.421.421,0,0,0,0-.605Z"/></svg>';
     
-    var commentDownVoteCounter = parseInt($('#downvoteCounter').text());
+    var commentDownVoteCounter = '';      //parseInt($('#downvoteCounter').text());
+    var downVoteIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.142 12.579"><defs></defs><path d="M7.8.122A.411.411,0,0,0,7.214.7l2.959,2.959H.409A.407.407,0,0,0,0,4.068a.411.411,0,0,0,.409.414h9.764L7.214,7.436a.419.419,0,0,0,0,.584.409.409,0,0,0,.584,0L11.457,4.36a.4.4,0,0,0,0-.578Z" transform="translate(8.642 0.5) rotate(90)"/></svg>';
     
-    var commentsVotes = '<div class="commentVotes"><button><span id="upvoteCounter">' + commentUpVoteCounter + '</span> ' + upVoteIcon + '</button></div>';
+    var commentsVotes = '<div class="commentVotes"><button><span id="upvoteCounter">' + commentUpVoteCounter + '</span> ' + upVoteIcon + '</button><button><span id="downvoteCounter">' + commentDownVoteCounter + '</span>'+ downVoteIcon +'</button></div>';
     
         
         submitCommentBtn.click(function(e){

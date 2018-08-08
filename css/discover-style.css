@@ -416,7 +416,7 @@ button.newMsg img{
     top: 5px;
     border-radius: 50px;
     float: right;
-    border: 1px solid #b2b2b2;
+    border: 1px solid #CFCFCF;
     
 }
 .slideThree:after {
@@ -515,9 +515,8 @@ content: 'شخصية';
 
 .reciverInfo input:last-of-type{
     font-family: sans-serif;
-    border: 1px solid #b2b2b2;
+    border: 1px solid #CFCFCF;
 }
-
 
 .createMsgForm textarea{
     display: block;
@@ -529,7 +528,7 @@ content: 'شخصية';
     resize: none;
     min-height: 220px;
     border-radius: 5px;
-    border: 1px solid #b2b2b2;   
+    border: 1px solid #CFCFCF;
     outline: none;
     font-size: 15px;
     font-weight: 900;
@@ -792,7 +791,7 @@ content: 'شخصية';
     margin-top: 5px;
     float: left;
     margin-left: 0;
-    border-color: #b2b2b2;
+    border-color: #CFCFCF;
 }
 
 .newImgBtn .inputfile + label svg{
@@ -839,7 +838,7 @@ content: 'شخصية';
     border-radius: 3px;
     padding: 1px 3px;
     cursor: pointer;
-    border: 1px solid #b2b2b2;
+    border: 1px solid #CFCFCF;
 }
 
 .msgDetails .cont select:hover{
@@ -855,7 +854,7 @@ content: 'شخصية';
 .msgDetails .cont:nth-of-type(2) input{
     font-weight: 600;
     border-radius: 3px;
-    border: 1px solid #b2b2b2;
+    border: 1px solid #CFCFCF;
     padding: 3px;
     outline: 0;
     cursor: pointer;
@@ -1083,7 +1082,7 @@ content: 'شخصية';
 }
 
 .postContent .threeImgs img{
-    width: 32.33%;
+    width: 32.63%;
     margin-left: 1%;
 }
 
@@ -1093,7 +1092,8 @@ content: 'شخصية';
     float: right;
     overflow: auto;
     white-space: nowrap;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .postContent .moreThanFour img{
@@ -1394,21 +1394,23 @@ content: 'شخصية';
     outline: none;
 }
 
-.post .addReacts button:hover{
+.post .addReacts button:hover,.post .addReacts button.activeReactBtn{
     background-color: #eee;
 }
-
+/*
 .post .addReacts button.activeReactBtn{
     background-color: #333AA7; 
-}
-
-.post .addReacts button:hover svg, .post .addReacts button.activeReactBtn svg{
-    fill: #333AA7;
 }
 
 .post .addReacts button.activeReactBtn svg{
     fill: #fff;
 }
+*/
+.post .addReacts button:hover svg, .post .addReacts button.activeReactBtn svg{
+    fill: #333AA7;
+}
+
+
 
 .addReacts > div:nth-of-type(3){
     border-left: 0;
@@ -1651,11 +1653,18 @@ content: 'شخصية';
 
 .commentVotes button:hover{
     border-color: #333AA7;
+    font-weight: 600;
 }
 
 .commentVotes button svg{
     width: 8px;
     fill: #33377A;
+    transition: .2s;
+}
+.commentVotes button:hover svg{
+    transform: scale(1.5);
+    stroke: #333AA7;
+    margin-right: 4px;
 }
 
 /*************************************/
