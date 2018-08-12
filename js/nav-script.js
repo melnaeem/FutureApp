@@ -39,14 +39,14 @@ $(document).ready(function(){
         $(".circle").animate({
             bottom: '140px',
 
-            },500);
+            },500,"linear");
 
          $(".mark").animate({
             bottom: '215px',
              
-             
+   
 
-            },500);     
+            },500,"linear");     
 
             flag = false;
 

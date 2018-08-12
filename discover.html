@@ -607,10 +607,9 @@
                       </div>
                     </div>
                     
-                    <!-- Modal For Previewing Images  -->
+                    <!-- Modal For Previewing Each Post Images  -->
                     <div id="previewImgModal" class="modal">
                                             
-
                         <!-- Modal Content (The Image) -->
                         
                         <div class="modal-content">
@@ -652,11 +651,25 @@
                                             <svg viewBox="0 0 185.343 185.343"><defs><style>.a99{fill:#010002;}</style></defs><g transform="translate(144.374 185.343) rotate(180)"><path class="a99" d="M51.707,185.343a10.737,10.737,0,0,1-7.593-18.324l74.352-74.347L44.114,18.32A10.732,10.732,0,0,1,59.294,3.145l81.934,81.934a10.724,10.724,0,0,1,0,15.175L59.294,182.193A10.678,10.678,0,0,1,51.707,185.343Z"/></g></svg>
                                 </button>
                             </div>
-                        </div>
-
-                        
-                                  
+                        </div>       
                     </div>
+                    
+                    <div class="modal fade" tabindex="-1" role="dialog" id="deleteCommentModal"  data-backdrop="static" data-keyboard="false">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <h4 class="modal-title">مسح</h4>
+                           </div>
+                           <div class="modal-body">
+                             هل تريد تأكيد مسح التعليق؟
+                           </div>
+                           <div class="modal-footer">
+                             <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
+                             <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
+                           </div>
+                         </div><!-- /.modal-content -->
+                       </div><!-- /.modal-dialog -->
+                     </div><!-- /.modal -->
                     
                     <div class="post">
                         
@@ -865,31 +878,12 @@
                                             </div>
                                         
                                             <div class="delete">
-                                                
-                                                <div class="modal fade" tabindex="-1" role="dialog" id="deleteCommentModal">
-                                                  <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                      <div class="modal-header">
-                                                        <h4 class="modal-title">مسح</h4>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                        هل تريد تأكيد مسح التعليق؟
-                                                      </div>
-                                                      <div class="modal-footer">
-                                                        <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
-                                                        <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
-                                                      </div>
-                                                    </div><!-- /.modal-content -->
-                                                  </div><!-- /.modal-dialog -->
-                                                </div><!-- /.modal -->
-                                                
-                                                <button data-toggle="modal" data-target="#deleteCommentModal">
+                                                <button id="deleteBtn" data-toggle="modal" data-target="#deleteCommentModal">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903">
                                                             <g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g>
                                                         </svg>
                                                     <span>مسح</span>
                                                 </button>
-
                                             </div>
                                         </div>
                                     </div>
@@ -918,25 +912,7 @@
                                             </div>
                                         
                                             <div class="delete">
-                                                
-                                                <div class="modal fade" tabindex="-1" role="dialog" id="deleteCommentModal">
-                                                  <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                      <div class="modal-header">
-                                                        <h4 class="modal-title">مسح</h4>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                        هل تريد تأكيد مسح التعليق؟
-                                                      </div>
-                                                      <div class="modal-footer">
-                                                        <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
-                                                        <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
-                                                      </div>
-                                                    </div><!-- /.modal-content -->
-                                                  </div><!-- /.modal-dialog -->
-                                                </div><!-- /.modal -->
-                                                
-                                                <button data-toggle="modal" data-target="#deleteCommentModal">
+                                                <button id="deleteBtn" data-toggle="modal" data-target="#deleteCommentModal">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903">
                                                             <g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g>
                                                         </svg>
@@ -971,24 +947,7 @@
                                         
                                             <div class="delete">
                                                 
-                                                <div class="modal fade" tabindex="-1" role="dialog" id="deleteCommentModal">
-                                                  <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                      <div class="modal-header">
-                                                        <h4 class="modal-title">مسح</h4>
-                                                      </div>
-                                                      <div class="modal-body">
-                                                        هل تريد تأكيد مسح التعليق؟
-                                                      </div>
-                                                      <div class="modal-footer">
-                                                        <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
-                                                        <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
-                                                      </div>
-                                                    </div><!-- /.modal-content -->
-                                                  </div><!-- /.modal-dialog -->
-                                                </div><!-- /.modal -->
-                                                
-                                                <button data-toggle="modal" data-target="#deleteCommentModal">
+                                                <button id="deleteBtn" data-toggle="modal" data-target="#deleteCommentModal">
                                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903">
                                                             <g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g>
                                                         </svg>

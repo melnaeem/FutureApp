@@ -92,6 +92,14 @@ a:active, a:visited{
     
 }
 
+.mark:hover,.gd:hover{
+    transform: scale(.96);
+}
+
+.mark:active,.gd:active{
+    transform: scale(.93);
+}
+
 .mark{
     line-height: 2.2;
 }
@@ -1375,7 +1383,7 @@ content: 'شخصية';
 /*************************************/
 
 .post .addReacts{
-    margin-top: 15px;
+    margin-top: 10px;
     padding: 0 10px;
     padding-bottom: 15px;
 }
@@ -1592,10 +1600,11 @@ overflow: hidden;
     border-radius: 20px;
     margin-bottom: 10px;
         
+   
 }
 
 .removeComment{
-    transition: transform .3s;
+    transition: transform .5s;
     transform: scale(0);
 }
 
