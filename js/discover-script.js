@@ -468,38 +468,27 @@ $(".post").each(function(){
             }else{
                 
 
-            //commentSection.append(postCommentTemp);
-                
                 $(postCommentTemp).appendTo(commentSection).show('slow');
                 
                 
                 commentTxtArea.attr('rows',commentAreaRowsCounter=1);
 
-                commentTxtArea.val(""); // Clear Txt area   
+                commentTxtArea.val("");
+
+                
+                
             }
             
            
         })
     
     
-        var flag = false;
-    
-    
-        post.find('.postComment').each(function(){
-                    
-            var commentToDelete = $(this);
-            var deleteCommentBtn = $(this).find('#deleteBtn');
-            //var comment = post.find('.postComment');
-            var approveDeleteBtn = $('#deleteCommentModal #approve');
-            var cancelDeleteBtn = $('#deleteCommentModal #cancel');
-            
-            
-        
-
-            deleteCommentBtn.click(function(){
+    function deleteComment(commentToDelete, approveDeleteBtn, cancelDeleteBtn, flag){
+                
+                flag = !flag;
                 
                 approveDeleteBtn.click(function(){
-                    flag = true;
+                    
                     console.log('APPROVED');
                     
                     if(flag == true){
@@ -516,30 +505,35 @@ $(".post").each(function(){
                 })
                 
                 console.log(flag);
- 
-            })
         
-        })
+                return flag;
+ 
+    }
+    
+        
     
     
-    
-       
-        /*
-            $(this).click(function(){
-                console.log(comment.find('p').text());
-            })
-         
-    
-        approveDeleteBtn.click({comment: comment},function(){
+        post.find('.postComment').each(function(){
                     
-            console.log(comment.find('p').text());
-                  
-        })
+            var commentToDelete = $(this);
+            var deleteCommentBtn = $(this).find('#deleteBtn');
+            //var comment = post.find('.postComment');
+            var approveDeleteBtn = $('#deleteCommentModal #approve');
+            var cancelDeleteBtn = $('#deleteCommentModal #cancel');
+            var flag = false;
+            
+
+            deleteCommentBtn.click(function(){
+                deleteComment(commentToDelete, approveDeleteBtn, cancelDeleteBtn, flag);
+            })
     
-         */
+        
+        });
+    
 
+    
+    
 });
-
 
 
 
