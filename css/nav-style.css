@@ -861,8 +861,12 @@ input::-webkit-input-placeholder {
     border-radius: 5px;
 }
 
+.userSetting button:hover{
+    background-color: #eee;
+}
+
 .userSetting button svg{
-    width: 15px; height: 15px;
+    width: 10px; height: 15px;
     fill: #1e228b;
 }
 

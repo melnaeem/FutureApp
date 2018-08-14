@@ -1385,7 +1385,8 @@ content: 'شخصية';
 .post .addReacts{
     margin-top: 10px;
     padding: 0 10px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
+    padding-right: 20px;
 }
 
 .post .addReacts:after{
@@ -1597,9 +1598,9 @@ overflow: hidden;
 .postComment{
     background-color: #fff;
     padding: 15px;
+    padding-bottom: 10px;
     border-radius: 20px;
     margin-bottom: 10px;
-        
    
 }
 
@@ -1654,10 +1655,16 @@ overflow: hidden;
     padding-right: 58px;
     padding-left: 0;
     margin-top: -15px;
+    word-wrap: break-word;
 }
 
 .commentActions{
-    margin-top: 10px;
+    margin-top: 15px;
+    opacity: .5;
+}
+
+.commentActions:hover{
+    opacity: 1;
 }
 
 .commentActions::after{
@@ -1671,8 +1678,8 @@ overflow: hidden;
 }
 
 .commentActions .votes button{
-    min-width: 50px;
-    padding: 3px 0;
+    min-width: 30px;
+    padding: 0px 0;
     background-color: #fff;
     border: 1px solid #CFCFCF;
     border-radius: 3px;

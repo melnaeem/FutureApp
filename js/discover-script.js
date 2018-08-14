@@ -430,22 +430,22 @@ $(".post").each(function(){
            
         });
     
-    var submitCommentBtn = $(this).find('#submitCommentBtn');
-    var commentTxtArea = $(this).find('#addCommentTextarea');
-    var commentSection = $(this).find('#commentsContainer');
-    var commenterImgSrc = $(this).find('#commenterAvatar').attr('src');
-    var commenterName = $(this).find('#commenterAvatar').parent().find('h5');
-    var currentDate = new Date();
-    var commentDate = currentDate.getDate() + '/' + parseInt(currentDate.getMonth()+1) + '/' + currentDate.getFullYear();
-    
-    
-    var commentUpVoteCounter = '';  
-    var upVoteIcon = '<svg viewBox="0 0 9.53 13.131"><path transform="translate(-4.174 12.631) rotate(-90)" d="M8.169,4.8a.43.43,0,1,0-.611.605l3.1,3.1H.428A.426.426,0,0,0,0,8.936a.431.431,0,0,0,.428.434h10.23l-3.1,3.094a.439.439,0,0,0,0,.611.428.428,0,0,0,.611,0L12,9.242a.421.421,0,0,0,0-.605Z"/></svg>';
-    
-    var commentDownVoteCounter = '';      //parseInt($('#downvoteCounter').text());
-    var downVoteIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.142 12.579"><defs></defs><path d="M7.8.122A.411.411,0,0,0,7.214.7l2.959,2.959H.409A.407.407,0,0,0,0,4.068a.411.411,0,0,0,.409.414h9.764L7.214,7.436a.419.419,0,0,0,0,.584.409.409,0,0,0,.584,0L11.457,4.36a.4.4,0,0,0,0-.578Z" transform="translate(8.642 0.5) rotate(90)"/></svg>';
-    
-    var commentsVotes = '<div class="commentActions"><div class="votes"><button><span id="upvoteCounter">' + commentUpVoteCounter + '</span> ' + upVoteIcon + '</button><button><span id="downvoteCounter">' + commentDownVoteCounter + '</span>'+ downVoteIcon +'</button></div>';
+        var submitCommentBtn = $(this).find('#submitCommentBtn');
+        var commentTxtArea = $(this).find('#addCommentTextarea');
+        var commentSection = $(this).find('#commentsContainer');
+        var commenterImgSrc = $(this).find('#commenterAvatar').attr('src');
+        var commenterName = $(this).find('#commenterAvatar').parent().find('h5');
+        var currentDate = new Date();
+        var commentDate = currentDate.getDate() + '/' + parseInt(currentDate.getMonth()+1) + '/' + currentDate.getFullYear();
+
+
+        var commentUpVoteCounter = '';  
+        var upVoteIcon = '<svg viewBox="0 0 9.53 13.131"><path transform="translate(-4.174 12.631) rotate(-90)" d="M8.169,4.8a.43.43,0,1,0-.611.605l3.1,3.1H.428A.426.426,0,0,0,0,8.936a.431.431,0,0,0,.428.434h10.23l-3.1,3.094a.439.439,0,0,0,0,.611.428.428,0,0,0,.611,0L12,9.242a.421.421,0,0,0,0-.605Z"/></svg>';
+
+        var commentDownVoteCounter = '';      //parseInt($('#downvoteCounter').text());
+        var downVoteIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.142 12.579"><defs></defs><path d="M7.8.122A.411.411,0,0,0,7.214.7l2.959,2.959H.409A.407.407,0,0,0,0,4.068a.411.411,0,0,0,.409.414h9.764L7.214,7.436a.419.419,0,0,0,0,.584.409.409,0,0,0,.584,0L11.457,4.36a.4.4,0,0,0,0-.578Z" transform="translate(8.642 0.5) rotate(90)"/></svg>';
+
+        var commentsVotes = '<div class="commentActions"><div class="votes"><button><span id="upvoteCounter">' + commentUpVoteCounter + '</span> ' + upVoteIcon + '</button><button><span id="downvoteCounter">' + commentDownVoteCounter + '</span>'+ downVoteIcon +'</button></div>';
     
     
     
@@ -454,11 +454,9 @@ $(".post").each(function(){
             
             e.preventDefault();     //!a.trim()
             
-            //!/^ *$/.test(commentTxtArea.val())
-            
             var commentBody = commentTxtArea.val().trim().replace(/\n/g, "<br>"); //replace(/\n/g, "<br>")
             
-            var postCommentTemp = '<div class="postComment animated slideInUp" style="display: none;"><div class="commenterDetails"><a href="#"><img src="' + commenterImgSrc + '"><h5>' + 'محمد عبدالنعيم' +'</h5></a><a href="#" class="commentDate"><h6>' + commentDate +'</h6></a></div><p>' + removeEmptyLines(commentBody) + '</p>' + commentsVotes  + '<div class="delete"><button id="deleteBtn" data-toggle="modal" data-target="#deleteCommentModal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903"><g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g></svg><span>مسح</span></button></div></div></div>';
+            var postCommentTemp = '<div class="postComment animated slideInUp" style="display: none;"><div class="commenterDetails"><a href="#"><img src="' + commenterImgSrc + '"><h5>' + 'محمد عبدالنعيم' +'</h5></a><a href="#" class="commentDate"><h6>' + commentDate +'</h6></a></div><p>' + removeEmptyLines(commentBody) + '</p>' + commentsVotes  + '<div class="delete"><button id="deleteBtn" data-toggle="modal" data-target="#deleteCommentModal" onclick="deleteComment(this, false)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903"><g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g></svg><span>مسح</span></button></div></div></div>';
             
             
             if( commentTxtArea.val() == 0 ) {             //!/^ *$/.test(this.newList)        
@@ -467,15 +465,11 @@ $(".post").each(function(){
                 
             }else{
                 
-
                 $(postCommentTemp).appendTo(commentSection).show('slow');
-                
                 
                 commentTxtArea.attr('rows',commentAreaRowsCounter=1);
 
                 commentTxtArea.val("");
-
-                
                 
             }
             
@@ -483,28 +477,44 @@ $(".post").each(function(){
         })
     
     
-    function deleteComment(commentToDelete, approveDeleteBtn, cancelDeleteBtn, flag){
-                
+    
+    
+    
+});
+
+
+   function deleteComment(commentToDelete, flag){
+       
+       console.log($(commentToDelete));
+       
+       commentToDelete = $(commentToDelete).parent().parent().parent();
+       
+            
                 flag = !flag;
+       
+       commentToDelete.removeClass('slideInUp');
+       commentToDelete.removeClass('animated');
                 
-                approveDeleteBtn.click(function(){
+                $('#deleteCommentModal #approve').click(function(){
                     
-                    console.log('APPROVED');
+                   // console.log('APPROVED');
                     
                     if(flag == true){
                     
+                        
                         commentToDelete.addClass('removeComment')
                         commentToDelete.slideUp(600).delay(300);
 
                     }
                 })
                 
-                cancelDeleteBtn.click(function(){
+                $('#deleteCommentModal #cancel').click(function(){
+                    
                     flag = false;
                     
                 })
                 
-                console.log(flag);
+                //console.log(flag);
         
                 return flag;
  
@@ -513,7 +523,7 @@ $(".post").each(function(){
         
     
     
-        post.find('.postComment').each(function(){
+        $('.postComment').each(function(){
                     
             var commentToDelete = $(this);
             var deleteCommentBtn = $(this).find('#deleteBtn');
@@ -524,16 +534,12 @@ $(".post").each(function(){
             
 
             deleteCommentBtn.click(function(){
-                deleteComment(commentToDelete, approveDeleteBtn, cancelDeleteBtn, flag);
+                deleteComment($(this), flag);
+                
             })
     
         
         });
-    
-
-    
-    
-});
 
 
 
