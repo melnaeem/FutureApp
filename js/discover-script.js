@@ -25,21 +25,7 @@ $('.slideThree label').click(function(){
 
 
 function removeEmptyLines(text){
-/*  
-    var BR = '<br>'
-    var firstLine = string.indexOf('<br>',S);   //S + 4
-    
-    var stt = string.slice(firstLine+4,string.length);
-    
-    
-    while(stt.search("<br>") > 0){
-        
-        stt.replace('<br>','xxxx');
-        
-    }
-	
-  */
-    
+
     while (text.indexOf('<br><br><br>') > -1){
         
         text = text.replace('<br><br><br>', '<br><br>');
@@ -51,15 +37,115 @@ function removeEmptyLines(text){
         text = text.replace('<br> ', '');
         
     }
-    
 
     return text;
-    
-    //text.replace("",/^[ \r\n]+$/gi);
-    //return console.log(text);
-
 }
 
+function editMsg(editBtn, flagx){
+    
+    var currentPost = $(editBtn).parent().parent().parent().parent().parent();
+    var msgContent = currentPost.find('.postContent #content');
+    var msgFullContent = currentPost.find('.postContent #fullContent');
+    
+    var editMsgTextarea = $('#editMsgTxtarea');
+    var approveEditBtn = $('#editMsgModal').find('button#approve');
+    
+    
+    
+    //console.log( approveEditBtn );
+    
+    editMsgTextarea.val( msgFullContent.text() );
+    
+    approveEditBtn.click(function(){
+        
+        flagx = !flagx;
+        
+        console.log( flagx );
+        
+        if(flagx == true){
+        
+            if(editMsgTextarea.val().length > 300){
+
+                var partOne = editMsgTextarea.val().substr(0, 300);
+                var partTwo = editMsgTextarea.val().substr(300,editMsgTextarea.val().length);
+
+
+                msgContent.text(partOne);
+                msgContent.append("......<a title='أظهر المزيد' href='#' class='moreDescription'>&#40; المزيد &#41;</a>");
+
+                msgFullContent.text( partOne + partTwo );
+                msgFullContent.css("display","none" );
+                msgContent.css("display","block");
+
+                currentPost.find(".moreDescription").click(function(){
+
+                    event.preventDefault();
+
+                    msgContent.css("display","none");       
+
+                    msgFullContent.css("display","block");
+
+                });
+            
+            
+            }else{
+
+                msgFullContent.text(editMsgTextarea.val());
+                msgContent.text('');
+                msgContent.css("display","none" );
+                msgFullContent.css("display","block");
+
+            }
+        }else{
+            flagx = false;
+        }
+        
+        
+        
+       // msgContent.text( editMsgTextarea.val() );
+        //msgFullContent.text( editMsgTextarea.val() );
+        
+        //console.log(msgFullContent.text());
+    })
+    
+    
+}
+
+ function deleteComment(commentToDelete, flag){
+       
+       console.log($(commentToDelete));
+       
+       commentToDelete = $(commentToDelete).parent().parent().parent();
+       
+            
+                flag = !flag;
+       
+       commentToDelete.removeClass('slideInUp');
+       commentToDelete.removeClass('animated');
+                
+                $('#deleteCommentModal #approve').click(function(){
+                    
+                    console.log(flag);
+                    
+                    if(flag == true){
+                        
+                        commentToDelete.addClass('removeComment')
+                        commentToDelete.slideUp(600).delay(300);
+
+                    }
+                })
+                
+                $('#deleteCommentModal #cancel').click(function(){
+                    
+                    flag = false;
+                    
+                })
+                
+                //console.log(flag);
+        
+                return flag;
+ 
+    }
 
 
 $('#emojiBtn').click(function(){
@@ -220,6 +306,10 @@ $(document).ready(function(){
     
 });
 
+function minifyMsg(){
+    
+}
+
 
 /******  Post View More  *****/
 
@@ -231,23 +321,28 @@ $(".post").each(function(){
     
         if(postContent.text().length > 300){
         
-        var partOne = postContent.text().substr(0, 300);
-        var partTwo = postContent.text().substr(300,postContent.text().length);
+            var partOne = postContent.text().substr(0, 300);
+            var partTwo = postContent.text().substr(300,postContent.text().length);
             
-        postContent.text(partOne);
-        postContent.append("......<a title='أظهر المزيد' href='#' class='moreDescription'>&#40; المزيد &#41;</a>");
+            postContent.text(partOne);
+            postContent.append("......<a title='أظهر المزيد' href='#' class='moreDescription'>&#40; المزيد &#41;</a>");
+            
+            $(this).find("#fullContent").text( partOne + partTwo );
         
+            //console.log( post );
+            //console.log( postContent.text() );
         
-        $(this).find(".moreDescription").click(function(){
+       }
+    
+     post.find(".moreDescription").click(function(){
     
             event.preventDefault();
 
             postContent.css("display","none");       
-            $(this).parent().parent().find("#fullContent").text(partOne + partTwo);
+
+            $(this).parent().parent().find("#fullContent").css("display","block");
 
         });
-        
-       }
     
         var postImgs = $(this).find('.postImgs img');
         var postImgsPreviewSrc = [""];
@@ -430,6 +525,27 @@ $(".post").each(function(){
            
         });
     
+    /*
+    $.prototype.colo = function(){
+        $(this).css("");
+        return $(this);
+    }
+    
+    $("dsfds").colo();
+    
+    function color(element){
+        $(this).css();
+        return element;
+    }
+    
+    color($("dsdf"));
+    
+    color($("#dddddd"));
+    
+    color();
+    
+    */
+    
         var submitCommentBtn = $(this).find('#submitCommentBtn');
         var commentTxtArea = $(this).find('#addCommentTextarea');
         var commentSection = $(this).find('#commentsContainer');
@@ -466,9 +582,7 @@ $(".post").each(function(){
             }else{
                 
                 $(postCommentTemp).appendTo(commentSection).show('slow');
-                
                 commentTxtArea.attr('rows',commentAreaRowsCounter=1);
-
                 commentTxtArea.val("");
                 
             }
@@ -483,42 +597,7 @@ $(".post").each(function(){
 });
 
 
-   function deleteComment(commentToDelete, flag){
-       
-       console.log($(commentToDelete));
-       
-       commentToDelete = $(commentToDelete).parent().parent().parent();
-       
-            
-                flag = !flag;
-       
-       commentToDelete.removeClass('slideInUp');
-       commentToDelete.removeClass('animated');
-                
-                $('#deleteCommentModal #approve').click(function(){
-                    
-                   // console.log('APPROVED');
-                    
-                    if(flag == true){
-                    
-                        
-                        commentToDelete.addClass('removeComment')
-                        commentToDelete.slideUp(600).delay(300);
-
-                    }
-                })
-                
-                $('#deleteCommentModal #cancel').click(function(){
-                    
-                    flag = false;
-                    
-                })
-                
-                //console.log(flag);
-        
-                return flag;
- 
-    }
+  
     
         
     
