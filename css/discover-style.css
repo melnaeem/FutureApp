@@ -1042,6 +1042,7 @@ content: 'شخصية';
     font-weight: 600;
     line-height: 25px;
     word-wrap: break-word;
+    margin-top: 10px;
 }
 
 .postContent p#fullContent{
@@ -1049,7 +1050,7 @@ content: 'شخصية';
     
 }
 .postContent .postImgs{
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .postImgs::after{

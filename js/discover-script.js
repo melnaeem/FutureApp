@@ -1,5 +1,5 @@
 function addAnim(x) {
-    $('.modal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
+    $('#myModal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
 }
 
 
