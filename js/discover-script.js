@@ -1,6 +1,6 @@
 function addAnim(x) {
     $('.modal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
-};
+}
 
 
 $('#myModal').on('show.bs.modal',function(e){
@@ -39,9 +39,9 @@ function removeEmptyLines(text){
     }
 
     return text;
-}
+}                               
 
-function editMsg(editBtn, flagx){
+function editMsg(editBtn, flagx){               //Edit Msg { ApproveEdit }
     
     var currentPost = $(editBtn).parent().parent().parent().parent().parent();
     var msgContent = currentPost.find('.postContent #content');
@@ -49,18 +49,14 @@ function editMsg(editBtn, flagx){
     
     var editMsgTextarea = $('#editMsgTxtarea');
     var approveEditBtn = $('#editMsgModal').find('button#approve');
+    var cancelEditBtn = $('#editMsgModal').find('button#cancel');
     
-    
-    
-    //console.log( approveEditBtn );
-    
+    //console.log( msgFullContent.text() );
     editMsgTextarea.val( msgFullContent.text() );
     
+    flagx = !flagx;
+    
     approveEditBtn.click(function(){
-        
-        flagx = !flagx;
-        
-        console.log( flagx );
         
         if(flagx == true){
         
@@ -69,43 +65,39 @@ function editMsg(editBtn, flagx){
                 var partOne = editMsgTextarea.val().substr(0, 300);
                 var partTwo = editMsgTextarea.val().substr(300,editMsgTextarea.val().length);
 
-
-                msgContent.text(partOne);
+                msgContent.val(partOne);
                 msgContent.append("......<a title='أظهر المزيد' href='#' class='moreDescription'>&#40; المزيد &#41;</a>");
 
-                msgFullContent.text( partOne + partTwo );
+                msgFullContent.val( partOne + partTwo );
                 msgFullContent.css("display","none" );
                 msgContent.css("display","block");
 
                 currentPost.find(".moreDescription").click(function(){
 
                     event.preventDefault();
-
                     msgContent.css("display","none");       
-
                     msgFullContent.css("display","block");
 
                 });
             
-            
             }else{
 
                 msgFullContent.text(editMsgTextarea.val());
-                msgContent.text('');
+                msgContent.val('');
                 msgContent.css("display","none" );
                 msgFullContent.css("display","block");
 
             }
-        }else{
-            flagx = false;
+            
+            console.log("EDITED");
         }
         
+        flagx = false;
         
-        
-       // msgContent.text( editMsgTextarea.val() );
-        //msgFullContent.text( editMsgTextarea.val() );
-        
-        //console.log(msgFullContent.text());
+    })
+    
+    cancelEditBtn.click(function(){
+        flagx = false;
     })
     
     
@@ -113,24 +105,25 @@ function editMsg(editBtn, flagx){
 
  function deleteComment(commentToDelete, flag){
        
-       console.log($(commentToDelete));
-       
        commentToDelete = $(commentToDelete).parent().parent().parent();
-       
             
-                flag = !flag;
+        flag = !flag;
        
        commentToDelete.removeClass('slideInUp');
        commentToDelete.removeClass('animated');
                 
                 $('#deleteCommentModal #approve').click(function(){
                     
-                    console.log(flag);
+                    //console.log(flag);
                     
                     if(flag == true){
                         
                         commentToDelete.addClass('removeComment')
                         commentToDelete.slideUp(600).delay(300);
+                        
+                        setTimeout(function() {
+                            commentToDelete.remove();
+                        }, 600);
 
                     }
                 })
@@ -143,9 +136,40 @@ function editMsg(editBtn, flagx){
                 
                 //console.log(flag);
         
-                return flag;
+                //return flag;
  
     }
+
+function deletePost(post, flag){
+    
+    post = $(post).parent().parent().parent().parent().parent();
+    //console.log("Flag in function: ", flag);
+    
+    $('#deletePostModal #approve').click(function(){
+        
+        console.log("Flag on approve =", flag)
+        if(flag == true){
+            post.addClass('removeComment');
+            post.slideUp(600);
+
+            setTimeout(function() {
+                post.remove();
+            }, 600);
+        }
+    });
+    
+    $('#deletePostModal #cancel').click(function(){        
+        flag = false;
+    });
+    
+    if(flag == false){
+        return false; 
+    }
+    
+    return true;   
+    
+}
+
 
 
 $('#emojiBtn').click(function(){
@@ -306,9 +330,6 @@ $(document).ready(function(){
     
 });
 
-function minifyMsg(){
-    
-}
 
 
 /******  Post View More  *****/
@@ -328,9 +349,6 @@ $(".post").each(function(){
             postContent.append("......<a title='أظهر المزيد' href='#' class='moreDescription'>&#40; المزيد &#41;</a>");
             
             $(this).find("#fullContent").text( partOne + partTwo );
-        
-            //console.log( post );
-            //console.log( postContent.text() );
         
        }
     
@@ -515,36 +533,11 @@ $(".post").each(function(){
         if($(this).val() == 0){
                 
             $(this).val() == "";
-           // $(this).attr('rows',commentAreaRowsCounter=1);
-            // $(this).val() = 0;
                 
         }
         
         
-    
-           
         });
-    
-    /*
-    $.prototype.colo = function(){
-        $(this).css("");
-        return $(this);
-    }
-    
-    $("dsfds").colo();
-    
-    function color(element){
-        $(this).css();
-        return element;
-    }
-    
-    color($("dsdf"));
-    
-    color($("#dddddd"));
-    
-    color();
-    
-    */
     
         var submitCommentBtn = $(this).find('#submitCommentBtn');
         var commentTxtArea = $(this).find('#addCommentTextarea');
@@ -563,9 +556,7 @@ $(".post").each(function(){
 
         var commentsVotes = '<div class="commentActions"><div class="votes"><button><span id="upvoteCounter">' + commentUpVoteCounter + '</span> ' + upVoteIcon + '</button><button><span id="downvoteCounter">' + commentDownVoteCounter + '</span>'+ downVoteIcon +'</button></div>';
     
-    
-    
-        
+            
         submitCommentBtn.click(function(e){
             
             e.preventDefault();     //!a.trim()
@@ -592,33 +583,44 @@ $(".post").each(function(){
     
     
     
-    
-    
 });
 
-
-  
-    
-        
-    
     
         $('.postComment').each(function(){
                     
-            var commentToDelete = $(this);
             var deleteCommentBtn = $(this).find('#deleteBtn');
             //var comment = post.find('.postComment');
-            var approveDeleteBtn = $('#deleteCommentModal #approve');
-            var cancelDeleteBtn = $('#deleteCommentModal #cancel');
+            //var approveDeleteBtn = $('#deleteCommentModal #approve');
+            //var cancelDeleteBtn = $('#deleteCommentModal #cancel');
             var flag = false;
             
 
             deleteCommentBtn.click(function(){
                 deleteComment($(this), flag);
-                
             })
     
         
         });
+
+
+
+        $('.postMenu').each(function(){
+        
+            var deletePostBtn = $(this).find('#deletePostBtn');
+            //var approveBtn = $(this).find("button#approve");
+            var flag = deletePost();
+            
+            deletePostBtn.attr({"data-toggle": "modal", "data-target": "#deletePostModal"});
+            
+            //flag = !flag;
+            
+            deletePostBtn.click(function(){
+                //console.log("Flag before delete", flag);
+                deletePost($(this), flag);
+            })
+        
+            
+        })
 
 
 

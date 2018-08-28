@@ -949,7 +949,7 @@ content: 'شخصية';
 }
 
 .userDetails div h4{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 900;
     margin-bottom: 5px;
     color: #333AA7;
@@ -1003,9 +1003,9 @@ content: 'شخصية';
 .post .dates h4{
     float: left;
     margin: 0;
-    padding: 7px 15px;
-    padding-top: 8px;
-    font-size: 14px;
+    padding: 4px 15px;
+    padding-top: 6px;
+    font-size: 12px;
     font-weight: 900;
 }
 
@@ -1031,7 +1031,7 @@ content: 'شخصية';
     display: block;
     width: 100%;
     float: right;
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 10px 20px;
     
 }
@@ -1766,10 +1766,9 @@ content: 'شخصية';
     opacity: 1;
 }
 
-#deleteCommentModal{
+#deleteCommentModal, #deletePostModal{
     margin-top: 30vh;
 }
-
 
 #deleteCommentModal .modal-header{
     background-color: #eee;
@@ -1785,14 +1784,14 @@ content: 'شخصية';
     margin-top: 0;
 }
 
-#deleteCommentModal .modal-content{
+#deleteCommentModal .modal-content, #deletePostModal .modal-content{
     width: 250px;
     margin: 0 auto;
     border: none;
     overflow: hidden;
 }
 
-#deleteCommentModal .modal-footer button{
+.modal-footer button{
     background-color: #fff;
     border: 0;
     padding: 5px;
@@ -1832,7 +1831,7 @@ content: 'شخصية';
 .postMenu .dropdown-menu{
     z-index: 1;
     margin-top: 0;
-    left: 30px;
+    left: 15px;
     border-top-left-radius: 0;
     padding: 0;
     overflow: hidden;
@@ -1899,6 +1898,7 @@ content: 'شخصية';
     outline: none;
     border-color: #eee;
     resize: none;
+    line-height: 1.8;
 }
 
 /*************************************/
