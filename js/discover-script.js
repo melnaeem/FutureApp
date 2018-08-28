@@ -2,11 +2,9 @@ function addAnim(x) {
     $('#myModal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
 }
 
-
 $('#myModal').on('show.bs.modal',function(e){
     
         addAnim('zoomIn');
-    //$('#myModal').css("padding-right","0");
     
 });
 
@@ -320,15 +318,24 @@ function previewFile() {
  
 }
 
-$(document).ready(function(){
 
-    $('#removeBtn').on( "click", function() {
-
-        $(this).fadeOut();
-
-    });
+$('#recordAudioBtn').click(function(e){
     
-});
+    e.preventDefault();
+    
+      
+            $('.recordStatus').fadeToggle();
+            $('span#recording').toggleClass('recordingAnimation');
+     
+    
+    $('.recordStatus').find('#cancelBtn').click(function(v){
+        v.preventDefault();
+        console.log('Clicked');
+        $('.recordStatus').fadeOut();
+        $('span#recording').removeClass('recordingAnimation');
+    })
+    
+})
 
 
 

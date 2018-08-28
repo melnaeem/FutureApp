@@ -539,7 +539,7 @@ content: 'شخصية';
     resize: none;
     min-height: 220px;
     border-radius: 5px;
-    border: 1px solid #FFF;
+    border: 1px solid #eee;
     outline: none;
     font-size: 15px;
     font-weight: 900;
@@ -547,13 +547,12 @@ content: 'شخصية';
     box-shadow: 0 #fff;
     padding-bottom: 50px;
     direction: inherit;
-    /*border: none;*/
-    background-color: #eee;
+    background-color: #fff;
     transition: .3s;
 }
 
 .createMsgForm textarea:focus, .reciverInfo input:focus{
-    border-color: #eee;
+    border-color: #5056b2;
     background-color: #fff;
 }
 
@@ -628,17 +627,102 @@ content: 'شخصية';
     height: 35px;
     line-height: 35px;
     cursor: pointer;
+    outline: none;
 }
 
 .msgUploads button:hover, .uploadImgBtn:hover {
     background: #d1d1d1;
-    
 }
 
 .msgUploads button svg, .inputfile + label svg{
     width: 20px; height: 20px;
 }
 
+.recordUploadContainer{
+    float: left;
+    width: auto;
+}
+.recordUploadContainer button{
+    margin-right: 0;
+    float: left;
+}
+
+.recordUploadContainer .recordStatus{
+    float: left;
+    margin-left: 10px;
+    display: none;
+}
+
+.recordStatus button{
+    padding: 0;
+    height: auto;
+    line-height: 1.1;
+    background-color: transparent;
+}
+
+.recordStatus button:hover{
+    background-color: transparent;
+}
+
+.recordStatus button svg{
+    width: 32px; height: 32px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+.recordStatus button#cancelBtn{
+    margin-right: 10px;
+}
+.recordStatus button#cancelBtn svg{
+    fill: #D51212;
+    border-color: #D51212;
+}                                              
+.recordStatus button#cancelBtn:hover svg{
+    background: #D51212;
+    fill: #fff;
+}
+
+.recordStatus button#approveBtn svg{
+    fill: #12d51f;
+    border-color: #12d51f;
+    margin-left: 10px;
+}
+.recordStatus button#approveBtn:hover svg{
+    background-color: #12d51f;
+    fill: #fff;
+}
+.recordStatus span{
+    display: block;
+    float: left;
+}
+.recordStatus span#timeRecorded{
+    margin: 7px 5px 0px 0px;
+}
+.recordStatus span#recording{
+    width: 10px; height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-top: 12.5px;
+    opacity: 0;
+}
+
+.recordingAnimation{
+    animation-name: recording;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes recording{
+    0{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
 
 
 /*************************************/
@@ -1033,7 +1117,6 @@ content: 'شخصية';
     float: right;
     margin-top: 0px;
     padding: 10px 20px;
-    
 }
 
 .postContent p{
@@ -1043,6 +1126,7 @@ content: 'شخصية';
     line-height: 25px;
     word-wrap: break-word;
     margin-top: 10px;
+    padding-right: 10px;
 }
 
 .postContent p#fullContent{
@@ -1050,7 +1134,7 @@ content: 'شخصية';
     
 }
 .postContent .postImgs{
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .postImgs::after{
@@ -1785,12 +1869,19 @@ content: 'شخصية';
     margin-top: 0;
 }
 
-#deleteCommentModal .modal-content, #deletePostModal .modal-content{
+#deleteCommentModal .modal-content, #deletePostModal .modal-content, #reportPostModal .modal-content{
     width: 250px;
     margin: 0 auto;
     border: none;
     overflow: hidden;
 }
+
+#reportPostModal .modal-content{
+    margin-top: 30vh;
+    width: 400px;
+}
+
+
 
 .modal-footer button{
     background-color: #fff;
@@ -1877,7 +1968,7 @@ content: 'شخصية';
     border: 0;
 }
 
-#editMsgModal .modal-header{
+.modal-header{
     background-color: #eee;
 }
 

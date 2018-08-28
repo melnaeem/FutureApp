@@ -478,11 +478,42 @@
                                             <defs><style>.a5{fill:url(#a);}</style><linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#2982aa"/><stop offset="1" stop-color="#3337aa"/></linearGradient></defs><path class="a5" d="M34.436,73.869a1.289,1.289,0,0,0-.491-.105,1.132,1.132,0,0,0-.884.4l-7.917,8.465V79.155a6.059,6.059,0,0,0-1.66-4.285,5.273,5.273,0,0,0-4-1.779H5.657a5.273,5.273,0,0,0-4,1.779A6.06,6.06,0,0,0,0,79.155V93.979a6.059,6.059,0,0,0,1.66,4.285,5.273,5.273,0,0,0,4,1.779H19.487a5.272,5.272,0,0,0,4-1.779,6.058,6.058,0,0,0,1.66-4.285v-3.5l7.917,8.486a1.132,1.132,0,0,0,.884.4,1.291,1.291,0,0,0,.491-.105,1.263,1.263,0,0,0,.766-1.242V75.112A1.264,1.264,0,0,0,34.436,73.869Z" transform="translate(0 -73.09)"/>
                                         </svg>
                                     </button>
-                                    <button title="تسجيل صوت"> 
-                                        <svg viewBox="0 0 18.721 36.371">
-                                            <defs><style>.a3{fill:url(#a);}</style><linearGradient id="a" x1="0.268" y1="-0.386" x2="0.786" y2="0.653" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#2982aa"/><stop offset="1" stop-color="#3337aa"/></linearGradient></defs><path class="a3" d="M31.135,28a.607.607,0,0,0-.585.627V32.39c0,4.841-3.674,8.779-8.19,8.779s-8.19-3.938-8.19-8.779V28.627a.586.586,0,1,0-1.17,0V32.39c0,5.321,3.887,9.675,8.775,10v3.167H18.85a.629.629,0,0,0,0,1.254h7.02a.629.629,0,0,0,0-1.254H22.945V42.391c4.888-.326,8.775-4.681,8.775-10V28.627A.607.607,0,0,0,31.135,28Z" transform="translate(-13 -10.442)"/><path class="a3" d="M24.435,28.846a6.686,6.686,0,0,0,6.435-6.9V6.9A6.686,6.686,0,0,0,24.435,0,6.686,6.686,0,0,0,18,6.9v15.05A6.686,6.686,0,0,0,24.435,28.846Z" transform="translate(-15.075)"/>
-                                        </svg>
-                                    </button>
+                                    <div class="recordUploadContainer">
+                                        <button title="تسجيل صوت" id="recordAudioBtn"> 
+                                            <svg viewBox="0 0 18.721 36.371">
+                                                <defs><style>.a3{fill:url(#a);}</style><linearGradient id="a" x1="0.268" y1="-0.386" x2="0.786" y2="0.653" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#2982aa"/><stop offset="1" stop-color="#3337aa"/></linearGradient></defs><path class="a3" d="M31.135,28a.607.607,0,0,0-.585.627V32.39c0,4.841-3.674,8.779-8.19,8.779s-8.19-3.938-8.19-8.779V28.627a.586.586,0,1,0-1.17,0V32.39c0,5.321,3.887,9.675,8.775,10v3.167H18.85a.629.629,0,0,0,0,1.254h7.02a.629.629,0,0,0,0-1.254H22.945V42.391c4.888-.326,8.775-4.681,8.775-10V28.627A.607.607,0,0,0,31.135,28Z" transform="translate(-13 -10.442)"/><path class="a3" d="M24.435,28.846a6.686,6.686,0,0,0,6.435-6.9V6.9A6.686,6.686,0,0,0,24.435,0,6.686,6.686,0,0,0,18,6.9v15.05A6.686,6.686,0,0,0,24.435,28.846Z" transform="translate(-15.075)"/>
+                                            </svg>
+                                        </button>
+                                        
+                                        <div class="recordStatus">
+                                            <button id="cancelBtn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.44 19.439">
+                                              <g id="cancel_2_" data-name="cancel (2)" transform="translate(0 -0.001)">
+                                                <g id="Group_163" data-name="Group 163" transform="translate(0 0.001)">
+                                                  <path id="Path_314" data-name="Path 314" class="cls-1" d="M11.167,9.721,19.14,1.748A1.023,1.023,0,1,0,17.693.3L9.72,8.274,1.747.3A1.023,1.023,0,0,0,.3,1.748L8.273,9.721.3,17.694a1.023,1.023,0,0,0,1.447,1.447L9.72,11.168l7.973,7.973a1.023,1.023,0,0,0,1.447-1.447Z" transform="translate(0 -0.001)"/>
+                                                </g>
+                                              </g>
+                                            </svg>
+                                            </button>
+                                            
+                                            <span id="timeRecorded">3:44</span>
+                                            <span id="recording"></span>
+                                            
+                                            <button id="approveBtn">
+                                            
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.229 19.262">
+                                                  
+                                                  <g id="tick" transform="translate(0 -67.998)">
+                                                    <g id="Group_162" data-name="Group 162" transform="translate(0 67.997)">
+                                                      <path id="Path_313" data-name="Path 313" class="cls-1" d="M25.845,68.382a1.311,1.311,0,0,0-1.855,0L8.278,84.094l-6.04-6.04A1.311,1.311,0,1,0,.384,79.909l6.967,6.967a1.312,1.312,0,0,0,1.855,0l16.64-16.64A1.311,1.311,0,0,0,25.845,68.382Z" transform="translate(0 -67.997)"/>
+                                                    </g>
+                                                  </g>
+                                                </svg>
+
+                                            </button>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                                   
@@ -700,6 +731,23 @@
                        </div><!-- /.modal-dialog -->
                      </div><!-- /.modal -->
                     
+                    <div class="modal fade" tabindex="-1" role="dialog" id="reportPostModal"  data-backdrop="static" data-keyboard="false">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <h4 class="modal-title">إبلاغ عن رسالة</h4>
+                           </div>
+                           <div class="modal-body">
+                               هل تريد تأكيد الابلاغ عن محتوى الرسالة؟
+                           </div>
+                           <div class="modal-footer">
+                             <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
+                             <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
+                           </div>
+                         </div><!-- /.modal-content -->
+                       </div><!-- /.modal-dialog -->
+                     </div><!-- /.modal -->
+                    
                     <div class="post">
                         
                         <div class="dates">
@@ -900,7 +948,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button>
+                                            <button id="reportPostBtn" data-toggle="modal" data-target="#reportPostModal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.31 12.178"><g transform="translate(0)"><g transform="translate(0 0)"><path d="M13.253,26.84,7.059,15.583a.461.461,0,0,0-.807,0L.058,26.84a.461.461,0,0,0,.4.683H12.849a.461.461,0,0,0,.4-.683ZM1.241,26.6,6.655,16.76,12.07,26.6Z" transform="translate(-0.001 -15.344)"/><path d="M164.894,128v3.33a.577.577,0,0,0,1.155,0V128a.577.577,0,1,0-1.155,0Z" transform="translate(-158.817 -123.289)"/><path d="M164.667,265.364a.608.608,0,1,0,.608.608A.609.609,0,0,0,164.667,265.364Z" transform="translate(-158.012 -256.149)"/></g></g></svg>
                                                 
                                                 إبلاغ
@@ -1237,7 +1285,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button>
+                                            <button id="reportPostBtn" data-toggle="modal" data-target="#reportPostModal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.31 12.178"><g transform="translate(0)"><g transform="translate(0 0)"><path d="M13.253,26.84,7.059,15.583a.461.461,0,0,0-.807,0L.058,26.84a.461.461,0,0,0,.4.683H12.849a.461.461,0,0,0,.4-.683ZM1.241,26.6,6.655,16.76,12.07,26.6Z" transform="translate(-0.001 -15.344)"/><path d="M164.894,128v3.33a.577.577,0,0,0,1.155,0V128a.577.577,0,1,0-1.155,0Z" transform="translate(-158.817 -123.289)"/><path d="M164.667,265.364a.608.608,0,1,0,.608.608A.609.609,0,0,0,164.667,265.364Z" transform="translate(-158.012 -256.149)"/></g></g></svg>
                                                 
                                                 إبلاغ
@@ -1574,7 +1622,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button>
+                                            <button id="reportPostBtn" data-toggle="modal" data-target="#reportPostModal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.31 12.178"><g transform="translate(0)"><g transform="translate(0 0)"><path d="M13.253,26.84,7.059,15.583a.461.461,0,0,0-.807,0L.058,26.84a.461.461,0,0,0,.4.683H12.849a.461.461,0,0,0,.4-.683ZM1.241,26.6,6.655,16.76,12.07,26.6Z" transform="translate(-0.001 -15.344)"/><path d="M164.894,128v3.33a.577.577,0,0,0,1.155,0V128a.577.577,0,1,0-1.155,0Z" transform="translate(-158.817 -123.289)"/><path d="M164.667,265.364a.608.608,0,1,0,.608.608A.609.609,0,0,0,164.667,265.364Z" transform="translate(-158.012 -256.149)"/></g></g></svg>
                                                 
                                                 إبلاغ
@@ -1909,7 +1957,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button>
+                                            <button id="reportPostBtn" data-toggle="modal" data-target="#reportPostModal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.31 12.178"><g transform="translate(0)"><g transform="translate(0 0)"><path d="M13.253,26.84,7.059,15.583a.461.461,0,0,0-.807,0L.058,26.84a.461.461,0,0,0,.4.683H12.849a.461.461,0,0,0,.4-.683ZM1.241,26.6,6.655,16.76,12.07,26.6Z" transform="translate(-0.001 -15.344)"/><path d="M164.894,128v3.33a.577.577,0,0,0,1.155,0V128a.577.577,0,1,0-1.155,0Z" transform="translate(-158.817 -123.289)"/><path d="M164.667,265.364a.608.608,0,1,0,.608.608A.609.609,0,0,0,164.667,265.364Z" transform="translate(-158.012 -256.149)"/></g></g></svg>
                                                 
                                                 إبلاغ
@@ -2243,7 +2291,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button>
+                                            <button id="reportPostBtn" data-toggle="modal" data-target="#reportPostModal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.31 12.178"><g transform="translate(0)"><g transform="translate(0 0)"><path d="M13.253,26.84,7.059,15.583a.461.461,0,0,0-.807,0L.058,26.84a.461.461,0,0,0,.4.683H12.849a.461.461,0,0,0,.4-.683ZM1.241,26.6,6.655,16.76,12.07,26.6Z" transform="translate(-0.001 -15.344)"/><path d="M164.894,128v3.33a.577.577,0,0,0,1.155,0V128a.577.577,0,1,0-1.155,0Z" transform="translate(-158.817 -123.289)"/><path d="M164.667,265.364a.608.608,0,1,0,.608.608A.609.609,0,0,0,164.667,265.364Z" transform="translate(-158.012 -256.149)"/></g></g></svg>
                                                 
                                                 إبلاغ
@@ -2569,7 +2617,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button id="deletePostBtn">
+                                            <button id="deletePostBtn" data-toggle="modal" data-target="#reportPostModal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903">
                                                     <g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g>
                                                 </svg>
@@ -2578,7 +2626,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button>
+                                            <button id="reportPostBtn" data-toggle="modal" data-target="#reportPostModal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.31 12.178"><g transform="translate(0)"><g transform="translate(0 0)"><path d="M13.253,26.84,7.059,15.583a.461.461,0,0,0-.807,0L.058,26.84a.461.461,0,0,0,.4.683H12.849a.461.461,0,0,0,.4-.683ZM1.241,26.6,6.655,16.76,12.07,26.6Z" transform="translate(-0.001 -15.344)"/><path d="M164.894,128v3.33a.577.577,0,0,0,1.155,0V128a.577.577,0,1,0-1.155,0Z" transform="translate(-158.817 -123.289)"/><path d="M164.667,265.364a.608.608,0,1,0,.608.608A.609.609,0,0,0,164.667,265.364Z" transform="translate(-158.012 -256.149)"/></g></g></svg>
                                                 
                                                 إبلاغ
