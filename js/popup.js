@@ -1,17 +1,14 @@
-
- $('.send-btn').on('click', function(){
-     
+$(document).ready(function(){
+    
+    $('.send-btn').on('click', function(){
+   
      $('.acc').fadeIn();
      $('.accordion').addClass('active');
-     
-    /* $('.accordion').next().style.maxHeight = $('.accordion').next().scrollHeight + "px";*/
+        
      
      var acc = document.getElementsByClassName("accordion");
      var panel = acc[0].nextElementSibling;
      panel.style.maxHeight = panel.scrollHeight + "px";
-      
-     
-    /* panel.style.maxHeight = panel.scrollHeight + "px";*/
  });
 
 
@@ -93,3 +90,8 @@ for (i = 0; i < acc.length; i++) {
 
 
 
+    
+});
+
+
+ 

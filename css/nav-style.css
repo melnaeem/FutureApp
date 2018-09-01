@@ -24,13 +24,12 @@
     background: #333AA7;
 }
 
-    body {
-      width: 100%;
-      height: 100%;
-        background-color: #E9EBEE;
-        padding-top: 30px;
-    }
-
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #E9EBEE;
+    padding-top: 30px;
+}
 
 .mobile-menu{
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);

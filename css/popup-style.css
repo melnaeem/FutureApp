@@ -1,0 +1,97 @@
+/** Start PopUp Style **/
+
+
+.circle,.mainx{
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    z-index: 6;
+}
+.mainx{
+    height: 70px; width: 70px;
+    font-size: 3.5em;
+    line-height: 83px;
+    transition: 1s;
+    position: fixed;
+    bottom: 60px; right: 17.5%;
+    
+     -webkit-box-shadow: 0px 0px 38px rgba(51, 55, 170, 0.62);
+    -moz-box-shadow: 0px 0px 38px rgba(51, 55, 170, 0.62);
+    box-shadow: 0px 0px 38px rgba(51, 55, 170, 0.12);
+    
+    background: #2982aa; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #2982aa 0%, #3337aa 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #2982aa 0%,#3337aa 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #2982aa 0%,#3337aa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2982aa', endColorstr='#3337aa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background-color: #3337AA;
+    
+    
+}
+
+.mainx img{
+    width: 30px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.mainx #inviteIcon{
+    display: none;
+}
+
+.pop{
+    max-width: 100px;
+}
+
+.pop::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.mark,.gd{
+    height: 60px; width: 60px;
+    line-height: 60px;
+    margin: auto;
+    position: fixed;
+    bottom: 65px; right: 18%;
+    font-size: 1.7em;
+    background-color: #3337AA;
+    
+}
+
+.mark:hover,.gd:hover{
+    transform: scale(.96);
+}
+
+.mark:active,.gd:active{
+    transform: scale(.93);
+}
+
+.mark{
+    line-height: 2.2;
+}
+
+.rotate{
+    transform: rotate(360deg);
+    transition: transform .5s;
+}
+
+.zO{
+    transform: scale(.9);
+    font-size: 2em;
+}
+
+.mark img,.gd img{
+    width: 30px;
+}
+
+.overlay{
+    position: fixed;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9;
+    display: none;
+}
