@@ -3,9 +3,7 @@ function addAnim(x) {
 }
 
 $('#myModal').on('show.bs.modal',function(e){
-    
         addAnim('zoomIn');
-    
 });
 
 $('#myModal').on('hide.bs.modal',function(e){
@@ -127,15 +125,8 @@ function editMsg(editBtn, flagx){               //Edit Msg { ApproveEdit }
                 })
                 
                 $('#deleteCommentModal #cancel').click(function(){
-                    
                     flag = false;
-                    
                 })
-                
-                //console.log(flag);
-        
-                //return flag;
- 
     }
 
 function deletePost(post, flag){
@@ -175,11 +166,10 @@ $('#emojiBtn').click(function(){
     event.preventDefault();
     
     $('.emojisContainer').fadeIn(300);
-    $('#emojiBtn').addClass('active');
+    $(this).addClass('active');
     
     $('body').click(function(){
         $('.emojisContainer').fadeOut(300);
-        
         $('#emojiBtn').removeClass('active');
     });
     
@@ -207,7 +197,6 @@ function showReact(){
     setTimeout(function(){$('.reactEmotions a:nth-of-type(4) svg').addClass('emotionShow')},400);
     
     setTimeout(function(){$('.reactEmotions svg').parent().css('overflow','visible')},600);
-    
     
 }
 
@@ -322,11 +311,9 @@ function previewFile() {
 $('#recordAudioBtn').click(function(e){
     
     e.preventDefault();
-    
       
-            $('.recordStatus').fadeToggle();
-            $('span#recording').toggleClass('recordingAnimation');
-     
+    $('.recordStatus').fadeToggle();
+    $('span#recording').toggleClass('recordingAnimation'); 
     
     $('.recordStatus').find('#cancelBtn').click(function(v){
         v.preventDefault();
@@ -521,30 +508,18 @@ $(".post").each(function(){
                 })
         }
     });
-    
-    
-    
+        
     var commentAreaRowsCounter = 1;
-  //  var BreakLinesPositions = [];
-  //  var EnterPressed = false;
-     
-             
+         
     post.find('.addComment').find('textarea').keyup(function(e){
             
-            
-        if(e.keyCode == 13){
-           
+        if(e.keyCode == 13){           
             $(this).attr('rows',++commentAreaRowsCounter);
-                 
         }
         if($(this).val() == 0){
-                
             $(this).val() == "";
-                
         }
-        
-        
-        });
+    });
     
         var submitCommentBtn = $(this).find('#submitCommentBtn');
         var commentTxtArea = $(this).find('#addCommentTextarea');
@@ -593,42 +568,31 @@ $(".post").each(function(){
 });
 
     
-        $('.postComment').each(function(){
+$('.postComment').each(function(){
                     
-            var deleteCommentBtn = $(this).find('#deleteBtn');
-            //var comment = post.find('.postComment');
-            //var approveDeleteBtn = $('#deleteCommentModal #approve');
-            //var cancelDeleteBtn = $('#deleteCommentModal #cancel');
-            var flag = false;
+    var deleteCommentBtn = $(this).find('#deleteBtn');
+    var flag = false;
             
 
-            deleteCommentBtn.click(function(){
-                deleteComment($(this), flag);
-            })
+    deleteCommentBtn.click(function(){
+        deleteComment($(this), flag);
+    })
     
         
-        });
+});
 
-
-
-        $('.postMenu').each(function(){
+$('.postMenu').each(function(){
         
-            var deletePostBtn = $(this).find('#deletePostBtn');
-            //var approveBtn = $(this).find("button#approve");
-            var flag = deletePost();
+    var deletePostBtn = $(this).find('#deletePostBtn');
+    var flag = deletePost();
             
-            deletePostBtn.attr({"data-toggle": "modal", "data-target": "#deletePostModal"});
+    deletePostBtn.attr({"data-toggle": "modal", "data-target": "#deletePostModal"});
             
-            //flag = !flag;
+    deletePostBtn.click(function(){
+        deletePost($(this), flag);
+    })
             
-            deletePostBtn.click(function(){
-                //console.log("Flag before delete", flag);
-                deletePost($(this), flag);
-            })
-        
-            
-        })
-
+})
 
 
 $('.viewMsgContainer .viewMsg').click(function(){
@@ -636,10 +600,8 @@ $('.viewMsgContainer .viewMsg').click(function(){
     $('.msgContent').slideToggle();
     
     if($(this).find('svg').hasClass('rotateMe')){
-        
         $(this).find('svg').removeClass('rotateMe');
         $(this).find('svg').addClass('unRotateMe');
-        
     }else{
         $(this).find('svg').addClass('rotateMe');    
         $(this).find('svg').removeClass('unRotateMe');
