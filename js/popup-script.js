@@ -24,7 +24,6 @@ $(document).ready(function(){
             $(".circle").removeClass("rotate");
     }
     else{
-       // $('.mainx').html('<span>+</span>');
         
         $(".circle").removeClass("rotate");
                 

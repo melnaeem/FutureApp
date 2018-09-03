@@ -1,14 +1,3 @@
-function addAnim(x) {
-    $('#myModal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
-}
-
-$('#myModal').on('show.bs.modal',function(e){
-        addAnim('zoomIn');
-});
-
-$('#myModal').on('hide.bs.modal',function(e){
-        addAnim('zoomOut');
-});
 
 
 $('.slideThree label').click(function(){
@@ -35,7 +24,7 @@ function removeEmptyLines(text){
     }
 
     return text;
-}                               
+}
 
 function editMsg(editBtn, flagx){               //Edit Msg { ApproveEdit }
     
@@ -47,7 +36,6 @@ function editMsg(editBtn, flagx){               //Edit Msg { ApproveEdit }
     var approveEditBtn = $('#editMsgModal').find('button#approve');
     var cancelEditBtn = $('#editMsgModal').find('button#cancel');
     
-    //console.log( msgFullContent.text() );
     editMsgTextarea.val( msgFullContent.text() );
     
     flagx = !flagx;
@@ -84,8 +72,6 @@ function editMsg(editBtn, flagx){               //Edit Msg { ApproveEdit }
                 msgFullContent.css("display","block");
 
             }
-            
-            console.log("EDITED");
         }
         
         flagx = false;
@@ -99,7 +85,7 @@ function editMsg(editBtn, flagx){               //Edit Msg { ApproveEdit }
     
 }
 
- function deleteComment(commentToDelete, flag){
+function deleteComment(commentToDelete, flag){
        
        commentToDelete = $(commentToDelete).parent().parent().parent();
             
@@ -132,7 +118,6 @@ function editMsg(editBtn, flagx){               //Edit Msg { ApproveEdit }
 function deletePost(post, flag){
     
     post = $(post).parent().parent().parent().parent().parent();
-    //console.log("Flag in function: ", flag);
     
     $('#deletePostModal #approve').click(function(){
         
@@ -159,31 +144,6 @@ function deletePost(post, flag){
     
 }
 
-
-
-$('#emojiBtn').click(function(){
-        
-    event.preventDefault();
-    
-    $('.emojisContainer').fadeIn(300);
-    $(this).addClass('active');
-    
-    $('body').click(function(){
-        $('.emojisContainer').fadeOut(300);
-        $('#emojiBtn').removeClass('active');
-    });
-    
-    return false;
-    
-});
-
-$('.emoji').click(function(){
-    
-    var msg = $('#msgContent').val() + $(this).html();
-    
-    $('#msgContent').val(msg);
-    
-});
 
 
 
@@ -308,6 +268,32 @@ function previewFile() {
 }
 
 
+$('#emojiBtn').click(function(){
+        
+    event.preventDefault();
+    
+    $('.emojisContainer').fadeIn(300);
+    $(this).addClass('active');
+    
+    $('body').click(function(){
+        $('.emojisContainer').fadeOut(300);
+        $('#emojiBtn').removeClass('active');
+    });
+    
+    return false;
+    
+});
+
+$('.emoji').click(function(){
+    
+    var msg = $('#msgContent').val() + $(this).html();
+    
+    $('#msgContent').val(msg);
+    
+});
+
+
+
 $('#recordAudioBtn').click(function(e){
     
     e.preventDefault();
@@ -324,9 +310,7 @@ $('#recordAudioBtn').click(function(e){
     
 })
 
-
-
-/******  Post View More  *****/
+$(document).ready(function(){
 
 $(".post").each(function(){
     
@@ -607,6 +591,7 @@ $('.viewMsgContainer .viewMsg').click(function(){
         $(this).find('svg').removeClass('unRotateMe');
     }
     
+})
 })
 
 
