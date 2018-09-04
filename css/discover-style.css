@@ -930,7 +930,7 @@ button.newMsg img{
     position: absolute;
     background-color: #fff;
     text-align: center;
-    z-index: 3;
+    z-index: 7;
     left: 50%; top: 120%;
     transform: translate(-50%,0);
     border: 3px solid #333AA7;

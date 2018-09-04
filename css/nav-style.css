@@ -29,6 +29,7 @@ body {
     height: 100%;
     background-color: #E9EBEE;
     padding-top: 30px;
+    font-family: 'Cairo', sans-serif;
 }
 
 .mobile-menu{
@@ -922,6 +923,9 @@ input::-webkit-input-placeholder {
     }
     .mobile-menu{
         display: block;
+    }
+    body{
+        padding-bottom: 70px;
     }
 }
 

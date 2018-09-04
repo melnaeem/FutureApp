@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Setting</title>
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">   
+        <link rel="stylesheet" href="css/nav-style.css">
+        <link rel="stylesheet" href="css/setting-style.css">
+        
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/nav-script.js"></script>
+        <script src="js/setting.js"></script>
+        
+    </head>
+    <body dir="rtl">
+        <div class="desktop-menu">
+            <div class="brand">
+                <a href="discover.html">مستقبلي</a>
+            </div>
+            
+            <div class="searchForm">
+                <form name="searchForm">
+                    <input type="text" placeholder="بحث...">
+                    <button type="submit">
+                       
+                        <svg viewBox="0 0 56.966 56.966">
+                        <path d="m55.146 51.887l-13.558-14.101c3.486-4.144 5.396-9.358 5.396-14.786 0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c0.571 0.593 1.339 0.92 2.162 0.92 0.779 0 1.518-0.297 2.079-0.837 1.192-1.147 1.23-3.049 0.083-4.242zm-31.162-45.887c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"/>
+                        </svg>
+
+                    </button>
+                </form>
+                <div class="searchResult">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="img/hipster.png">
+                                <span>محمد عبد النعيم</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/hipster.png">
+                                <span>محمد عبد النعيم</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/hipster.png">
+                                <span>محمد عبد النعيم</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/hipster.png">
+                                <span>محمد عبد النعيم</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                عرض كل نتائج البحث
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="user-panel">
+                <div class="user-info">
+                    <a title="الصفحة الشخصية" href="#">
+                        <img src="img/hipster.png">
+                        <span>محمد</span>
+                    </a>
+                </div>
+                
+                <div class="discover">
+                        <a title="إكتشف المستقبل" href="discover.html">     
+                            <svg viewBox="0 0 47.001 47.001">
+                                    <path d="m46.907 20.12c-0.163-0.347-0.511-0.569-0.896-0.569h-2.927c-1.861-10.099-10.729-17.776-21.358-17.776-11.979 0-21.726 9.747-21.726 21.726s9.746 21.725 21.726 21.725c7.731 0 14.941-4.161 18.816-10.857 0.546-0.945 0.224-2.152-0.722-2.699-0.944-0.547-2.152-0.225-2.697 0.72-3.172 5.481-9.072 8.887-15.397 8.887-9.801 0-17.776-7.974-17.776-17.774 0-9.802 7.975-17.776 17.776-17.776 8.442 0 15.515 5.921 17.317 13.825h-2.904c-0.385 0-0.732 0.222-0.896 0.569-0.163 0.347-0.11 0.756 0.136 1.051l4.938 5.925c0.188 0.225 0.465 0.355 0.759 0.355 0.293 0 0.571-0.131 0.758-0.355l4.938-5.925c0.246-0.296 0.298-0.705 0.135-1.052z"/>
+                                    <path d="m21.726 6.713c-1.091 0-1.975 0.884-1.975 1.975v11.984c-0.893 0.626-1.481 1.658-1.481 2.83 0 1.906 1.551 3.457 3.457 3.457 0.522 0 1.014-0.125 1.458-0.334l6.87 3.965c0.312 0.181 0.65 0.266 0.986 0.266 0.682 0 1.346-0.354 1.712-0.988 0.545-0.943 0.222-2.152-0.724-2.697l-6.877-3.971c-0.092-1.044-0.635-1.956-1.449-2.526v-11.986c-2e-3 -1.09-0.887-1.975-1.977-1.975zm0 18.269c-0.817 0-1.481-0.665-1.481-1.48 0-0.816 0.665-1.481 1.481-1.481s1.481 0.665 1.481 1.481c0 0.815-0.665 1.48-1.481 1.48z"/>
+                            </svg>
+                            <span>إكتشف</span>
+                        </a>
+                        
+                    </div>
+                
+                <div class="notifications">
+                    
+                    <div class="dropdown svgIcon bell">
+                        <a title="الإشعارات" href="#" data-toggle="dropdown">
+                            <svg viewBox="0 0 14.788 17.508">
+                            <g transform="translate(0.156 0.15)"><g transform="translate(0 2.531)"><path class="z" d="M57.094,86.777l-1.265-2.07a6.153,6.153,0,0,1-.876-3.164V79.73a5.063,5.063,0,1,0-10.126,0v1.813a6.153,6.153,0,0,1-.876,3.164l-1.243,2.07a.361.361,0,0,0,.31.548H56.761a.382.382,0,0,0,.333-.548ZM43.658,86.6s11.3,0,0,0Z" transform="translate(-42.657 -74.667)"/></g><g transform="translate(5.786)"><path class="z" d="M214.78,0a1.448,1.448,0,0,0-1.447,1.447V2.893a.362.362,0,0,0,.723,0V1.447c0-.4-.584.693-.185.693s-.176-.161-.176-.161l.574.807,1.234.108a.362.362,0,0,0,.723,0V1.447A1.448,1.448,0,0,0,214.78,0Z" transform="translate(-213.333)"/></g><g transform="translate(5.425 14.466)"><path class="x" d="M206.039,426.858a.362.362,0,1,0-.625.366c.094.16,0-.555,0-.366,0,.6-.058-.13-.656-.13s-1.352,1.094-1.352.5c0-.189.035.16.129,0a.362.362,0,1,0-.625-.366,1.809,1.809,0,1,0,3.129,0Z" transform="translate(-202.666 -426.68)"/></g></g>
+                        </svg>
+                        </a>
+                        <span class="counter">3</span>
+                        
+                        <div class="dropdown-container dropdown-menu">
+                            <ul>
+                                <li class="unread">
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span>قام <b>أحمد مصطفى</b> بالتعليق على رسالتك</span>
+                                            <span class="notification-date">22 فبراير 2010</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> تفاعل مع الرسالة الخاصة بك عندما</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="unread">
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span class="notification-content"><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <button class="viewAllBtn">عرض الكل</button>
+                            </ul>
+                        </div>
+                        
+                        <span class="active-caret"><svg viewBox="0 0 13.125 6.563"><path  d="M186,40.343l6.562,6.562,6.562-6.562Z" transform="translate(-186 -40.343)"/></svg></span>
+                    </div>
+                    
+                    <div class="dropdown svgIcon message">    
+                        <a title="الرسائل" href="#" data-toggle="dropdown">
+                            <svg viewBox="0 0 24.334 19.976">
+                                <path class="cls-1" transform="translate(0)" d="M0,15.314V2A2,2,0,0,1,2,0H22.333a2,2,0,0,1,2,2V13.315a2,2,0,0,1-2,2H4.13L0,19.976Z"/>
+                            </svg>
+                        </a>
+                        <span class="counter">5</span>
+                        
+                       <div class="dropdown-container dropdown-menu">
+                            <ul>
+                                <li class="unread">
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span>قام <b>أحمد مصطفى</b> بالتعليق على رسالتك</span>
+                                            <span class="notification-date">22 فبراير 2010</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> تفاعل مع الرسالة الخاصة بك عندما</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="unread">
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span class="notification-content"><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="message-notification">
+                                            <img src="img/hipster_avatar2.png">
+                                            <span><b>أحمد مصطفى</b> علق على رسالتك</span>
+                                            <span class="notification-date">منذ 21 دقيقة</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <button class="viewAllBtn">عرض الكل</button>
+                            </ul>
+                        </div>
+                        
+                        <span class="active-caret"><svg viewBox="0 0 13.125 6.563"><path d="M186,40.343l6.562,6.562,6.562-6.562Z" transform="translate(-186 -40.343)"/></svg></span>
+                    </div>
+                </div>
+                
+                <div class="dropdown userSetting">
+                    <button title="الإعدادات" data-toggle="dropdown">
+                        <svg viewBox="0 0 13.125 6.563"><path class="a8" d="M186,40.343l6.562,6.562,6.562-6.562Z" transform="translate(-186 -40.343)"/></svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">الإعدادات</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">تسجيل الخروج</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class="mobile-menu">
+                <div class="burger">
+                    <span></span>
+                </div>
+            
+                <h2 class="pageTitle">إكتشف المستقبل</h2>
+
+                <div class="searchIcon">
+                    <form id="demo-2">
+                        <input type="search" placeholder="بحث...">
+                    </form>
+                </div>
+
+                <nav class="mob-nav">
+                  <ul class="main">
+                    <li>
+                        <a href="#0" class="profile">
+                            <div class="mob-user-info">
+                                <img src="img/hipster.png">
+                                <span class="userName">محمد عبدالنعيم</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="#0">الإعدادات</a></li>
+                    <li><a href="#0">تسجيل الخروج</a></li>
+                      
+                  </ul>
+
+                </nav>
+
+                <div class="overlay"></div>
+            
+            <div class="pagination">
+                <div class="pagination-container">
+                    <a href="#" class="active">
+                    <div class="svgIcon discover">
+                            <svg viewBox="0 0 47.001 47.001">
+                                    <path d="m46.907 20.12c-0.163-0.347-0.511-0.569-0.896-0.569h-2.927c-1.861-10.099-10.729-17.776-21.358-17.776-11.979 0-21.726 9.747-21.726 21.726s9.746 21.725 21.726 21.725c7.731 0 14.941-4.161 18.816-10.857 0.546-0.945 0.224-2.152-0.722-2.699-0.944-0.547-2.152-0.225-2.697 0.72-3.172 5.481-9.072 8.887-15.397 8.887-9.801 0-17.776-7.974-17.776-17.774 0-9.802 7.975-17.776 17.776-17.776 8.442 0 15.515 5.921 17.317 13.825h-2.904c-0.385 0-0.732 0.222-0.896 0.569-0.163 0.347-0.11 0.756 0.136 1.051l4.938 5.925c0.188 0.225 0.465 0.355 0.759 0.355 0.293 0 0.571-0.131 0.758-0.355l4.938-5.925c0.246-0.296 0.298-0.705 0.135-1.052z"/>
+                                    <path d="m21.726 6.713c-1.091 0-1.975 0.884-1.975 1.975v11.984c-0.893 0.626-1.481 1.658-1.481 2.83 0 1.906 1.551 3.457 3.457 3.457 0.522 0 1.014-0.125 1.458-0.334l6.87 3.965c0.312 0.181 0.65 0.266 0.986 0.266 0.682 0 1.346-0.354 1.712-0.988 0.545-0.943 0.222-2.152-0.724-2.697l-6.877-3.971c-0.092-1.044-0.635-1.956-1.449-2.526v-11.986c-2e-3 -1.09-0.887-1.975-1.977-1.975zm0 18.269c-0.817 0-1.481-0.665-1.481-1.48 0-0.816 0.665-1.481 1.481-1.481s1.481 0.665 1.481 1.481c0 0.815-0.665 1.48-1.481 1.48z"/>
+                        </svg>                        
+                    </div>
+                </a>
+                    <a href="#">
+                        <div class="svgIcon message">    
+                                <svg viewBox="0 0 24.334 19.976">
+                                    <path class="cls-1" transform="translate(0)" d="M0,15.314V2A2,2,0,0,1,2,0H22.333a2,2,0,0,1,2,2V13.315a2,2,0,0,1-2,2H4.13L0,19.976Z"/>
+                                </svg>
+                            <span class="counter">5</span>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="svgIcon bell">
+
+                                <svg viewBox="0 0 14.788 17.508">
+                                <g transform="translate(0.156 0.15)"><g transform="translate(0 2.531)"><path d="M57.094,86.777l-1.265-2.07a6.153,6.153,0,0,1-.876-3.164V79.73a5.063,5.063,0,1,0-10.126,0v1.813a6.153,6.153,0,0,1-.876,3.164l-1.243,2.07a.361.361,0,0,0,.31.548H56.761a.382.382,0,0,0,.333-.548ZM43.658,86.6s11.3,0,0,0Z" transform="translate(-42.657 -74.667)"/></g><g transform="translate(5.786)"><path d="M214.78,0a1.448,1.448,0,0,0-1.447,1.447V2.893a.362.362,0,0,0,.723,0V1.447c0-.4-.584.693-.185.693s-.176-.161-.176-.161l.574.807,1.234.108a.362.362,0,0,0,.723,0V1.447A1.448,1.448,0,0,0,214.78,0Z" transform="translate(-213.333)"/></g><g transform="translate(5.425 14.466)"><path d="M206.039,426.858a.362.362,0,1,0-.625.366c.094.16,0-.555,0-.366,0,.6-.058-.13-.656-.13s-1.352,1.094-1.352.5c0-.189.035.16.129,0a.362.362,0,1,0-.625-.366,1.809,1.809,0,1,0,3.129,0Z" transform="translate(-202.666 -426.68)"/></g></g>
+                                </svg>
+
+                            <span class="counter">3</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 wrapper">
+                        <h2>الإعدادات</h2>
+                        <form>
+                            <div class="formGrid">
+                                <div class="form-group">
+                                <label>الإسم الأول</label>
+                                <input type="text" value="محمد">
+                                <span class="error">
+                                    لايمكن اضافة رموز في الاسم
+                                </span>
+                            </div>
+                                <div class="form-group">
+                                <label>إسم العائلة</label>
+                                <input type="text" value="عبد النعيم">
+                            </div>
+                                <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" value="mohamedxx@gmail.com">
+                            </div>
+                                <div class="form-group">
+                                <label>رقم الموبيل</label>
+                                <input type="tel" value="01123456789">
+                                <span class="error">
+                                    لايمكن اضافة رموز في الاسم
+                                </span>
+                            </div>
+                                <hr>
+                                <div class="form-group pass oldPassword">
+                                <label>كلمة المرور القديمة</label>
+                                <input type="password">
+                                <button class="togglePassBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.218 16.224">
+                                        <g transform="translate(0 -98.725)"><path d="M13.609,98.725c-5.2,0-9.916,2.845-13.4,7.466a1.077,1.077,0,0,0,0,1.286c3.48,4.627,8.2,7.472,13.4,7.472s9.916-2.845,13.4-7.466a1.077,1.077,0,0,0,0-1.286C23.525,101.57,18.809,98.725,13.609,98.725Zm.373,13.825a5.725,5.725,0,1,1,5.339-5.339A5.728,5.728,0,0,1,13.982,112.55Zm-.173-2.639a3.083,3.083,0,1,1,2.879-2.879A3.077,3.077,0,0,1,13.809,109.911Z" transform="translate(0 0)"/></g>
+                                    </svg>
+                                </button>
+                                <span class="error">
+                                    كلمة المرور غير صحيحة
+                                </span>
+                            </div>
+                                <div class="form-group pass">
+                                <label>كلمة المرور الجديدة</label>
+                                <input type="password">
+                                <button class="togglePassBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.218 16.224"><g transform="translate(0 -98.725)"><path d="M13.609,98.725c-5.2,0-9.916,2.845-13.4,7.466a1.077,1.077,0,0,0,0,1.286c3.48,4.627,8.2,7.472,13.4,7.472s9.916-2.845,13.4-7.466a1.077,1.077,0,0,0,0-1.286C23.525,101.57,18.809,98.725,13.609,98.725Zm.373,13.825a5.725,5.725,0,1,1,5.339-5.339A5.728,5.728,0,0,1,13.982,112.55Zm-.173-2.639a3.083,3.083,0,1,1,2.879-2.879A3.077,3.077,0,0,1,13.809,109.911Z" transform="translate(0 0)"/></g>
+                                    </svg>
+                                </button>
+                            </div>
+                                <div class="form-group pass">
+                                <label>تأكيد كلمة المرور الجديدة</label>
+                                <input type="password">
+                                <button class="togglePassBtn">
+                                    
+                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.218 16.224"><g transform="translate(0 -98.725)"><path d="M13.609,98.725c-5.2,0-9.916,2.845-13.4,7.466a1.077,1.077,0,0,0,0,1.286c3.48,4.627,8.2,7.472,13.4,7.472s9.916-2.845,13.4-7.466a1.077,1.077,0,0,0,0-1.286C23.525,101.57,18.809,98.725,13.609,98.725Zm.373,13.825a5.725,5.725,0,1,1,5.339-5.339A5.728,5.728,0,0,1,13.982,112.55Zm-.173-2.639a3.083,3.083,0,1,1,2.879-2.879A3.077,3.077,0,0,1,13.809,109.911Z" transform="translate(0 0)"/></g>
+                                    </svg>
+                                </button>
+                                <span class="error">
+                                    كلمات المرور الجديدة غير متطابقة
+                                </span>
+                            </div>
+                            </div>
+                            
+                            <button type="submit" id="submitForm">حفظ التعديلات</button>
+                        </form>
+                        
+                        <button class="reportProb" data-toggle="modal" data-target="#generalReport">
+                            الابلاغ عن مشكلة
+                        </button>
+                        
+                        <button class="disabled" title="SOON" disabled>
+                            الاعلانات وعمليات الدفع
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="modal fade" tabindex="-1" role="dialog" id="generalReport"  data-backdrop="static" data-keyboard="false">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <h4 class="modal-title">ابلاغ عن مشكلة</h4>
+                           </div>
+                           <div class="modal-body">
+                                <textarea placeholder="إكتب مشكلتك هنا وسيتم التواصل معك..." id="editMsgTxtarea"></textarea>
+                           </div>
+                           <div class="modal-footer">
+                             <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
+                             <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
+                           </div>
+                         </div><!-- /.modal-content -->
+                       </div><!-- /.modal-dialog -->
+            </div>
+        
+    </body>
+</html>

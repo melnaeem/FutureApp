@@ -1,0 +1,226 @@
+.wrapper{
+    float: none;
+    margin: 0 auto;
+   
+    padding: 0;
+    
+}
+
+.wrapper h2{
+    font-size: 22px;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    background-color: #E2E2E2;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.wrapper form{
+    padding: 20px 25px;
+    overflow: hidden; 
+     background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+form .formGrid{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 40px;
+    grid-row-gap: 10px;
+}
+
+
+.form-group label{
+    font-size: 12px;
+    margin-bottom: 13px;
+    color: #747474;
+}
+
+.form-group input{
+    display: block;
+    width: 100%;
+    padding: 9px;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #fff;
+}
+
+.form-group input:focus{
+    border: 1px solid #333AA7;
+}
+
+.form-group .error{
+    display: none;
+    margin-top: 10px;
+    font-weight: 900;
+    color: red;
+    font-size: 11px;
+}
+
+.wrapper form hr{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.wrapper form .oldPassword{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.pass{
+    position: relative;
+}
+
+.pass input{
+    padding-left: 50px;
+}
+
+.pass button.togglePassBtn{
+    background-color: #fff;
+    padding: 0;
+    width: 40px; height: 32px;
+    line-height: 35px;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    outline: none;
+    
+    position: absolute;
+    left: 5px; top: 36px;
+}
+
+.pass button.togglePassBtn svg{
+    fill:#b1b1b1;
+    width: 20px; height: 30px;
+}
+
+.pass button.togglePassBtn:hover svg{
+    fill: #2f2f2f;
+}
+
+.pass button.togglePassBtn:hover svg .aq,.pass button.togglePassBtn:hover svg .bq{
+    fill: #2f2f2f;
+}
+
+
+form #submitForm{
+    width: 140px;
+    background-color: #333AA7;
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    
+    
+    margin-top: 20px;
+}
+
+form #submitForm:hover,button.reportProb:hover{
+    opacity: .95;
+}
+
+form #submitForm:active,button.reportProb:active{
+    transform: scale(.99)
+}
+
+button.reportProb, button.disabled{
+    width: 100%;
+    padding: 10px 0;
+    background-color: #333AA7;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+button.disabled{
+    background-color: rgba(149, 149, 149, 0.76);
+    color: rgba(51, 51, 51, 0.53);
+    cursor: not-allowed;
+    margin-top: 10px;
+}
+
+
+#generalReport .modal-content{
+    overflow: hidden;
+    margin-top: 15vh;
+}
+
+#generalReport .modal-header{
+    background-color: #eee;
+    
+}
+
+#generalReport .modal-header h4{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#generalReport textarea{
+    width: 100%;
+    min-height: 200px;
+    resize: none;
+    padding: 10px;
+    border-color: #eaeaea;
+    outline: none;
+    border-radius: 3px;
+}
+
+#generalReport textarea:focus{
+    border-color: #333AA7;
+}
+
+#generalReport button{
+    padding: 3px 10px;
+    min-width: 70px;
+    color: #fff;
+    background-color: #333AA7;
+    border: none;
+    border-radius: 3px;
+    border: 1px solid #333AA7;
+}
+
+#generalReport button:last-of-type{
+    background-color: #f7f7f7;
+    color: #333;
+    border-color: #CFCFCF;
+}
+
+#generalReport button:hover{
+    opacity: .95;
+}
+
+#generalReport button:active{
+    transform: scale(.99);
+}
+
+@media screen and (max-width: 768px){
+    .wrapper form{
+        grid-row-gap: 5px;
+    }
+    
+    .wrapper .form-group{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    
+    button.reportProb, button.disabled{
+        width: calc(100% - 15px);
+        margin-right: 7.5px;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    
+    
+    
+}
+
