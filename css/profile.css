@@ -30,133 +30,10 @@ body{
     right: 8%;
 }
 
+
 /** Start Message **/
 
-.acc{
-    position: fixed;
-    width: 350px;
-    right: 50%; bottom: 0px;
-    transform: translate(50%);
-    z-index: 6;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);
-         box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);
-    
-    display: none;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    overflow: hidden;
-}
 
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    width: 100%;
-    border: none;
-    text-align: center;
-    font-size: 13px;
-    transition: 0.4s;
-    padding: 10px;
-    font-weight: 600;
-}
-
- button.accordion:hover {
-    background-color: #ddd;
-}
-
-.accordion i{
-    float: left;
-    display: none;
-    opacity: .8;
-}
-.accordion i:hover{
-    opacity: 1;
-}
-
-button.accordion:hover i{
-    display: block
-}
-
-.datex{
-    display: block;
-}
-
-select.form-control{
-    width: 33%;
-    float: left;
-    margin-left: .1%;
-    padding: 0 5px;
-}
-
-.datex > label{
-    padding-top: 6px;
-    width: 100%;
-}
-
-.friendInf h5, .radioFather > label{
-    margin: 0;
-}
-.friendInf{
-    margin: 0;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.radio-inline{
-    margin-right: 15px;
-    margin-left: 5px;
-}
-.radio-inline span{
-    margin-right: 15px;
-}
-
-.acc textarea{
-    resize: none;
-}
-
-div.panel{
-    width: 100%;
-    background-color: #fff;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    line-height: 1.5em;
-    margin-bottom: 0;
-    
-    border-radius: 0;
-}
-
-.panel form{
-    padding: 10px;
-    padding-bottom: 20px;
-}
-
-.panel{
-    border: 0;
-}
-
-form .send{
-    padding: 10px 30px;
-    background: #333AA7;
-    color: #fff;
-    font-size: 15px;
-    transition: .5s;
-    border: 1px solid rgb(38,64,91);
-    
-    margin-top: 10px;
-    width: 100%;
-}
-
-form .send:hover{
-    background-color: #fff;
-    border: 1px solid #333AA7;
-    color: #333AA7;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-/** End Message **/
 
 
 /******************** Modals Styles  *****************/
@@ -204,6 +81,23 @@ form .send:hover{
     color: #fff;
 }
 
+
+.profileReciver h3{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.profileReciver img{
+    width: 30px;height: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.profileReciver span{
+    font-weight: 600;
+}
 
 
 /***** End Modals Styles  *******/
@@ -285,13 +179,11 @@ button.accordion.active{
     overflow: hidden;
     width: 100%;
 }
-
 .coverContainer::after{
     content: "";
     display: block;
     clear: both;
 }
-
 .cover{
     height: 320px;width: 100%;
     object-fit: cover;
@@ -301,14 +193,13 @@ button.accordion.active{
     -webkit-clip-path: polygon(50% 100%, 100% 86%, 100% 0, 0 0, 0 86%);
     clip-path: polygon(50% 100%, 100% 86%, 100% 0, 0 0, 0 86%);
 }
-
 .cov-cam{
     position: absolute;
     top: 20px; right: 30px;
     font-size: 14px;
     font-weight: 600;
     padding: 7px;
-    color: #333AA7;
+    color: #333;
     background-color: rgba(255, 255, 255, 0.89);
     border: 2px solid #333AA7;
     display: block;
@@ -323,6 +214,7 @@ button.accordion.active{
 .cov-cam i{
     font-size: 20px;
     margin-left: 5px;
+    color: #333AA7;
 }
 
 .coverContainer .cover:hover ~ .cov-cam{

@@ -15,13 +15,17 @@
         <link rel="stylesheet" href="css/profile.css">
         
         <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
         <script src="js/bootstrap.min.js"></script>
         
         <script src="js/nav-script.js"></script>
         <script async src="js/modal.js"></script>
         <script src="js/popup-script.js"></script>
+<!--
         <script src="js/profileMsgPopup.js"></script>
-        <script src="js/discover-script.js"></script>
+-->
+        <script src="js/profile-script.js"></script>
         
     </head>
     <body dir="rtl">
@@ -386,7 +390,7 @@
             </div>
         
         </div>
-        
+<!--
         <div class="acc">
                 <button class="accordion">محمد عبدالنعيم <i class="fa fa-times msg-close-btn" aria-hidden="true"></i></button>
                 <div class="panel">
@@ -519,15 +523,15 @@
                 </div>
                 
         </div>
+-->
         <div class="modal fade createMsgModal" id="myModal">
-                      <div class="modal-dialog" role="document">
+        <div class="modal-dialog" role="document">
                         
                           <div class="modal-content">
                           
                               <form class="createMsgForm">
                             
-                                  <div class="msg-receiver">
-                                
+                                <div class="msg-receiver">
                                 
                                         <div class="chooseReciver">
                                             <h4>الرسالة :</h4>
@@ -563,12 +567,15 @@
                                         </div>
                                 </div>
                                   
+                                  <div class="profileReciver">
+                                      <h3>رسالة الى : <img><span id="reciverName"></span></h3>
+                                  </div>
+                                  
                             <div class="msgContainer">
                                 <textarea id="msgContent" placeholder="إكتب هنا..."></textarea>
                                 
                                 <div class="msgUploads">
                                     <button id="emojiBtn">
-                                        
                                         <svg viewBox="0 0 32.904 35.271">
                                             <defs><style>.a2{fill:url(#a);}.b2{fill:#fff;}</style><linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#2982aa"/><stop offset="1" stop-color="#3337aa"/></linearGradient></defs><path class="a2" d="M16.452,0C7.381,0,0,7.911,0,17.635S7.381,35.271,16.452,35.271,32.9,27.359,32.9,17.635,25.524,0,16.452,0Z"/><path class="b2" d="M128.556,298.706a.682.682,0,0,0-.825.545,8.116,8.116,0,0,1-16.01-.009.689.689,0,0,0-.825-.547.739.739,0,0,0-.51.884,9.468,9.468,0,0,0,18.678.012A.738.738,0,0,0,128.556,298.706Z" transform="translate(-103.274 -278.101)"/><ellipse class="b2" cx="1.371" cy="1.47" rx="1.371" ry="1.47" transform="translate(9.597 11.757)"/><ellipse class="b2" cx="1.371" cy="1.47" rx="1.371" ry="1.47" transform="translate(20.565 11.757)"/>
                                         </svg>
@@ -579,10 +586,10 @@
                                                 <li title="Cool" class="emoji">😎</li>
                                                 <li title="love" class="emoji">😍</li>
                                                 <li title="upper eye" class="emoji">🙄</li>
-                                                <li title="Smile" class="emoji">😃</li>
-                                                <li title="Cool" class="emoji">😎</li>
-                                                <li title="love" class="emoji">😍</li>
-                                                <li title="upper eye" class="emoji">🙄</li>
+                                                <li title="Smile" class="emoji">😂</li>
+                                                <li title="Cool" class="emoji">👍</li>
+                                                <li title="love" class="emoji">🔥</li>
+                                                <li title="upper eye" class="emoji">😊</li>
                                             </ul>
                                         </div>
                                         
@@ -758,7 +765,7 @@
                             
                         </div>
                       </div>
-                    </div>
+        </div>
 
         <div id="previewImgModal" class="modal">
                                             
@@ -915,25 +922,23 @@
                                  </button> 
                             </div>
 
-                            <h3>محمد عبدالنعيم</h3>
+                            <h3 id="profileOwnerName">عبد الرحمن حجازي</h3>
                             <div class="personActions">
                                    <button>
                                       متابعة
                                   </button>
-                                  <button class="send-btn">
+                                  <button class="send-btn" data-toggle="modal" data-target=".createMsgModal">
                                         رسالة
                                   </button>
-
                             </div>
                             <div class="follow">
                                 <span>99<i class="fa fa-user" aria-hidden="true"></i> </span>
                                 <span>50<i class="fa fa-envelope" aria-hidden="true"></i></span>
                             </div>
-
                             <button id="blockBtn" title="حظر">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.598 21.598">
                                     <defs><style>.ar,.cr{fill:none;}.ar{stroke:#fff;stroke-width:3px;}.br{stroke:none;}</style></defs><g class="ar" transform="translate(0)"><circle class="br" cx="10.799" cy="10.799" r="10.799"/><circle class="cr" cx="10.799" cy="10.799" r="9.299"/></g><line class="ar" x1="15.025" y2="15.025" transform="translate(3.521 3.521)"/>
-</svg>
+                                </svg>
                                 <span>حظر</span>
                             </button>
                         </div>
@@ -2972,6 +2977,6 @@
         
         
        
-        
+        <script src="js/discover-script.js"></script>
     </body>
 </html>

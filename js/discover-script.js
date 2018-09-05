@@ -12,15 +12,11 @@ $('.slideThree label').click(function(){
 function removeEmptyLines(text){
 
     while (text.indexOf('<br><br><br>') > -1){
-        
         text = text.replace('<br><br><br>', '<br><br>');
-        
     }
     
      while (text.indexOf('<br> ') > -1){
-        
         text = text.replace('<br> ', '');
-        
     }
 
     return text;
@@ -268,9 +264,9 @@ function previewFile() {
 }
 
 
-$('#emojiBtn').click(function(){
+$('#emojiBtn').click(function(e){
         
-    event.preventDefault();
+    e.preventDefault();
     
     $('.emojisContainer').fadeIn(300);
     $(this).addClass('active');
