@@ -349,7 +349,7 @@ $(".post").each(function(){
     
         var previewImgModal = $('#previewImgModal');
         var modalImg = $('#modalImg');
-        var spanClose = $('modalImg').find(".close");
+        var spanClose = $('#previewImgModal').find(".close");
 
         modalImg.addClass('animated');
 
