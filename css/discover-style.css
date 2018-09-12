@@ -21,6 +21,7 @@ a:active, a:visited{
 
 .alert-warning .close{
     float: left;
+    outline: none;
 }
 
 .alert-warning .warning-body{
