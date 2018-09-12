@@ -1,15 +1,13 @@
 .wrapper{
     float: none;
     margin: 0 auto;
-   
     padding: 0;
-    
 }
 
 .wrapper h2{
     font-size: 22px;
     text-align: center;
-    padding: 15px;
+    padding: 20px 0;
     font-weight: 600;
     background-color: #E2E2E2;
     color: #333;
@@ -28,10 +26,9 @@
 form .formGrid{
     display: grid;
     grid-template-columns: auto auto;
-    grid-column-gap: 40px;
+    grid-column-gap: 25px;
     grid-row-gap: 10px;
 }
-
 
 .form-group label{
     font-size: 12px;
@@ -62,9 +59,34 @@ form .formGrid{
     font-size: 11px;
 }
 
-.wrapper form hr{
-    grid-column-start: 1;
-    grid-column-end: 3;
+button.togglePassword{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #F5F5F5;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-weight: 600;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+button.togglePassword:hover{
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.23);
+}
+
+button.togglePassword:active{
+    transform: scale(.99);
+}
+
+form .collapse{
+    margin-top: 10px;
+}
+
+form .collapsing{
+    transition: .5s;
 }
 
 .wrapper form .oldPassword{
@@ -107,7 +129,6 @@ form .formGrid{
     fill: #2f2f2f;
 }
 
-
 form #submitForm{
     width: 140px;
     background-color: #333AA7;
@@ -116,9 +137,7 @@ form #submitForm{
     padding: 10px;
     border-radius: 3px;
     font-weight: 600;
-    
-    
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 form #submitForm:hover,button.reportProb:hover{

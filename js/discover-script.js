@@ -308,12 +308,12 @@ $('#recordAudioBtn').click(function(e){
 
 $(document).ready(function(){
 
+    
 $(".post").each(function(){
     
         var post = $(this);
         var postContent = $(this).find("#content");
         
-    
         if(postContent.text().length > 300){
         
             var partOne = postContent.text().substr(0, 300);
@@ -349,7 +349,7 @@ $(".post").each(function(){
     
         var previewImgModal = $('#previewImgModal');
         var modalImg = $('#modalImg');
-        var span = $(".close");
+        var spanClose = $('modalImg').find(".close");
 
         modalImg.addClass('animated');
 
@@ -362,7 +362,6 @@ $(".post").each(function(){
             })
 
             
-
             $(this).find(postImgs).click(function(){
                 
                 var modalImgSrc = $(this).attr('src');
@@ -405,7 +404,7 @@ $(".post").each(function(){
 
             })
             
-            $('.close').click(function(){
+            spanClose.click(function(){
                     modalImg.removeClass('slideInUp');
                     modalImg.addClass('bounceOutDown');
                     $(this).parent().parent().fadeOut(200);
@@ -492,7 +491,6 @@ $(".post").each(function(){
     var commentAreaRowsCounter = 1;
          
     post.find('.addComment').find('textarea').keyup(function(e){
-            
         if(e.keyCode == 13){           
             $(this).attr('rows',++commentAreaRowsCounter);
         }
@@ -505,7 +503,7 @@ $(".post").each(function(){
         var commentTxtArea = $(this).find('#addCommentTextarea');
         var commentSection = $(this).find('#commentsContainer');
         var commenterImgSrc = $(this).find('#commenterAvatar').attr('src');
-        var commenterName = $(this).find('#commenterAvatar').parent().find('h5');
+        var commenterName = 'محمد عبدالنعيم';
         var currentDate = new Date();
         var commentDate = currentDate.getDate() + '/' + parseInt(currentDate.getMonth()+1) + '/' + currentDate.getFullYear();
 
@@ -525,7 +523,7 @@ $(".post").each(function(){
             
             var commentBody = commentTxtArea.val().trim().replace(/\n/g, "<br>"); //replace(/\n/g, "<br>")
             
-            var postCommentTemp = '<div class="postComment animated slideInUp" style="display: none;"><div class="commenterDetails"><a href="#"><img src="' + commenterImgSrc + '"><h5>' + 'محمد عبدالنعيم' +'</h5></a><a href="#" class="commentDate"><h6>' + commentDate +'</h6></a></div><p>' + removeEmptyLines(commentBody) + '</p>' + commentsVotes  + '<div class="delete"><button id="deleteBtn" data-toggle="modal" data-target="#deleteCommentModal" onclick="deleteComment(this, false)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903"><g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g></svg><span>مسح</span></button></div></div></div>';
+            var postCommentTemp = '<div class="postComment animated slideInUp" style="display: none;"><div class="commenterDetails"><a href="#"><img src="' + commenterImgSrc + '"><h5>' + commenterName +'</h5></a><a href="#" class="commentDate"><h6>' + commentDate +'</h6></a></div><p>' + removeEmptyLines(commentBody) + '</p>' + commentsVotes  + '<div class="delete"><button id="deleteBtn" data-toggle="modal" data-target="#deleteCommentModal" onclick="deleteComment(this, false)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.617 12.903"><g transform="translate(0)"><g transform="translate(0)"><path d="M74.476,108.607a.649.649,0,0,0,.649.622h6.062a.649.649,0,0,0,.649-.622l.433-9.139H74.043Zm5.051-6.869a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264h-.422a.264.264,0,0,1-.264-.264v-5.221Zm-1.846,0a.264.264,0,0,1,.264-.264h.422a.264.264,0,0,1,.264.264v5.221a.264.264,0,0,1-.264.264H76.1a.264.264,0,0,1-.264-.264Z" transform="translate(-73.347 -96.326)"/><path d="M61.225.665h-2.8V.136A.136.136,0,0,0,58.293,0H55.356a.136.136,0,0,0-.136.136V.665h-2.8a.407.407,0,0,0-.407.408v1.28h9.617V1.072A.407.407,0,0,0,61.225.665Z" transform="translate(-52.016)"/></g></g></svg><span>مسح</span></button></div></div></div>';
             
             
             if( commentTxtArea.val() == 0 ) {             //!/^ *$/.test(this.newList)        
@@ -538,14 +536,45 @@ $(".post").each(function(){
                 commentTxtArea.attr('rows',commentAreaRowsCounter=1);
                 commentTxtArea.val("");
                 
-            }
-            
-           
+            }           
         })
     
     
     
-});
+    
+        
+        var anonymousCommentState = false;
+        var commenterImg = $(this).find('#commenterAvatar');
+        var orgAvatar = commenterImg.attr('src');
+        var orgName = commenterName;
+        
+        $(this).find('.anonymousComment').click(function(e){
+            e.preventDefault();
+            anonymousCommentState = !anonymousCommentState;
+            
+            console.log(anonymousCommentState);
+            
+            if(anonymousCommentState){
+                commenterImgSrc = 'img/anonymousAvatar2.png';
+                commenterName = 'مجهول';
+                commenterImg.attr('src','img/anonymousAvatar.png');
+                commenterImg.addClass('anonymous');
+                $(this).addClass('anonymousCommentActive');
+            }else{
+                commenterImgSrc = orgAvatar;
+                commenterName = orgName;
+                commenterImg.attr('src',orgAvatar);
+                commenterImg.removeClass('anonymous');
+                $(this).removeClass('anonymousCommentActive');
+            }
+        })
+        
+
+    
+    
+    });
+    
+
 
     
 $('.postComment').each(function(){
@@ -588,6 +617,9 @@ $('.viewMsgContainer .viewMsg').click(function(){
     }
     
 })
+    
+
+    
 })
 
 

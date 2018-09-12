@@ -6,7 +6,6 @@ $(document).ready(function(){
         var inputField = $(this).find('input');
         var showPassword = false;
         
-        
         $(togglePassBtn).click(function(e) {
             e.preventDefault();
             

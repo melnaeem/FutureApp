@@ -12,6 +12,55 @@ a:active, a:visited{
     text-decoration: none;
 }
 
+.alert-warning{
+    position: sticky;
+    top: 47px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.alert-warning .close{
+    float: left;
+}
+
+.alert-warning .warning-body{
+    display: block;
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 5px;
+}
+
+.alert-warning form{
+    float: right;
+}
+
+.alert-warning form input{
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    height: 25px;
+    line-height: 25px;
+    padding: 5px;
+    min-width: 220px;
+    outline: none;
+    font-size: 13px;
+}
+
+.alert-warning form button[type="submit"]{
+    background-color: #333AA7;
+    border: none;
+    color: #fff;
+    width: 60px;
+    height: 25px;
+    border-radius: 3px;
+    font-weight: 600;
+    
+}
+
+.alert-warning form button[type="submit"]:hover{
+    opacity: .8;
+}
+
 /********   Main Section    **********/
 
 .main{
@@ -59,7 +108,10 @@ a:active, a:visited{
 
 .posts-section{
     padding: 5px 10px;
+    margin: 0 auto;
+    float: none;
 }
+
 
 /***********************************/
 button.newMsg{
@@ -896,6 +948,12 @@ button.newMsg img{
     border: 2px solid #333AA7;
     float: right;
     margin-left: 10px;
+    object-fit: contain;
+}
+
+.addComment img.anonymous{
+    padding: 5px;
+    background-color: #fff;
 }
 
 .addComment form{
@@ -952,6 +1010,40 @@ button.newMsg img{
 #commentsContainer{
     margin-bottom: 10px;
     overflow: hidden;
+}
+
+.addComment button.anonymousComment{
+    position: absolute;
+    left: 85px; bottom: 5px;
+    padding: 3px;
+    background-color: #fff;
+    border: 1px solid #777777;
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    outline: none;
+}
+
+.addComment button.anonymousComment:hover{
+    background-color: #eee;
+}
+
+.addComment button.anonymousComment svg{
+    width: 20px;
+    height: 20px;
+    fill: #777777;
+    margin-top: 2px;
+}
+
+.addComment button.anonymousCommentActive{
+    background-color: #333AA7;
+    border-color: #333AA7;
+}
+
+.addComment button.anonymousCommentActive svg{
+    fill: #fff;
+}
+.addComment button.anonymousCommentActive:hover{
+    background-color: #5157af;
 }
 
 /*************************************/
@@ -1268,16 +1360,10 @@ button.newMsg img{
 /*************************************/
 
 @media screen and (min-width: 991px){
-    .sidebar{
-        position: sticky;
-        top: 75px;
-    }
     main .container{
         width: 870px;
     }
-    .posts-section{
-        margin-left: 8%;
-    }
+    
 }
 
 

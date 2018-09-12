@@ -203,7 +203,7 @@
                        <div class="dropdown-container dropdown-menu">
                             <ul>
                                 <li class="unread">
-                                    <a href="#">
+                                    <a href="profile.html#P4">
                                         <div class="message-notification">
                                             <img src="img/hipster_avatar2.png">
                                             <span>قام <b>أحمد مصطفى</b> بالتعليق على رسالتك</span>
@@ -375,11 +375,20 @@
         <main class="main">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 posts-section">
-                    <button class="newMsg" data-toggle="modal" data-target=".createMsgModal">
-                        <img src="img/hipster.png">
-                        <span>رسالة جديدة ...</span>
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
                     </button>
+                    <span class="warning-body">
+                        <strong>تنبيه!</strong> برجاء اضافة البريد الإلكتروني
+                    </span>
+                    <form>
+                        <input type="text" placeholder="مثال: melnaeem00@gmail.com">
+                        <button type="submit">إضافة</button>
+                    </form>
+                </div>
+                <div class="col-md-9 posts-section">
+                   
                     
                     <div class="modal fade createMsgModal" id="myModal">
                       <div class="modal-dialog" role="document">
@@ -403,8 +412,9 @@
                                         <div class="reciverInfo">
                                             <div class="inputContainer">
                                                 <select>
-                                                  <option value="Email">الإيميل</option>
+                                                  <option value="Whatsapp">الواتساب</option>
                                                   <option value="Mobile">الموبيل</option>
+                                                    <option value="Email">الإيميل</option>
                                                 </select>
                                                 <input type="text" placeholder="إكتب هنا ..">
                                             </div>
@@ -738,6 +748,11 @@
                        </div><!-- /.modal-dialog -->
                      </div><!-- /.modal -->
                     
+                    <button class="newMsg" data-toggle="modal" data-target=".createMsgModal">
+                        <img src="img/hipster.png">
+                        <span>رسالة جديدة ...</span>
+                    </button>
+                    
                     <div class="post">
                         
                         <div class="dates">
@@ -1060,7 +1075,9 @@
                                     <form>
                                         <textarea id="addCommentTextarea" rows="1" placeholder="أضف تعليق..."></textarea>
                                         <button type="submit" id="submitCommentBtn">نشر</button>
-                                        <button>X</button>
+                                        <button title="إخفاء الهوية" class="anonymousComment">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.371 23.071"><g transform="translate(0)"><path  d="M35.6,11.573H31.7V7.616A7.654,7.654,0,0,0,25.668.167a7.563,7.563,0,0,0-3.175,0,7.654,7.654,0,0,0-6.029,7.449v3.956h-3.9a.666.666,0,0,0,0,1.332H35.6a.666.666,0,0,0,0-1.332ZM25.39,1.47a6.316,6.316,0,0,1,4.975,6.147V9.449H17.8V7.617A6.316,6.316,0,0,1,22.771,1.47,6.248,6.248,0,0,1,25.39,1.47Z" transform="translate(-11.895 0.001)"/><path  d="M42.017,88.238h1.165a2.794,2.794,0,0,0,2.781-2.395l.26-1.734H47l.26,1.734a2.794,2.794,0,0,0,2.781,2.395h1.165a2.8,2.8,0,0,0,2.8-2.532l.293-2.929H38.927l.293,2.929A2.8,2.8,0,0,0,42.017,88.238Z" transform="translate(-34.428 -69)"/><path d="M-8502.66,1766.273h3.771" transform="translate(8512.817 -1743.702)"/></g></svg>
+                                        </button>
                                     </form>
                                     
                                 </div>
@@ -1398,6 +1415,9 @@
                                     <form>
                                         <textarea id="addCommentTextarea" rows="1" placeholder="أضف تعليق..."></textarea>
                                         <button type="submit" id="submitCommentBtn">نشر</button>
+                                        <button title="إخفاء الهوية" class="anonymousComment">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.371 23.071"><g transform="translate(0)"><path  d="M35.6,11.573H31.7V7.616A7.654,7.654,0,0,0,25.668.167a7.563,7.563,0,0,0-3.175,0,7.654,7.654,0,0,0-6.029,7.449v3.956h-3.9a.666.666,0,0,0,0,1.332H35.6a.666.666,0,0,0,0-1.332ZM25.39,1.47a6.316,6.316,0,0,1,4.975,6.147V9.449H17.8V7.617A6.316,6.316,0,0,1,22.771,1.47,6.248,6.248,0,0,1,25.39,1.47Z" transform="translate(-11.895 0.001)"/><path  d="M42.017,88.238h1.165a2.794,2.794,0,0,0,2.781-2.395l.26-1.734H47l.26,1.734a2.794,2.794,0,0,0,2.781,2.395h1.165a2.8,2.8,0,0,0,2.8-2.532l.293-2.929H38.927l.293,2.929A2.8,2.8,0,0,0,42.017,88.238Z" transform="translate(-34.428 -69)"/><path d="M-8502.66,1766.273h3.771" transform="translate(8512.817 -1743.702)"/></g></svg>
+                                        </button>
                                     </form>
                                     
                                 </div>
@@ -1733,6 +1753,9 @@
                                     <form>
                                         <textarea id="addCommentTextarea" rows="1" placeholder="أضف تعليق..."></textarea>
                                         <button type="submit" id="submitCommentBtn">نشر</button>
+                                        <button title="إخفاء الهوية" class="anonymousComment">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.371 23.071"><g transform="translate(0)"><path  d="M35.6,11.573H31.7V7.616A7.654,7.654,0,0,0,25.668.167a7.563,7.563,0,0,0-3.175,0,7.654,7.654,0,0,0-6.029,7.449v3.956h-3.9a.666.666,0,0,0,0,1.332H35.6a.666.666,0,0,0,0-1.332ZM25.39,1.47a6.316,6.316,0,0,1,4.975,6.147V9.449H17.8V7.617A6.316,6.316,0,0,1,22.771,1.47,6.248,6.248,0,0,1,25.39,1.47Z" transform="translate(-11.895 0.001)"/><path  d="M42.017,88.238h1.165a2.794,2.794,0,0,0,2.781-2.395l.26-1.734H47l.26,1.734a2.794,2.794,0,0,0,2.781,2.395h1.165a2.8,2.8,0,0,0,2.8-2.532l.293-2.929H38.927l.293,2.929A2.8,2.8,0,0,0,42.017,88.238Z" transform="translate(-34.428 -69)"/><path d="M-8502.66,1766.273h3.771" transform="translate(8512.817 -1743.702)"/></g></svg>
+                                        </button>
                                     </form>
                                     
                                 </div>
