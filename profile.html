@@ -658,7 +658,6 @@
                                          
                                       <div id="multiImgPreview">
                 
-                                          
                                       </div>
                                       
                                       <div class="uploadImgContainer newImgBtn">
@@ -881,7 +880,7 @@
                          </div><!-- /.modal-content -->
                        </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-        
+       <!-- 
         <div class="modal fade" id="updateImgModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -896,33 +895,60 @@
             </div>
           </div>
         </div>
-        
+        -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="changeImgModal"  data-backdrop="static" data-keyboard="false">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <h4 class="modal-title">إختيار الصورة</h4>
+                           </div>
+                           <div class="modal-body">
+                             هل تريد تأكيد إختيار الصورة؟
+                                <img>
+                            </div>
+                           <div class="modal-footer">
+                             <button type="button" id="approve" data-dismiss="modal">تأكيد</button>
+                             <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
+                           </div>
+                         </div><!-- /.modal-content -->
+                       </div><!-- /.modal-dialog -->
+                     </div>
             <div class="row"> 
                 <div class="container">
                     <div class="col-md-8 main">
                         <div class="info">
                             <div class="coverContainer">
                                 <img class="cover" src="img/cover.jpg">
-                                <span class="cov-cam" data-toggle="modal" data-target="#updateImgModal"><i class="fa fa-camera" aria-hidden="true"></i> تغيير صورة الغلاف</span>
+                                <form>
+                                    <label class="cov-cam" for="updateCoverInput">
+                                        <i class="fa fa-camera" aria-hidden="true"></i> 
+                                        تغيير صورة الغلاف
+                                    </label>
+                                    <input type="file" id="updateCoverInput" name="coverInput" accept="image/*">
+                                </form>
                             </div>
                             <div class="ppContainer">
                                 <img class="profile" src="img/hipster.png">
-                                 <button id="editPP" title="تعديل الصورة الشخصية" data-toggle="modal" data-target="#updateImgModal">
-                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                         viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-                                    <g><g>
-                                            <path d="M50,40c-8.285,0-15,6.718-15,15c0,8.285,6.715,15,15,15c8.283,0,15-6.715,15-15
-                                                C65,46.718,58.283,40,50,40z M90,25H78c-1.65,0-3.428-1.28-3.949-2.846l-3.102-9.309C70.426,11.28,68.65,10,67,10H33
-                                                c-1.65,0-3.428,1.28-3.949,2.846l-3.102,9.309C25.426,23.72,23.65,25,22,25H10C4.5,25,0,29.5,0,35v45c0,5.5,4.5,10,10,10h80
-                                                c5.5,0,10-4.5,10-10V35C100,29.5,95.5,25,90,25z M50,80c-13.807,0-25-11.193-25-25c0-13.806,11.193-25,25-25
-                                                c13.805,0,25,11.194,25,25C75,68.807,63.805,80,50,80z M86.5,41.993c-1.932,0-3.5-1.566-3.5-3.5c0-1.932,1.568-3.5,3.5-3.5
-                                                c1.934,0,3.5,1.568,3.5,3.5C90,40.427,88.433,41.993,86.5,41.993z"/>
-                                        </g></g>
-                                    </svg>
+                                <button id="editPP" title="تعديل الصورة الشخصية">
+                                    <form>
+                                        <input type="file" id="inputProfilePic" name="profilePicInput" accept="image/*">
+                                        <label for="inputProfilePic">
+                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">   
+                                        <g><g>
+                                                <path d="M50,40c-8.285,0-15,6.718-15,15c0,8.285,6.715,15,15,15c8.283,0,15-6.715,15-15
+                                                    C65,46.718,58.283,40,50,40z M90,25H78c-1.65,0-3.428-1.28-3.949-2.846l-3.102-9.309C70.426,11.28,68.65,10,67,10H33
+                                                    c-1.65,0-3.428,1.28-3.949,2.846l-3.102,9.309C25.426,23.72,23.65,25,22,25H10C4.5,25,0,29.5,0,35v45c0,5.5,4.5,10,10,10h80
+                                                    c5.5,0,10-4.5,10-10V35C100,29.5,95.5,25,90,25z M50,80c-13.807,0-25-11.193-25-25c0-13.806,11.193-25,25-25
+                                                    c13.805,0,25,11.194,25,25C75,68.807,63.805,80,50,80z M86.5,41.993c-1.932,0-3.5-1.566-3.5-3.5c0-1.932,1.568-3.5,3.5-3.5
+                                                    c1.934,0,3.5,1.568,3.5,3.5C90,40.427,88.433,41.993,86.5,41.993z"/>
+                                            </g></g>
+                                        </svg>
+                                        </label>
+                                    </form>
                                  </button> 
                             </div>
 
-                            <h3 id="profileOwnerName">عبد الرحمن حجازي</h3>
+                            <h3 id="profileOwnerName">محمد عبدالنعيم</h3>
                             <div class="personActions">
                                    <button>
                                       متابعة
