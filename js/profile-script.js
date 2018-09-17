@@ -31,53 +31,31 @@ $(document).ready(function(){
     var imageModal = $('#changeImgModal');
     
     inputImg.change(function(){
-        //console.log('change Happen');
         
         var input = this;
+        var reader = new FileReader();
         
         imageModal.modal('show');
         
-        var reader = new FileReader();
+        
         if (input.files && input.files[0]){
             reader.onload = function(e){
                 imageModal.find('img').attr('src', e.target.result);
-                console.log($(input).is("#inputProfilePic"));
-                /*
-                if($(input).is("#inputProfilePic")){
-                    imageModal.find('img').attr('title','pp'); 
-                }
-                */
+                
+                if($(input).is("#inputProfilePic"))
+                    imageModal.find('img').attr('title','pp');    
+                else
+                    imageModal.find('img').attr('title','cover');
             }
             reader.readAsDataURL(input.files[0])
-
         }
         
     });
-    $(imageModal).find('#approve').click(function(){    
-        console.log('approved');
+    $(imageModal).find('#approve').click(function(){
+        if(imageModal.find('img').attr('title') == 'pp')
+            $('.profile').attr('src', imageModal.find('img').attr('src'));
+        else
+            $('.cover').attr('src', imageModal.find('img').attr('src')); 
     })
-    /*
-    $('#changeImgModal #approve').click(function(e){
-            
-            console.log('function fired');
-            //console.log(input);
-            flag = true;
-            if (input.files && input.files[0] && flag){
-                
-                reader.onload = function(e){
-                    console.log(imageModal.find('img'));
-                    if($(input).attr('name') == 'coverInput'){
-                        $('.cover').attr('src', e.target.result); 
-                    }else if($(input).attr('name') == 'profilePicInput'){
-                        $('.profile').attr('src', e.target.result);
-                    }
-            }
-                reader.readAsDataURL(input.files[0])
-            }
-        })
-      */  
-    
-    console.log(inputImg);
-    
     
 })

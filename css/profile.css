@@ -38,10 +38,26 @@ body{
 
 /******************** Modals Styles  *****************/
 
+#changeImgModal .modal-content{
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: none;
+}
+#changeImgModal .modal-body span{
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+#changeImgModal .modal-body{
+    padding-bottom: 10px;
+}
 #changeImgModal img{
     width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    margin-top: 10px;
 }
-
 
 #updateImgModal .modal-content{
     background-color: #fff;
@@ -209,7 +225,8 @@ button.accordion.active{
     display: block;
     opacity: 0;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 50%;
+    line-height: 16px;
 }
 .coverContainer:hover .cov-cam:hover{
     opacity: 1;
@@ -217,7 +234,6 @@ button.accordion.active{
 
 .cov-cam i{
     font-size: 20px;
-    margin-left: 5px;
     color: #333AA7;
 }
 
@@ -479,10 +495,7 @@ button#ViewAllMsgs:active{
     transform: scale(.993);
 }
 
-
 /*** End Posts Section ***/
-
-
 
 @media screen and (max-width: 991px){
     body{
@@ -514,5 +527,7 @@ button#ViewAllMsgs:active{
         border: 0;
         border-bottom: 1px solid #eee;
     }
-    
+    .info{
+        border-radius: 0;   
+    }
 }

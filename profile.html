@@ -15,8 +15,6 @@
         <link rel="stylesheet" href="css/profile.css">
         
         <script src="js/jquery-3.1.1.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
         <script src="js/bootstrap.min.js"></script>
         
         <script src="js/nav-script.js"></script>
@@ -879,8 +877,9 @@
                            </div>
                          </div><!-- /.modal-content -->
                        </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-       <!-- 
+            </div>
+        <!-- /.modal -->
+        <!-- 
         <div class="modal fade" id="updateImgModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -903,7 +902,7 @@
                              <h4 class="modal-title">إختيار الصورة</h4>
                            </div>
                            <div class="modal-body">
-                             هل تريد تأكيد إختيار الصورة؟
+                            <span>هل تريد تأكيد إختيار هذه الصورة؟</span>
                                 <img>
                             </div>
                            <div class="modal-footer">
@@ -913,16 +912,16 @@
                          </div><!-- /.modal-content -->
                        </div><!-- /.modal-dialog -->
                      </div>
-            <div class="row"> 
+        
+        <div class="row"> 
                 <div class="container">
                     <div class="col-md-8 main">
                         <div class="info">
                             <div class="coverContainer">
                                 <img class="cover" src="img/cover.jpg">
                                 <form>
-                                    <label class="cov-cam" for="updateCoverInput">
+                                    <label class="cov-cam" for="updateCoverInput" title="تغيير صورة الغلاف">
                                         <i class="fa fa-camera" aria-hidden="true"></i> 
-                                        تغيير صورة الغلاف
                                     </label>
                                     <input type="file" id="updateCoverInput" name="coverInput" accept="image/*">
                                 </form>
@@ -3000,9 +2999,7 @@
                 </div>
             </div>
         </div>
-        
-        
-       
+               
         <script src="js/discover-script.js"></script>
     </body>
 </html>
