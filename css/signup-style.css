@@ -7,7 +7,6 @@
     width: 7px;
 }
 
-
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(185, 12, 12, 0);
     background-color:transparent;
@@ -25,11 +24,9 @@ html {
   box-sizing: inherit;
 }
 
-
 body{
-    font-family: "viprawy";
+    font-family: 'Cairo', sans-serif;
     background-color: #E9EBEE;
-    
 }
 
 .row{
@@ -41,7 +38,6 @@ a:active, a:visited{
     text-decoration: none;
 }
 
-
 .mainContainer{
     margin-top: 50px;
     margin-bottom: 40px;
@@ -52,7 +48,6 @@ a:active, a:visited{
     padding: 0;
     overflow: hidden;
     display: flex;
-    
 }
 
 .birds{
@@ -175,25 +170,19 @@ a:active, a:visited{
 
 form{
     overflow: hidden;
-    
 }
 
 form.signUp{
     display: grid;
-    grid-template-columns: 50fr 50fr;
+    grid-template-columns: auto auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 25px;
 }
 
 .nameContainer , .mailContainer, .mobileContainer, .passContainer{
     float: right;
     padding-left: 10px;
 }
-
-
-form .nameContainer:nth-of-type(2), .mobileContainer, .passContainer:last-of-type{
-    float: left;
-    padding-right: 10px;
-}
-
 
 input{
     display: block;
@@ -209,7 +198,7 @@ input{
 }
 
 input:focus{
-    border-color: #2982aa;
+    border-color: #333aa7;
 }
 
 .nameContainer input{
@@ -231,7 +220,6 @@ input[type="password"]{
     background: url(../img/icons/pass.png) no-repeat scroll 10px 10px #fff;
 }
 
-
 .keyContainer{
     position: relative;
 }
@@ -242,7 +230,9 @@ input[type="password"]{
     padding-left: 60px;
     font-family: sans-serif;
 }
-
+label{
+    font-size: 12px;
+}
 .mobileContainer select{
     float: left;
     position: absolute;
@@ -261,18 +251,14 @@ input[type="password"]{
     cursor: pointer;
 }
 
-form > div{
-    margin-bottom: 0px;
-    margin-top: 20px;
-}
-
 .error{
     color: red;
     display: block;
     margin-top: -5px;
     float: right;
     width: 100%;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 600;
     margin-top: 10px;
     display: none;
 }
@@ -284,12 +270,12 @@ form > div{
 }
 
 form button[type="submit"]{
-    font-size: 16px;
+    font-size: 14px;
     padding: 5px 30px;
     border-radius: 30px;
     border: none;
     width: 100px;
-    
+    font-weight: 600;
     background: #2982aa; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #2982aa 0%, #3337aa 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(-45deg, #2982aa 0%,#3337aa 100%); /* Chrome10-25,Safari5.1-6 */
@@ -297,8 +283,9 @@ form button[type="submit"]{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2982aa', endColorstr='#3337aa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     
     color: #fff;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 23px;
 }
 
 form button[type="submit"]:hover{
@@ -306,18 +293,23 @@ form button[type="submit"]:hover{
 }
 
 .socialSign{
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
     overflow: hidden;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
 }
 
-.socialSign h5{
-    margin-bottom: 15px;
+h5{
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 12px;
+    margin-bottom: 17px;
 }
 
 .socialSign a{
     display: block;
-    width: 33.33%;
+    width: 50%;
     float: left;
     color: #fff;
     background-color: #4267B2;
@@ -326,6 +318,7 @@ form button[type="submit"]:hover{
     background-repeat: no-repeat;
     background-position: 10px;
     background-size: 18px;
+    font-weight: 600;
 }
 
 .socialSign a:first-of-type{
@@ -367,11 +360,9 @@ footer a{
     text-decoration: underline;
     
 }
-
 footer a:hover{
     color: #333;
 }
-
 
 /********** Sign In Style   ****/
 
@@ -379,6 +370,7 @@ footer a:hover{
     float: right;
     display: block;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .remember input{
@@ -402,15 +394,13 @@ footer a:hover{
 @media screen and (max-width: 991px){
     .formContainer{
         width: 90%;
-    }
-    
-    
+    }    
 }
 
 @media screen and (max-width: 767px){
     .formContainer{
         width: 100%;
-        
+        height: 100vh;
     }
     .loginContainer{
         display: none;
@@ -449,14 +439,16 @@ footer a:hover{
         padding-left: 0;
     }
     
-    .error{
+    .error, .remember .pass a,{
         color: #fff;
         padding-right: 20px;
         position: relative;
     }
     
-   
-    
+    .remember{
+        color: #fff;
+    }
+
     form button[type="submit"]{
         background: #fff;
         color: #3337aa;

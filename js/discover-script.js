@@ -184,7 +184,6 @@ function previewMultiFiles() {
                 var removeBtn = document.createElement('span');
                 var image = new Image();
 
-
                 container.classList = "uploadImgContainer";
                 overlay.classList = "uploadImgOverlay";
                 image.title = file.name;

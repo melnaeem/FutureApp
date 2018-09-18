@@ -208,10 +208,14 @@ button.accordion.active{
     height: 320px;width: 100%;
     object-fit: cover;
     cursor: pointer;
-    transition: 1s;
+    
     padding: 0;
     -webkit-clip-path: polygon(50% 100%, 100% 86%, 100% 0, 0 0, 0 86%);
     clip-path: polygon(50% 100%, 100% 86%, 100% 0, 0 0, 0 86%);
+    
+    filter: drop-shadow(1px 1px 1px #333);
+    
+
 }
 .cov-cam{
     position: absolute;

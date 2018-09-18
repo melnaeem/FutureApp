@@ -43,7 +43,7 @@ $(document).ready(function(){
                 imageModal.find('img').attr('src', e.target.result);
                 
                 if($(input).is("#inputProfilePic"))
-                    imageModal.find('img').attr('title','pp');    
+                    imageModal.find('img').attr('title','pp');   
                 else
                     imageModal.find('img').attr('title','cover');
             }
@@ -52,10 +52,12 @@ $(document).ready(function(){
         
     });
     $(imageModal).find('#approve').click(function(){
-        if(imageModal.find('img').attr('title') == 'pp')
+        if(imageModal.find('img').attr('title') == 'pp'){
             $('.profile').attr('src', imageModal.find('img').attr('src'));
-        else
+        }else{
             $('.cover').attr('src', imageModal.find('img').attr('src')); 
+        }
     })
+    
     
 })
