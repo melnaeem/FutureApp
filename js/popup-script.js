@@ -1,35 +1,32 @@
 $(document).ready(function(){
    var flag = true;
     
+    var circlePosBottom = $(window).outerHeight() - $('.circle').position().top - $('.circle').outerHeight();
+    
+     var markPosBottom = $(window).outerHeight() - $('.mark').position().top - $('.mark').outerHeight();
+    
+    
     $(".mainx").click(function(){
         if(flag){
-          // $('.mainx').html('<span>X</span>');
             $('.mainx').addClass('zO');
-        
-        
-        $(".circle").animate({
-            bottom: '140px',
 
+            $(".circle").animate({
+                bottom: circlePosBottom + 70 +'px',
             },500,"linear");
 
-         $(".mark").animate({
-            bottom: '215px',
-             
-   
-
+             $(".mark").animate({
+                bottom: circlePosBottom + 135 +'px',
             },500,"linear");     
 
             flag = false;
 
             $(".circle").removeClass("rotate");
-    }
-    else{
+    }else{
         
         $(".circle").removeClass("rotate");
                 
         $(".circle").animate({
-            bottom: '65px',
-            
+            bottom: circlePosBottom + 'px',
         },500);
    
         flag = true;
@@ -43,7 +40,7 @@ $(document).ready(function(){
         
     }
     
-    });
+});
     
         
     function fadeToggle(){
