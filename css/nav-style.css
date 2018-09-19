@@ -370,7 +370,7 @@ input::-webkit-input-placeholder {
     background-position: 40px 7px;
     
 }
-
+/**********************************/
 
 .pagination{
     position: fixed;
@@ -385,24 +385,29 @@ input::-webkit-input-placeholder {
 
 .pagination-container{
     overflow: hidden;
-    width: 40%;
+    width: 70%;
     margin: 0 auto;
     
+}
+
+.pagination .group{
+    overflow: hidden;
+    float: right;
+}
+
+.pagination .group:last-of-type{
+    float: left;
 }
 
 .pagination a{
     display: block;
     float: right;
-    margin: 0 auto;
-    padding: 10px;
-    width: 20%;
-    margin-right: 13.3%;
+    padding: 10px 25px;
 }
 
 .pagination a > div{
     width: 30px; height: 30px;
     padding: 0;
-    margin: 0 auto;
 }
 
 .pagination .svgIcon svg{
@@ -413,6 +418,13 @@ input::-webkit-input-placeholder {
     position: relative;
     width: 30px; height: 30px;
     
+}
+.pagination a img{
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #8D8D8D;
 }
 
 .pagination .message svg{
@@ -425,11 +437,19 @@ input::-webkit-input-placeholder {
 
 .pagination .discover{
     padding: 0;
+    margin: 0;
 }
 .pagination a:hover .svgIcon svg, .pagination a.active .svgIcon svg{
     fill: #3337AA;
 }
 
+.pagination a.active:hover .svgIcon svg{
+    fill: #575aad;
+}
+
+.pagination a.active img, .pagination a:hover img{
+    border-color: #333AA7;
+}
 
 /**********************************
 
@@ -875,7 +895,6 @@ input::-webkit-input-placeholder {
 .userSetting.open button svg{
     fill: #ffffff;
 }
-
 .dropdown-menu{
     margin-top: 12.5px;
     margin-left: -10px;
@@ -890,13 +909,11 @@ input::-webkit-input-placeholder {
     min-width: 120px;
     z-index: -1;
 }
-
 .userSetting .dropdown-menu li{
     padding: 0;
     margin: 0;
     margin-top: 5px;
 }
-
 .userSetting .dropdown-menu li a{
     font-size: 12px;
     text-align: right;
@@ -907,10 +924,6 @@ input::-webkit-input-placeholder {
    /* border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;*/
 }
-
-
-
-
 
 /***************************/
 
@@ -925,26 +938,33 @@ input::-webkit-input-placeholder {
     body{
         padding-bottom: 70px;
     }
+    .pagination-container{
+        padding: 0;
+        width: 70%;
+    }
+    .pagination a{
+        padding: 10px 33px;
+    }
 }
 
 @media screen and (max-width: 768px){
     .pagination-container{
-        width: 100%;
-        padding: 0 30px;
+        width: 85%;
+        padding: 0 10px;
     }
-    .pagination a{
-        width: 20%;
-        margin-right: 12%;
+    .pagination a {
+        padding: 10px 30px;
     }
 }
 
 @media screen and (max-width: 500px){
-    
-    .pagination a{
-        width: 33%;
-        margin-right: 0;
+    .pagination-container{
+        width: 100%;
+        padding: 0 10px;
     }
-    
+    .pagination a{
+        margin-right: 0;
+        padding: 10px 15px;
+        text-align: center;
+    }
 }
-
-

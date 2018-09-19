@@ -1,0 +1,166 @@
+button.newMsg{
+    text-align: left;
+    border-bottom-left-radius: 5px;
+}
+button.newMsg img{
+    margin-left: 0;
+    margin-right: 10px;
+}
+button.newMsg:after{
+    -webkit-transform: rotateY(180deg); /* Safari */
+    transform: rotateY(180deg);
+    left: calc(100% - 31px);
+}
+.userDetails img, .userDetails{
+    margin-left: 0;
+    float: left;
+}
+.post .dates{
+    float: right;
+    border-right: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    overflow: hidden;
+}
+
+.reactionsCounter > div, .addReacts > div{
+    float: left;
+    border-left: 0;
+    border-right: 1px solid #e5e5e5;
+}
+.userDetails{
+    margin-left: 20px;
+}
+.post .dates h4 img{
+    float: left;
+    margin-right: 10px;
+}
+.ctgTitle svg, .addReacts > div, .postComment .commenterDetails img, .postComment .commenterDetails h5, .commentActions .votes, .alert-warning .warning-body, .alert-warning form{
+    float: left;
+}
+
+.personActions button.send-btn{
+    margin-right: 0;
+    margin-left: 5px;
+}
+.personActions button.send-btn{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 0;
+}
+.personActions button.send-btn:after{
+    -webkit-transform: rotateY(180deg); /* Safari */
+    transform: rotateY(180deg);
+    left: calc(100% - 15px);   
+}
+.follow span i{
+    margin-right: 0;
+    margin-left: 5px;
+}
+.reactionsCounter .emotions .emoContainer svg:nth-of-type(2), .reactionsCounter .emotions .emoContainer svg:nth-of-type(3){
+    margin-right: 0;
+    margin-left: -10px;
+}
+.reactionsCounter .emotions{
+    padding-left: 0;
+    padding-right: 10px;
+}
+.post .addReacts .postMenu{
+    float: right;
+    border-right: 0;
+}
+.addReacts > div:nth-of-type(3){
+    border: none;
+}
+.postComment .commenterDetails h5{
+    margin-right: 0;
+    margin-left: 10px;
+}
+.postComment .commenterDetails .commentDate, .delete, .postMenu .dropdown-menu button svg{
+    float: right;
+}
+.postComment p{
+    padding-right: 0;
+    padding-left: 58px;
+}
+.postMenu .dropdown-menu{
+    left: calc(100% - 115px);
+}
+.addComment img{
+    margin-left: 0;
+    float: left;
+}
+.addComment form button[type="submit"]{
+    left: calc(100% - 80px);
+}
+.addComment form textarea{
+    padding-left: 20px;
+    padding-right: 90px;
+}
+
+.alert-warning .close{
+    float: right;
+}
+.reactionsCounter .counter{
+    float: left;
+    margin-right: 5px;
+    margin-left: 0;
+}
+#editMsgModal .modal-body img{
+    float: left;
+}
+.modal-footer{
+    text-align: left;
+}
+.addComment button.anonymousComment{
+    left: calc(100% - 115px);
+}
+.commentActions .votes button{
+    margin-left: 0;
+    margin-right: 5px;
+}
+.emotions{
+ margin-left: 10px;   
+}
+.burger{
+    float: left;
+    right: calc(100% - 50px);
+}
+#demo-2{
+    direction: rtl;
+}
+.searchIcon{
+    text-align: right;
+}
+.mob-nav{
+    right: calc(100% - 310px);
+    transform: translateX(-250%);
+}
+.mob-nav.show{
+    transform: translateX(0);
+}
+@media screen and (max-width: 768px){
+    .reactionsCounter > div {
+        width: auto;
+    }
+    .userDetails img{
+        float: none;
+    }
+    .postMenu .dropdown-menu{
+        left: calc(100% - 30px);
+    }
+    .post .dates{
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 478px){
+    .reactionsCounter > div{
+        width: 33.33%;
+    }
+    .reactionsCounter .counter{
+        display: block;
+        width: 100%;
+    }
+}
