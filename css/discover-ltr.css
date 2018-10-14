@@ -140,6 +140,13 @@ button.newMsg:after{
 .mob-nav.show{
     transform: translateX(0);
 }
+
+.desktop-menu .userSetting .dropdown-menu{
+    left: -80px; 
+    margin-top: 13px;
+}
+
+
 @media screen and (max-width: 768px){
     .reactionsCounter > div {
         width: auto;

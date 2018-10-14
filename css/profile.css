@@ -182,7 +182,7 @@ button.accordion.active{
     padding: 0px;
     float: none;
     margin: 0 auto;
-    margin-top: 19px;
+    margin-top: 10px;
     padding-bottom: 80px;
 }
 
@@ -198,6 +198,7 @@ button.accordion.active{
     border-radius: 5px;
     overflow: hidden;
     width: 100%;
+    position: relative;
 }
 .coverContainer::after{
     content: "";
@@ -310,11 +311,20 @@ button.accordion.active{
 
 .follow{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 .follow span{
-    padding: 10px;
-    font-size: 20px;
+    padding: 0px 7px;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.follow span:first-of-type{
+    margin-left: 40px;
+}
+.follow span:hover{
+    background-color: #eee;
 }
 .follow i{
     color: #333AA7;
@@ -322,7 +332,7 @@ button.accordion.active{
 
 .follow span i{
     margin-right: 5px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #blockBtn{
@@ -332,15 +342,18 @@ button.accordion.active{
     display: block;
     float: left;
     padding: 5px 8px;
-    margin-left: 15px;
     border-radius: 3px;
+    
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute;
+    left: 0; bottom: 35%;
 }
 
 #blockBtn svg{
     display: block;
     float: right;
-    width: 15px; height: 20px;
-    margin-left: 5px;
+    width: 13px; height: 20px;
 }
 
 #blockBtn span{
@@ -348,6 +361,7 @@ button.accordion.active{
     float: right;
     color: #fff;
     font-weight: 600;
+    font-size: 12px;
 }
 #blockBtn:hover{
     opacity: .8;
@@ -461,10 +475,9 @@ button#editPP form input[type="file"] + label {
     width: 100%;
     padding: 5px 10px;
     background-color: #eee;
-    
     position: sticky;
     top: 48px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .ctgTitle svg{
@@ -484,6 +497,7 @@ button#editPP form input[type="file"] + label {
 button#ViewAllMsgs{
     width: calc(100% - 20px);
     margin-right: 10px;
+    margin-left: 10px;
     background-color: #333AA7;
     border: none;
     padding: 7px 0;
@@ -499,6 +513,38 @@ button#ViewAllMsgs:active{
     transform: scale(.993);
 }
 
+.modal button{
+    font-weight: 600;
+}
+.modal button:hover{
+    opacity: .9;
+}
+.modal button:active{
+    transform: scale(.98);
+}
+
+#blockModal{
+    margin-top: 15vh;
+}
+
+.modal-dialog .modal-content{
+    overflow: hidden;
+    border: none;
+}
+#blockModal li{
+    list-style: none;
+    margin-bottom: 5px;
+    padding-right: 5px;
+}
+#blockModal li::before{
+    content: '-';
+    font-weight: 900;
+    margin-left: 5px;
+}
+#blockModal #approve{
+    background: #D51212;
+}
+
 /*** End Posts Section ***/
 
 @media screen and (max-width: 991px){
@@ -508,10 +554,7 @@ button#ViewAllMsgs:active{
      .acc{
         bottom: 45px;
     }
-    .modal-dialog{
-        width: 80%;
-        left: -10px;
-    }
+    
     #multiImgPreview{
         width: 85%;
     }
@@ -524,7 +567,7 @@ button#ViewAllMsgs:active{
     #updateImgModal .modal-content button{
         width: 100%;
     }
-    .modal-dialog{
+    #updateImgModal .modal-dialog{
         width: 100%;
     }
     #updateImgModal .modal-content button:first-of-type{

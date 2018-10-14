@@ -143,9 +143,20 @@ a:active, a:visited{
     text-align: center;
 }
 
+.logo{
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: -50px;
+}
+.formContainer .logo{
+    display: none;
+}
+
 .loginContainer .content h1{
     font-size: 3em;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    margin-top: 0;
 }
 
 .loginContainer .content a{
@@ -180,7 +191,7 @@ form.signUp{
 }
 
 .nameContainer , .mailContainer, .mobileContainer, .passContainer{
-    float: right;
+   
     padding-left: 10px;
 }
 
@@ -201,6 +212,7 @@ input:focus{
     border-color: #333aa7;
 }
 
+
 .nameContainer input{
     margin-bottom: 0;
 }
@@ -220,6 +232,7 @@ input[type="password"]{
     background: url(../img/icons/pass.png) no-repeat scroll 10px 10px #fff;
 }
 
+
 .keyContainer{
     position: relative;
 }
@@ -232,6 +245,8 @@ input[type="password"]{
 }
 label{
     font-size: 12px;
+    display: block;
+    margin-bottom: 10px;
 }
 .mobileContainer select{
     float: left;
@@ -313,7 +328,7 @@ h5{
     float: left;
     color: #fff;
     background-color: #4267B2;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     background-repeat: no-repeat;
     background-position: 10px;
@@ -339,8 +354,7 @@ h5{
     background: #EA4335;
     background-image: url(../img/icons/google-plus.png);
     background-repeat: no-repeat;
-     background-position: 10px;
-    
+    background-position: 10px;
 }
 
 .small-sign{
@@ -388,7 +402,31 @@ footer a:hover{
     color: #7e7e7e;
 }
 
-/***************************/
+.birthDate select, .gender select{
+    border-color: #eee;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 0 5px;
+}
+.birthDate select:hover, .gender select:hover{
+    background-color: #eee;
+}
+.birthDate select:focus, .gender select:focus{
+    border-color: #333AA7;
+}
+.birthDate select{
+    margin-left: 5px;
+}
+
+/******************************/
+
+/*************************
+input[type]:hover{
+    background: #eee;
+}
+**/
 
 
 @media screen and (max-width: 991px){
@@ -400,7 +438,7 @@ footer a:hover{
 @media screen and (max-width: 767px){
     .formContainer{
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
     }
     .loginContainer{
         display: none;
@@ -426,6 +464,11 @@ footer a:hover{
     
     body{
         background: url(../img/register-bg.jpg);
+    }
+    
+    .formContainer .logo{
+        margin-top: -35px;
+        display: block;
     }
     
      .mailContainer, .mobileContainer, .passContainer,.passContainer:last-of-type{
@@ -461,7 +504,7 @@ footer a:hover{
     
     .small-sign{
         color: #fff;
-        display: inline;
+        display: block;
     }
     .small-sign a{
         font-size: 20px;
@@ -474,6 +517,9 @@ footer a:hover{
         display: inline;
         position: absolute;
         right:2px; top: -5px;
+    }
+    .remember .pass a{
+        color: #fff;
     }
     
     .socialSign a{

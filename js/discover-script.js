@@ -308,7 +308,7 @@ $('#recordAudioBtn').click(function(e){
 $(document).ready(function(){
 
     
-$(".post").each(function(){
+    $(".post").each(function(){
     
         var post = $(this);
         var postContent = $(this).find("#content");
@@ -576,7 +576,7 @@ $(".post").each(function(){
 
 
     
-$('.postComment').each(function(){
+    $('.postComment').each(function(){
                     
     var deleteCommentBtn = $(this).find('#deleteBtn');
     var flag = false;
@@ -589,7 +589,7 @@ $('.postComment').each(function(){
         
 });
 
-$('.postMenu').each(function(){
+    $('.postMenu').each(function(){
         
     var deletePostBtn = $(this).find('#deletePostBtn');
     var flag = deletePost();
@@ -603,7 +603,7 @@ $('.postMenu').each(function(){
 })
 
 
-$('.viewMsgContainer .viewMsg').click(function(){
+    $('.viewMsgContainer .viewMsg').click(function(){
     
     $('.msgContent').slideToggle();
     
@@ -617,7 +617,13 @@ $('.viewMsgContainer .viewMsg').click(function(){
     
 })
     
-
+    
+    $('a.profileShare').click(function(e){
+        e.preventDefault();
+    })
+    
+    $('a.profileShare').attr('data-toggle','modal').attr('data-target','#shareModal');
+    
     
 })
 

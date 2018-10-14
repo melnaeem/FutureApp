@@ -916,6 +916,8 @@ button.newMsg img{
 }
 
 
+
+
 /**************************************/
 
 .comments-section{
@@ -1325,7 +1327,7 @@ button.newMsg img{
 */
 
 #editMsgModal .modal-dialog{
-    width: 600px;
+    padding-left: 7px;
 }
 
 #editMsgModal .modal-content{
@@ -1391,6 +1393,34 @@ button.newMsg img{
     float: right;
 }
 
+
+
+.addReacts .reactEmotions a.profileShare{
+    cursor: pointer;
+}
+
+#shareModal{
+    margin-top: 15vh;
+}
+
+#shareModal .modal-content{
+    overflow: hidden;
+    border: 0;
+}
+#shareModal img{
+    background-color: #fff;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+}
+#shareModal select{
+    cursor: pointer;
+    outline: none;
+}
+
+.sharePrivacy{
+    
+}
+
 /*************************************/
 
 @media screen and (min-width: 991px){
@@ -1421,10 +1451,7 @@ button.newMsg img{
         right: calc(50vw - 30px);
         bottom: 20px;
     }
-    .modal-dialog{
-        width: 100%;
-        left: -10px;
-    }
+    
     #multiImgPreview{
         width: 85%;
     }

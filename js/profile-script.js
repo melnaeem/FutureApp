@@ -57,7 +57,8 @@ $(document).ready(function(){
         }else{
             $('.cover').attr('src', imageModal.find('img').attr('src')); 
         }
-    })
+    });
+    
     
     
 })

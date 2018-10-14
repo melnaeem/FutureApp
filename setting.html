@@ -15,7 +15,7 @@
         <script src="js/setting.js"></script>
         
     </head>
-    <body dir="ltr">
+    <body dir="rtl">
         <div class="desktop-menu">
             <div class="brand">
                 <a href="discover.html">مستقبلي</a>
@@ -363,7 +363,7 @@
         </div>
         
         
-            <div class="container">
+        <div class="container">
                 <div class="row">
                     <div class="col-md-8 wrapper">
                         <h2>الإعدادات</h2>
@@ -431,11 +431,12 @@
                             </div>                            
                             <button type="submit" id="submitForm">حفظ التعديلات</button>
                         </form>
-                        
+                        <button class="blockedUsers" data-toggle="modal" data-target="#blockListModal">
+                            قائمة المحظورين
+                        </button>
                         <button class="reportProb" data-toggle="modal" data-target="#generalReport">
                             الابلاغ عن مشكلة
                         </button>
-                        
                         <button class="disabled" title="SOON" disabled>
                             الاعلانات وعمليات الدفع
                         </button>
@@ -443,7 +444,7 @@
                 </div>
             </div>
         
-            <div class="modal fade" tabindex="-1" role="dialog" id="generalReport"  data-backdrop="static" data-keyboard="false">
+        <div class="modal fade setting-modal" tabindex="-1" role="dialog" id="generalReport"  data-backdrop="static" data-keyboard="false">
                        <div class="modal-dialog" role="document">
                          <div class="modal-content">
                            <div class="modal-header">
@@ -459,6 +460,21 @@
                          </div><!-- /.modal-content -->
                        </div><!-- /.modal-dialog -->
             </div>
+        <div class="modal fade setting-modal" tabindex="-1" role="dialog" id="blockListModal"  data-backdrop="static" data-keyboard="false">
+             <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h4 class="modal-title">قائمة المحظورين</h4>
+                 </div>
+                 <div class="modal-body">
+                      
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" id="cancel" data-dismiss="modal">إلغاء</button>
+                 </div>
+               </div><!-- /.modal-content -->
+             </div><!-- /.modal-dialog -->
+        </div>
         
     </body>
 </html>

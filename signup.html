@@ -25,12 +25,14 @@
                    <div class="loginContainer">
                        <div class="overlay"></div>
                        <div class="content">
-                           <h1>مستقبلي</h1>
+                           <img class="logo" src="img/logo.svg">
+                           <h1>Togols</h1>
                            <a href="signin.html">دخول</a>
                        </div>
                        
                    </div>
                    <div class="formContainer">
+                       <img class="logo" src="img/logo.svg">
                        <h2>تسجيل</h2>
                        <div class="socialSign">
                            <a href="#">فيسبوك</a>
@@ -81,6 +83,38 @@
                            <div class="passContainer">
                                <label>تأكيد كلمة المرور</label>
                                <input type="password">
+                               <span class="error">لا يمكن استخدام رموز في الاسم</span>
+                           </div>
+                           
+                           <div class="birthDate">
+                               <label>تاريخ الميلاد</label>
+                               <select name="day">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                </select>
+                               <select name="month">
+                                  <option value="1">يناير</option>
+                                  <option value="2">قبراير</option>
+                                  <option value="3">مارس</option>
+                                  <option value="4">ابريل</option>
+                                </select>
+                               <select name="year">
+                                  <option value="1990">1990</option>
+                                  <option value="1991">1991</option>
+                                  <option value="1992">1992</option>
+                                  <option value="1993">1993</option>
+                                </select>
+                               <span class="error">لا يمكن استخدام رموز في الاسم</span>
+                           </div>
+                           
+                           <div class="gender">
+                               <label>النوع</label>
+                               <select name="gender">
+                                  <option value="boy">رجل</option>
+                                  <option value="girl">امرأة</option>
+                                </select>
                                <span class="error">لا يمكن استخدام رموز في الاسم</span>
                            </div>
                            

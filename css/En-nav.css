@@ -1,0 +1,42 @@
+.desktop-menu .brand, .desktop-menu .searchForm, .user-panel > div,.user-panel .user-info img,.discover a svg{
+    float: left;
+}
+.user-panel .user-info img,.discover a svg{
+    margin-right: 7px;
+}
+.user-panel > div{
+    margin-right: 10px;
+}
+
+.desktop-menu .searchForm{
+    margin-right: 0;
+    margin-left: 80px;
+}
+.desktop-menu .user-panel,.message-notification .notification-date{
+    float: right;
+}
+
+.desktop-menu .dropdown-menu{
+    left: -400px;
+}
+.message-notification .notification-date{
+    float: right;
+}
+.message-notification{
+    text-align: left;
+}
+.desktop-menu .searchForm button{
+    left: calc(100% - 45px);
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.userSetting{
+    border: 0;
+}
+.discover{
+    border-left:  1px solid #ebebeb; 
+    padding-left: 10px;
+    padding-right: 10px;
+}
